@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonCadastre = new System.Windows.Forms.Button();
+            this.buttonEntrar = new System.Windows.Forms.Button();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelCadastro = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.buttonVoltar = new System.Windows.Forms.Button();
+            this.buttonLimpar = new System.Windows.Forms.Button();
+            this.buttonCadastrar = new System.Windows.Forms.Button();
+            this.comboBoxUf = new System.Windows.Forms.ComboBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxEndereco = new System.Windows.Forms.TextBox();
+            this.maskedTextBoxCelular = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,33 +56,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelConta = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonPagar = new System.Windows.Forms.Button();
+            this.buttonDepositar = new System.Windows.Forms.Button();
+            this.buttonTransferir = new System.Windows.Forms.Button();
             this.panelContaPoupanca = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
+            this.labelSaldoPoupanca = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panelTransacao = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panelContaCorrente = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
+            this.labelSaldoCorrente = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.panelDadosUsuario = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.labelConta = new System.Windows.Forms.Label();
+            this.labelAgencia = new System.Windows.Forms.Label();
+            this.labelBanco = new System.Windows.Forms.Label();
+            this.labelNome = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
@@ -95,10 +87,10 @@
             // panelLogin
             // 
             this.panelLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.panelLogin.Controls.Add(this.button2);
-            this.panelLogin.Controls.Add(this.button1);
-            this.panelLogin.Controls.Add(this.textBox2);
-            this.panelLogin.Controls.Add(this.textBox1);
+            this.panelLogin.Controls.Add(this.buttonCadastre);
+            this.panelLogin.Controls.Add(this.buttonEntrar);
+            this.panelLogin.Controls.Add(this.textBoxSenha);
+            this.panelLogin.Controls.Add(this.textBoxUsuario);
             this.panelLogin.Controls.Add(this.label3);
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.label1);
@@ -106,39 +98,38 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(458, 295);
             this.panelLogin.TabIndex = 0;
-            this.panelLogin.Visible = false;
             // 
-            // button2
+            // buttonCadastre
             // 
-            this.button2.Location = new System.Drawing.Point(287, 222);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(87, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Cadastre-se";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonCadastre.Location = new System.Drawing.Point(299, 222);
+            this.buttonCadastre.Name = "buttonCadastre";
+            this.buttonCadastre.Size = new System.Drawing.Size(75, 23);
+            this.buttonCadastre.TabIndex = 6;
+            this.buttonCadastre.Text = "Cadastre-se";
+            this.buttonCadastre.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonEntrar
             // 
-            this.button1.Location = new System.Drawing.Point(183, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 30);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Entrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonEntrar.Location = new System.Drawing.Point(198, 222);
+            this.buttonEntrar.Name = "buttonEntrar";
+            this.buttonEntrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEntrar.TabIndex = 5;
+            this.buttonEntrar.Text = "Entrar";
+            this.buttonEntrar.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // textBoxSenha
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 149);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 20);
-            this.textBox2.TabIndex = 4;
+            this.textBoxSenha.Location = new System.Drawing.Point(130, 149);
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.Size = new System.Drawing.Size(244, 20);
+            this.textBoxSenha.TabIndex = 4;
             // 
-            // textBox1
+            // textBoxUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 20);
-            this.textBox1.TabIndex = 3;
+            this.textBoxUsuario.Location = new System.Drawing.Point(130, 105);
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(244, 20);
+            this.textBoxUsuario.TabIndex = 3;
             // 
             // label3
             // 
@@ -173,24 +164,16 @@
             // panelCadastro
             // 
             this.panelCadastro.BackColor = System.Drawing.SystemColors.Control;
-            this.panelCadastro.Controls.Add(this.label28);
-            this.panelCadastro.Controls.Add(this.label27);
-            this.panelCadastro.Controls.Add(this.textBox9);
-            this.panelCadastro.Controls.Add(this.label26);
-            this.panelCadastro.Controls.Add(this.textBox7);
-            this.panelCadastro.Controls.Add(this.textBox6);
-            this.panelCadastro.Controls.Add(this.label25);
-            this.panelCadastro.Controls.Add(this.label24);
-            this.panelCadastro.Controls.Add(this.button5);
-            this.panelCadastro.Controls.Add(this.button4);
-            this.panelCadastro.Controls.Add(this.button3);
-            this.panelCadastro.Controls.Add(this.comboBox1);
-            this.panelCadastro.Controls.Add(this.textBox5);
-            this.panelCadastro.Controls.Add(this.textBox4);
-            this.panelCadastro.Controls.Add(this.maskedTextBox3);
-            this.panelCadastro.Controls.Add(this.maskedTextBox2);
-            this.panelCadastro.Controls.Add(this.maskedTextBox1);
-            this.panelCadastro.Controls.Add(this.textBox3);
+            this.panelCadastro.Controls.Add(this.buttonVoltar);
+            this.panelCadastro.Controls.Add(this.buttonLimpar);
+            this.panelCadastro.Controls.Add(this.buttonCadastrar);
+            this.panelCadastro.Controls.Add(this.comboBoxUf);
+            this.panelCadastro.Controls.Add(this.textBoxEmail);
+            this.panelCadastro.Controls.Add(this.textBoxEndereco);
+            this.panelCadastro.Controls.Add(this.maskedTextBoxCelular);
+            this.panelCadastro.Controls.Add(this.maskedTextBoxNascimento);
+            this.panelCadastro.Controls.Add(this.maskedTextBoxCpf);
+            this.panelCadastro.Controls.Add(this.textBoxNome);
             this.panelCadastro.Controls.Add(this.label11);
             this.panelCadastro.Controls.Add(this.label10);
             this.panelCadastro.Controls.Add(this.label9);
@@ -206,86 +189,86 @@
             this.panelCadastro.TabIndex = 1;
             this.panelCadastro.Visible = false;
             // 
-            // button5
+            // buttonVoltar
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(354, 478);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(90, 30);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Voltar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVoltar.Location = new System.Drawing.Point(358, 381);
+            this.buttonVoltar.Name = "buttonVoltar";
+            this.buttonVoltar.Size = new System.Drawing.Size(90, 30);
+            this.buttonVoltar.TabIndex = 17;
+            this.buttonVoltar.Text = "Voltar";
+            this.buttonVoltar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonLimpar
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(249, 478);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 30);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Limpar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLimpar.Location = new System.Drawing.Point(249, 381);
+            this.buttonLimpar.Name = "buttonLimpar";
+            this.buttonLimpar.Size = new System.Drawing.Size(90, 30);
+            this.buttonLimpar.TabIndex = 16;
+            this.buttonLimpar.Text = "Limpar";
+            this.buttonLimpar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonCadastrar
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(138, 478);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 30);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Confirmar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCadastrar.Location = new System.Drawing.Point(138, 381);
+            this.buttonCadastrar.Name = "buttonCadastrar";
+            this.buttonCadastrar.Size = new System.Drawing.Size(90, 30);
+            this.buttonCadastrar.TabIndex = 15;
+            this.buttonCadastrar.Text = "Cadastrar";
+            this.buttonCadastrar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboBoxUf
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(138, 228);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.Text = "Selecione...";
+            this.comboBoxUf.FormattingEnabled = true;
+            this.comboBoxUf.Location = new System.Drawing.Point(138, 237);
+            this.comboBoxUf.Name = "comboBoxUf";
+            this.comboBoxUf.Size = new System.Drawing.Size(121, 28);
+            this.comboBoxUf.TabIndex = 14;
+            this.comboBoxUf.Text = "Selecione...";
             // 
-            // textBox5
+            // textBoxEmail
             // 
-            this.textBox5.Location = new System.Drawing.Point(138, 299);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(438, 26);
-            this.textBox5.TabIndex = 13;
+            this.textBoxEmail.Location = new System.Drawing.Point(138, 328);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(438, 26);
+            this.textBoxEmail.TabIndex = 13;
             // 
-            // textBox4
+            // textBoxEndereco
             // 
-            this.textBox4.Location = new System.Drawing.Point(138, 195);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(438, 26);
-            this.textBox4.TabIndex = 12;
+            this.textBoxEndereco.Location = new System.Drawing.Point(138, 195);
+            this.textBoxEndereco.Name = "textBoxEndereco";
+            this.textBoxEndereco.Size = new System.Drawing.Size(438, 26);
+            this.textBoxEndereco.TabIndex = 12;
             // 
-            // maskedTextBox3
+            // maskedTextBoxCelular
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(138, 265);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(169, 26);
-            this.maskedTextBox3.TabIndex = 11;
+            this.maskedTextBoxCelular.Location = new System.Drawing.Point(138, 279);
+            this.maskedTextBoxCelular.Name = "maskedTextBoxCelular";
+            this.maskedTextBoxCelular.Size = new System.Drawing.Size(169, 26);
+            this.maskedTextBoxCelular.TabIndex = 11;
             // 
-            // maskedTextBox2
+            // maskedTextBoxNascimento
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(451, 156);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(125, 26);
-            this.maskedTextBox2.TabIndex = 10;
+            this.maskedTextBoxNascimento.Location = new System.Drawing.Point(451, 156);
+            this.maskedTextBoxNascimento.Name = "maskedTextBoxNascimento";
+            this.maskedTextBoxNascimento.Size = new System.Drawing.Size(125, 26);
+            this.maskedTextBoxNascimento.TabIndex = 10;
             // 
-            // maskedTextBox1
+            // maskedTextBoxCpf
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(138, 156);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(169, 26);
-            this.maskedTextBox1.TabIndex = 9;
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(138, 156);
+            this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(169, 26);
+            this.maskedTextBoxCpf.TabIndex = 9;
             // 
-            // textBox3
+            // textBoxNome
             // 
-            this.textBox3.Location = new System.Drawing.Point(138, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(438, 26);
-            this.textBox3.TabIndex = 8;
+            this.textBoxNome.Location = new System.Drawing.Point(138, 119);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(438, 26);
+            this.textBoxNome.TabIndex = 8;
             // 
             // label11
             // 
@@ -366,9 +349,9 @@
             // 
             // panelConta
             // 
-            this.panelConta.Controls.Add(this.button8);
-            this.panelConta.Controls.Add(this.button7);
-            this.panelConta.Controls.Add(this.button6);
+            this.panelConta.Controls.Add(this.buttonPagar);
+            this.panelConta.Controls.Add(this.buttonDepositar);
+            this.panelConta.Controls.Add(this.buttonTransferir);
             this.panelConta.Controls.Add(this.panelContaPoupanca);
             this.panelConta.Controls.Add(this.panelTransacao);
             this.panelConta.Controls.Add(this.panelContaCorrente);
@@ -377,41 +360,42 @@
             this.panelConta.Name = "panelConta";
             this.panelConta.Size = new System.Drawing.Size(893, 511);
             this.panelConta.TabIndex = 18;
+            this.panelConta.Visible = false;
             // 
-            // button8
+            // buttonPagar
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(749, 363);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(91, 29);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "Pagar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPagar.Location = new System.Drawing.Point(749, 363);
+            this.buttonPagar.Name = "buttonPagar";
+            this.buttonPagar.Size = new System.Drawing.Size(91, 29);
+            this.buttonPagar.TabIndex = 5;
+            this.buttonPagar.Text = "Pagar";
+            this.buttonPagar.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // buttonDepositar
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(749, 278);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(91, 29);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Depositar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDepositar.Location = new System.Drawing.Point(749, 278);
+            this.buttonDepositar.Name = "buttonDepositar";
+            this.buttonDepositar.Size = new System.Drawing.Size(91, 29);
+            this.buttonDepositar.TabIndex = 4;
+            this.buttonDepositar.Text = "Depositar";
+            this.buttonDepositar.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonTransferir
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(749, 320);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(91, 29);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Transferir";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonTransferir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTransferir.Location = new System.Drawing.Point(749, 320);
+            this.buttonTransferir.Name = "buttonTransferir";
+            this.buttonTransferir.Size = new System.Drawing.Size(91, 29);
+            this.buttonTransferir.TabIndex = 3;
+            this.buttonTransferir.Text = "Transferir";
+            this.buttonTransferir.UseVisualStyleBackColor = true;
             // 
             // panelContaPoupanca
             // 
             this.panelContaPoupanca.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelContaPoupanca.Controls.Add(this.label23);
+            this.panelContaPoupanca.Controls.Add(this.labelSaldoPoupanca);
             this.panelContaPoupanca.Controls.Add(this.label20);
             this.panelContaPoupanca.Controls.Add(this.label17);
             this.panelContaPoupanca.Location = new System.Drawing.Point(269, 156);
@@ -419,15 +403,15 @@
             this.panelContaPoupanca.Size = new System.Drawing.Size(200, 236);
             this.panelContaPoupanca.TabIndex = 2;
             // 
-            // label23
+            // labelSaldoPoupanca
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(15, 114);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(148, 46);
-            this.label23.TabIndex = 9;
-            this.label23.Text = "R$0,00";
+            this.labelSaldoPoupanca.AutoSize = true;
+            this.labelSaldoPoupanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaldoPoupanca.Location = new System.Drawing.Point(15, 114);
+            this.labelSaldoPoupanca.Name = "labelSaldoPoupanca";
+            this.labelSaldoPoupanca.Size = new System.Drawing.Size(148, 46);
+            this.labelSaldoPoupanca.TabIndex = 9;
+            this.labelSaldoPoupanca.Text = "R$0,00";
             // 
             // label20
             // 
@@ -486,7 +470,7 @@
             // panelContaCorrente
             // 
             this.panelContaCorrente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelContaCorrente.Controls.Add(this.label22);
+            this.panelContaCorrente.Controls.Add(this.labelSaldoCorrente);
             this.panelContaCorrente.Controls.Add(this.label16);
             this.panelContaCorrente.Controls.Add(this.label19);
             this.panelContaCorrente.Location = new System.Drawing.Point(35, 156);
@@ -494,15 +478,15 @@
             this.panelContaCorrente.Size = new System.Drawing.Size(200, 236);
             this.panelContaCorrente.TabIndex = 1;
             // 
-            // label22
+            // labelSaldoCorrente
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(11, 112);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(148, 46);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "R$0,00";
+            this.labelSaldoCorrente.AutoSize = true;
+            this.labelSaldoCorrente.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaldoCorrente.Location = new System.Drawing.Point(11, 112);
+            this.labelSaldoCorrente.Name = "labelSaldoCorrente";
+            this.labelSaldoCorrente.Size = new System.Drawing.Size(148, 46);
+            this.labelSaldoCorrente.TabIndex = 8;
+            this.labelSaldoCorrente.Text = "R$0,00";
             // 
             // label16
             // 
@@ -529,58 +513,58 @@
             // panelDadosUsuario
             // 
             this.panelDadosUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelDadosUsuario.Controls.Add(this.label15);
-            this.panelDadosUsuario.Controls.Add(this.label14);
-            this.panelDadosUsuario.Controls.Add(this.label13);
-            this.panelDadosUsuario.Controls.Add(this.label12);
+            this.panelDadosUsuario.Controls.Add(this.labelConta);
+            this.panelDadosUsuario.Controls.Add(this.labelAgencia);
+            this.panelDadosUsuario.Controls.Add(this.labelBanco);
+            this.panelDadosUsuario.Controls.Add(this.labelNome);
             this.panelDadosUsuario.Location = new System.Drawing.Point(35, 28);
             this.panelDadosUsuario.Name = "panelDadosUsuario";
             this.panelDadosUsuario.Size = new System.Drawing.Size(666, 100);
             this.panelDadosUsuario.TabIndex = 0;
             // 
-            // label15
+            // labelConta
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.Control;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(462, 59);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 20);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Conta";
+            this.labelConta.AutoSize = true;
+            this.labelConta.BackColor = System.Drawing.SystemColors.Control;
+            this.labelConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelConta.Location = new System.Drawing.Point(462, 59);
+            this.labelConta.Name = "labelConta";
+            this.labelConta.Size = new System.Drawing.Size(52, 20);
+            this.labelConta.TabIndex = 3;
+            this.labelConta.Text = "Conta";
             // 
-            // label14
+            // labelAgencia
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.SystemColors.Control;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(462, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 20);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Agencia";
+            this.labelAgencia.AutoSize = true;
+            this.labelAgencia.BackColor = System.Drawing.SystemColors.Control;
+            this.labelAgencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAgencia.Location = new System.Drawing.Point(462, 20);
+            this.labelAgencia.Name = "labelAgencia";
+            this.labelAgencia.Size = new System.Drawing.Size(67, 20);
+            this.labelAgencia.TabIndex = 2;
+            this.labelAgencia.Text = "Agencia";
             // 
-            // label13
+            // labelBanco
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.Control;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 59);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 20);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Banco";
+            this.labelBanco.AutoSize = true;
+            this.labelBanco.BackColor = System.Drawing.SystemColors.Control;
+            this.labelBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBanco.Location = new System.Drawing.Point(15, 59);
+            this.labelBanco.Name = "labelBanco";
+            this.labelBanco.Size = new System.Drawing.Size(55, 20);
+            this.labelBanco.TabIndex = 1;
+            this.labelBanco.Text = "Banco";
             // 
-            // label12
+            // labelNome
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.Control;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(15, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Nome";
+            this.labelNome.AutoSize = true;
+            this.labelNome.BackColor = System.Drawing.SystemColors.Control;
+            this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNome.Location = new System.Drawing.Point(15, 20);
+            this.labelNome.Name = "labelNome";
+            this.labelNome.Size = new System.Drawing.Size(51, 20);
+            this.labelNome.TabIndex = 0;
+            this.labelNome.Text = "Nome";
             // 
             // label24
             // 
@@ -655,8 +639,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(932, 535);
             this.Controls.Add(this.panelLogin);
-            this.Controls.Add(this.panelCadastro);
             this.Controls.Add(this.panelConta);
+            this.Controls.Add(this.panelCadastro);
             this.Name = "FormPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);
@@ -679,10 +663,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panelLogin;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonCadastre;
+        private System.Windows.Forms.Button buttonEntrar;
+        private System.Windows.Forms.TextBox textBoxSenha;
+        private System.Windows.Forms.TextBox textBoxUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -695,43 +679,35 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBoxEndereco;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCelular;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxNascimento;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCpf;
+        private System.Windows.Forms.TextBox textBoxNome;
+        private System.Windows.Forms.ComboBox comboBoxUf;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Button buttonVoltar;
+        private System.Windows.Forms.Button buttonLimpar;
+        private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Panel panelConta;
         private System.Windows.Forms.Panel panelContaPoupanca;
         private System.Windows.Forms.Panel panelTransacao;
         private System.Windows.Forms.Panel panelContaCorrente;
         private System.Windows.Forms.Panel panelDadosUsuario;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonPagar;
+        private System.Windows.Forms.Button buttonDepositar;
+        private System.Windows.Forms.Button buttonTransferir;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelConta;
+        private System.Windows.Forms.Label labelAgencia;
+        private System.Windows.Forms.Label labelBanco;
+        private System.Windows.Forms.Label labelNome;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label labelSaldoPoupanca;
+        private System.Windows.Forms.Label labelSaldoCorrente;
     }
 }
