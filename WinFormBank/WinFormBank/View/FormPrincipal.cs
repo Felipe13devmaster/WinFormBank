@@ -21,5 +21,31 @@ namespace WinFormBank.View
         {
 
         }
+
+        private void buttonCadastre_Click(object sender, EventArgs e)
+        {
+            panelCadastro.Visible = true;
+            panelLogin.Visible = false;
+        }
+
+        private void buttonVoltar_Click(object sender, EventArgs e)
+        {
+            panelCadastro.Visible = false;
+            panelLogin.Visible = true;
+        }
+
+        private void buttonLimpar_Click(object sender, EventArgs e)
+        {
+            textBoxNome.Text = "";
+            maskedTextBoxCpf.Text = "";
+            maskedTextBoxNascimento.Text = "";
+            textBoxEndereco.Text = "";
+           // comboBoxUf.SelectedIndex = 0;
+            maskedTextBoxCelular.Text = "";
+            textBoxEmail.Text = "";
+            textBoxUsuarioInsert.Text = "";
+            textBoxSenhaInsert.Text = "";
+            textBoxSenhaConfirm.Text = "";
+        }
     }
 }

@@ -37,6 +37,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelCadastro = new System.Windows.Forms.Panel();
+            this.labelConfirmaSenha = new System.Windows.Forms.Label();
+            this.labelCriaSenha = new System.Windows.Forms.Label();
+            this.textBoxSenhaConfirm = new System.Windows.Forms.TextBox();
+            this.textBoxSenhaInsert = new System.Windows.Forms.TextBox();
+            this.textBoxUsuarioInsert = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonCadastrar = new System.Windows.Forms.Button();
@@ -75,14 +83,6 @@
             this.labelAgencia = new System.Windows.Forms.Label();
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBoxUsuarioInsert = new System.Windows.Forms.TextBox();
-            this.textBoxSenhaInsert = new System.Windows.Forms.TextBox();
-            this.textBoxSenhaConfirm = new System.Windows.Forms.TextBox();
-            this.labelCriaSenha = new System.Windows.Forms.Label();
-            this.labelConfirmaSenha = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
@@ -115,6 +115,7 @@
             this.buttonCadastre.TabIndex = 6;
             this.buttonCadastre.Text = "Cadastre-se";
             this.buttonCadastre.UseVisualStyleBackColor = true;
+            this.buttonCadastre.Click += new System.EventHandler(this.buttonCadastre_Click);
             // 
             // buttonEntrar
             // 
@@ -205,6 +206,72 @@
             this.panelCadastro.TabIndex = 1;
             this.panelCadastro.Visible = false;
             // 
+            // labelConfirmaSenha
+            // 
+            this.labelConfirmaSenha.AutoSize = true;
+            this.labelConfirmaSenha.Location = new System.Drawing.Point(330, 395);
+            this.labelConfirmaSenha.Name = "labelConfirmaSenha";
+            this.labelConfirmaSenha.Size = new System.Drawing.Size(160, 20);
+            this.labelConfirmaSenha.TabIndex = 25;
+            this.labelConfirmaSenha.Text = "Cornfirme sua senha.";
+            // 
+            // labelCriaSenha
+            // 
+            this.labelCriaSenha.AutoSize = true;
+            this.labelCriaSenha.Location = new System.Drawing.Point(330, 363);
+            this.labelCriaSenha.Name = "labelCriaSenha";
+            this.labelCriaSenha.Size = new System.Drawing.Size(119, 20);
+            this.labelCriaSenha.TabIndex = 24;
+            this.labelCriaSenha.Text = "Cire sua senha.";
+            // 
+            // textBoxSenhaConfirm
+            // 
+            this.textBoxSenhaConfirm.Location = new System.Drawing.Point(138, 392);
+            this.textBoxSenhaConfirm.Name = "textBoxSenhaConfirm";
+            this.textBoxSenhaConfirm.Size = new System.Drawing.Size(169, 26);
+            this.textBoxSenhaConfirm.TabIndex = 23;
+            // 
+            // textBoxSenhaInsert
+            // 
+            this.textBoxSenhaInsert.Location = new System.Drawing.Point(138, 360);
+            this.textBoxSenhaInsert.Name = "textBoxSenhaInsert";
+            this.textBoxSenhaInsert.Size = new System.Drawing.Size(169, 26);
+            this.textBoxSenhaInsert.TabIndex = 22;
+            // 
+            // textBoxUsuarioInsert
+            // 
+            this.textBoxUsuarioInsert.Location = new System.Drawing.Point(138, 326);
+            this.textBoxUsuarioInsert.Name = "textBoxUsuarioInsert";
+            this.textBoxUsuarioInsert.Size = new System.Drawing.Size(318, 26);
+            this.textBoxUsuarioInsert.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(42, 395);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(56, 20);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Senha";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(42, 363);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 20);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Senha";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(41, 329);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 20);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Usuario";
+            // 
             // buttonVoltar
             // 
             this.buttonVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,6 +281,7 @@
             this.buttonVoltar.TabIndex = 17;
             this.buttonVoltar.Text = "Voltar";
             this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
             // buttonLimpar
             // 
@@ -224,6 +292,7 @@
             this.buttonLimpar.TabIndex = 16;
             this.buttonLimpar.Text = "Limpar";
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // buttonCadastrar
             // 
@@ -582,72 +651,6 @@
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(41, 329);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 20);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Usuario";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(42, 363);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 20);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Senha";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(42, 395);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 20);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Senha";
-            // 
-            // textBoxUsuarioInsert
-            // 
-            this.textBoxUsuarioInsert.Location = new System.Drawing.Point(138, 326);
-            this.textBoxUsuarioInsert.Name = "textBoxUsuarioInsert";
-            this.textBoxUsuarioInsert.Size = new System.Drawing.Size(318, 26);
-            this.textBoxUsuarioInsert.TabIndex = 21;
-            // 
-            // textBoxSenhaInsert
-            // 
-            this.textBoxSenhaInsert.Location = new System.Drawing.Point(138, 360);
-            this.textBoxSenhaInsert.Name = "textBoxSenhaInsert";
-            this.textBoxSenhaInsert.Size = new System.Drawing.Size(169, 26);
-            this.textBoxSenhaInsert.TabIndex = 22;
-            // 
-            // textBoxSenhaConfirm
-            // 
-            this.textBoxSenhaConfirm.Location = new System.Drawing.Point(138, 392);
-            this.textBoxSenhaConfirm.Name = "textBoxSenhaConfirm";
-            this.textBoxSenhaConfirm.Size = new System.Drawing.Size(169, 26);
-            this.textBoxSenhaConfirm.TabIndex = 23;
-            // 
-            // labelCriaSenha
-            // 
-            this.labelCriaSenha.AutoSize = true;
-            this.labelCriaSenha.Location = new System.Drawing.Point(330, 363);
-            this.labelCriaSenha.Name = "labelCriaSenha";
-            this.labelCriaSenha.Size = new System.Drawing.Size(119, 20);
-            this.labelCriaSenha.TabIndex = 24;
-            this.labelCriaSenha.Text = "Cire sua senha.";
-            // 
-            // labelConfirmaSenha
-            // 
-            this.labelConfirmaSenha.AutoSize = true;
-            this.labelConfirmaSenha.Location = new System.Drawing.Point(330, 395);
-            this.labelConfirmaSenha.Name = "labelConfirmaSenha";
-            this.labelConfirmaSenha.Size = new System.Drawing.Size(160, 20);
-            this.labelConfirmaSenha.TabIndex = 25;
-            this.labelConfirmaSenha.Text = "Cornfirme sua senha.";
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,8 +658,8 @@
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(932, 535);
             this.Controls.Add(this.panelCadastro);
-            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelConta);
+            this.Controls.Add(this.panelLogin);
             this.Name = "FormPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);
