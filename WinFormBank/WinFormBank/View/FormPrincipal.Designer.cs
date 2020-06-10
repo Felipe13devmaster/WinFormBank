@@ -129,13 +129,16 @@
             // textBoxSenha
             // 
             this.textBoxSenha.Location = new System.Drawing.Point(130, 149);
+            this.textBoxSenha.MaxLength = 8;
             this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(244, 20);
             this.textBoxSenha.TabIndex = 4;
             // 
             // textBoxUsuario
             // 
             this.textBoxUsuario.Location = new System.Drawing.Point(130, 105);
+            this.textBoxUsuario.MaxLength = 50;
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(244, 20);
             this.textBoxUsuario.TabIndex = 3;
@@ -227,20 +230,26 @@
             // textBoxSenhaConfirm
             // 
             this.textBoxSenhaConfirm.Location = new System.Drawing.Point(138, 392);
+            this.textBoxSenhaConfirm.MaxLength = 8;
             this.textBoxSenhaConfirm.Name = "textBoxSenhaConfirm";
+            this.textBoxSenhaConfirm.PasswordChar = '*';
             this.textBoxSenhaConfirm.Size = new System.Drawing.Size(169, 26);
             this.textBoxSenhaConfirm.TabIndex = 23;
+            this.textBoxSenhaConfirm.TextChanged += new System.EventHandler(this.textBoxSenhaConfirm_TextChanged);
             // 
             // textBoxSenhaInsert
             // 
             this.textBoxSenhaInsert.Location = new System.Drawing.Point(138, 360);
+            this.textBoxSenhaInsert.MaxLength = 8;
             this.textBoxSenhaInsert.Name = "textBoxSenhaInsert";
+            this.textBoxSenhaInsert.PasswordChar = '*';
             this.textBoxSenhaInsert.Size = new System.Drawing.Size(169, 26);
             this.textBoxSenhaInsert.TabIndex = 22;
             // 
             // textBoxUsuarioInsert
             // 
             this.textBoxUsuarioInsert.Location = new System.Drawing.Point(138, 326);
+            this.textBoxUsuarioInsert.MaxLength = 50;
             this.textBoxUsuarioInsert.Name = "textBoxUsuarioInsert";
             this.textBoxUsuarioInsert.Size = new System.Drawing.Size(318, 26);
             this.textBoxUsuarioInsert.TabIndex = 21;
@@ -306,16 +315,46 @@
             // 
             // comboBoxUf
             // 
+            this.comboBoxUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxUf.FormattingEnabled = true;
+            this.comboBoxUf.Items.AddRange(new object[] {
+            "Selecione...",
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
             this.comboBoxUf.Location = new System.Drawing.Point(138, 223);
             this.comboBoxUf.Name = "comboBoxUf";
             this.comboBoxUf.Size = new System.Drawing.Size(121, 28);
             this.comboBoxUf.TabIndex = 14;
-            this.comboBoxUf.Text = "Selecione...";
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(138, 294);
+            this.textBoxEmail.MaxLength = 100;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(438, 26);
             this.textBoxEmail.TabIndex = 13;
@@ -323,6 +362,7 @@
             // textBoxEndereco
             // 
             this.textBoxEndereco.Location = new System.Drawing.Point(138, 188);
+            this.textBoxEndereco.MaxLength = 100;
             this.textBoxEndereco.Name = "textBoxEndereco";
             this.textBoxEndereco.Size = new System.Drawing.Size(438, 26);
             this.textBoxEndereco.TabIndex = 12;
@@ -330,13 +370,15 @@
             // maskedTextBoxCelular
             // 
             this.maskedTextBoxCelular.Location = new System.Drawing.Point(138, 257);
+            this.maskedTextBoxCelular.Mask = "(00) 00000-9999";
             this.maskedTextBoxCelular.Name = "maskedTextBoxCelular";
-            this.maskedTextBoxCelular.Size = new System.Drawing.Size(169, 26);
+            this.maskedTextBoxCelular.Size = new System.Drawing.Size(131, 26);
             this.maskedTextBoxCelular.TabIndex = 11;
             // 
             // maskedTextBoxNascimento
             // 
             this.maskedTextBoxNascimento.Location = new System.Drawing.Point(451, 154);
+            this.maskedTextBoxNascimento.Mask = "00/00/0000";
             this.maskedTextBoxNascimento.Name = "maskedTextBoxNascimento";
             this.maskedTextBoxNascimento.Size = new System.Drawing.Size(125, 26);
             this.maskedTextBoxNascimento.TabIndex = 10;
@@ -344,6 +386,7 @@
             // maskedTextBoxCpf
             // 
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(138, 154);
+            this.maskedTextBoxCpf.Mask = "000.000.000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(169, 26);
             this.maskedTextBoxCpf.TabIndex = 9;
@@ -351,6 +394,7 @@
             // textBoxNome
             // 
             this.textBoxNome.Location = new System.Drawing.Point(138, 119);
+            this.textBoxNome.MaxLength = 80;
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(438, 26);
             this.textBoxNome.TabIndex = 8;

@@ -26,6 +26,7 @@ namespace WinFormBank.View
         {
             panelCadastro.Visible = true;
             panelLogin.Visible = false;
+            comboBoxUf.SelectedIndex = 0;
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
@@ -40,12 +41,26 @@ namespace WinFormBank.View
             maskedTextBoxCpf.Text = "";
             maskedTextBoxNascimento.Text = "";
             textBoxEndereco.Text = "";
-           // comboBoxUf.SelectedIndex = 0;
+            comboBoxUf.SelectedIndex = 0;
             maskedTextBoxCelular.Text = "";
             textBoxEmail.Text = "";
             textBoxUsuarioInsert.Text = "";
             textBoxSenhaInsert.Text = "";
             textBoxSenhaConfirm.Text = "";
+        }
+
+        private void textBoxSenhaConfirm_TextChanged(object sender, EventArgs e)
+        {
+            string textSenhaInsert = textBoxSenhaInsert.Text;
+            string textSenhaConfirm = textBoxSenhaConfirm.Text;
+            if(textSenhaInsert.Equals(textSenhaConfirm))
+            {
+                labelConfirmaSenha.Text = "Senha validada com sucesso.";
+            }
+            else
+            {
+                labelConfirmaSenha.Text = "Senhas não conferem.";
+            }
         }
     }
 }
