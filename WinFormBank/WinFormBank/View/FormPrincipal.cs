@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormBank.Model;
+using WinFormBank.Controller;
 
 namespace WinFormBank.View
 {
@@ -61,6 +63,30 @@ namespace WinFormBank.View
             {
                 labelConfirmaSenha.Text = "Senhas não conferem.";
             }
+        }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            Usuario usuario = new Usuario();
+            ClienteDAO clienteDAO = new ClienteDAO();
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+            cliente.Nome = textBoxNome.Text;
+            cliente.Cpf = maskedTextBoxCpf.Text;
+            cliente.Nascimento = maskedTextBoxNascimento.Text;
+            cliente.Endereco = textBoxEndereco.Text;
+            cliente.Uf = comboBoxUf.Text;
+            cliente.Celular = maskedTextBoxCelular.Text;
+            cliente.Email = textBoxEmail.Text;
+            usuario.Nome = textBoxUsuarioInsert.Text;
+            usuario.Senha = textBoxSenhaConfirm.Text;
+
+            clienteDAO.salvar(cliente);
+            usuarioDAO.salvar(usuario);
+           
+
+
         }
     }
 }

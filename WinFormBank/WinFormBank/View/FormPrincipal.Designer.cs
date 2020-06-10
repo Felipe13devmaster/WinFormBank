@@ -225,7 +225,7 @@
             this.labelCriaSenha.Name = "labelCriaSenha";
             this.labelCriaSenha.Size = new System.Drawing.Size(119, 20);
             this.labelCriaSenha.TabIndex = 24;
-            this.labelCriaSenha.Text = "Cire sua senha.";
+            this.labelCriaSenha.Text = "Crie sua senha.";
             // 
             // textBoxSenhaConfirm
             // 
@@ -312,6 +312,7 @@
             this.buttonCadastrar.TabIndex = 15;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // comboBoxUf
             // 

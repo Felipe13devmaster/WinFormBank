@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace WinFormBank.Controller
 {
-    class ClienteDao
+    class ClienteDAO
     {
         private Cliente cliente;
         private SqlConnection connection;
         private SqlCommand command;
 
-        public ClienteDao()
+        public ClienteDAO()
         {
             try
             {

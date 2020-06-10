@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ClienteDao.cs" />
+    <Compile Include="Controller\ClienteDAO.cs" />
+    <Compile Include="Controller\UsuarioDAO.cs" />
     <Compile Include="Model\Agencia.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Conta.cs" />
