@@ -73,8 +73,12 @@ namespace WinFormBank.View
             UsuarioDAO usuarioDAO = new UsuarioDAO();
 
             cliente.Nome = textBoxNome.Text;
-            cliente.Cpf = maskedTextBoxCpf.Text;
-            cliente.Nascimento = maskedTextBoxNascimento.Text;
+            cliente.Cpf = maskedTextBoxCpf.Text;//  13/04/1991
+            string dia = maskedTextBoxNascimento.Text.Substring(0, 2);
+            string mes = maskedTextBoxNascimento.Text.Substring(2, 4);
+            string ano = maskedTextBoxNascimento.Text.Substring(6, 4);
+            string data = ano + mes + dia;
+            cliente.Nascimento = DateTime.Parse(data);
             cliente.Endereco = textBoxEndereco.Text;
             cliente.Uf = comboBoxUf.Text;
             cliente.Celular = maskedTextBoxCelular.Text;

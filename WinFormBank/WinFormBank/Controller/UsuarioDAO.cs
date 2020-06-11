@@ -30,21 +30,21 @@ namespace WinFormBank.Controller
 
         public void salvar(Usuario usuario)
         {
-            string sqlQuery = @"INSERT INTO PERFIL(ID_USUARIO, NOME_USUARIO, SENHA, ID_CLIENTE)" +
-               " VALUES(?, ?, ?, ?)";
+            string sqlQuery = @"INSERT INTO PERFIL(NOME_USUARIO, SENHA, ID_CLIENTE)" +
+               " VALUES(@NOME_USUARIO, @SENHA, @ID_CLIENTE)";
 
             try
             {
-                command = new SqlCommand(sqlQuery);
-                command.Parameters.AddWithValue("ID_USUARIO", usuario.Id);
-                command.Parameters.AddWithValue("NOME_USUARIO", usuario.Nome);
-                command.Parameters.AddWithValue("SENHA", usuario.Senha);
-                command.Parameters.AddWithValue("ID_CLIENTE", usuario.IdCliente);
+                command = new SqlCommand(sqlQuery, connection);
+               // command.Parameters.AddWithValue("@ID_USUARIO", usuario.Id);
+                command.Parameters.AddWithValue("@NOME_USUARIO", usuario.Nome);
+                command.Parameters.AddWithValue("@SENHA", usuario.Senha);
+                command.Parameters.AddWithValue("@ID_CLIENTE", usuario.IdCliente);
                 command.ExecuteNonQuery();
             }
             catch (Exception e)
             {
-                MessageBox.Show("Erro ao salvar usuario!");
+                MessageBox.Show("Erro ao salvar usuario!"+ e);
             }
         }
     }
