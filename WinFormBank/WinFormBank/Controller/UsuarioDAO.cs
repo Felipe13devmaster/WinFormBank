@@ -35,20 +35,20 @@ namespace WinFormBank.Controller
                 " INSERT INTO PERFIL(NOME_USUARIO, SENHA, ID_CLIENTE)" +
                 " VALUES(@NOME_USUARIO, @SENHA, @IDENTITY_CLIENTE)";
 
-
             try
             {
                 command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@NOME_USUARIO", usuario.Nome);
                 command.Parameters.AddWithValue("@SENHA", usuario.Senha);
                 command.ExecuteNonQuery();
-
-                MessageBox.Show("Bem vindo "+ usuario.Nome);
             }
             catch (Exception e)
             {
                 MessageBox.Show("Erro ao salvar usuario!"+ e);
             }
+
+            MessageBox.Show("Bem vindo " + usuario.Nome);
+            
         }
     }
 }

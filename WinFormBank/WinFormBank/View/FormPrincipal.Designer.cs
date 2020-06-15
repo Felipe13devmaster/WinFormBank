@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelCadastro = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.labelConfirmaSenha = new System.Windows.Forms.Label();
             this.labelCriaSenha = new System.Windows.Forms.Label();
             this.textBoxSenhaConfirm = new System.Windows.Forms.TextBox();
@@ -176,6 +177,7 @@
             // panelCadastro
             // 
             this.panelCadastro.BackColor = System.Drawing.SystemColors.Control;
+            this.panelCadastro.Controls.Add(this.label15);
             this.panelCadastro.Controls.Add(this.labelConfirmaSenha);
             this.panelCadastro.Controls.Add(this.labelCriaSenha);
             this.panelCadastro.Controls.Add(this.textBoxSenhaConfirm);
@@ -209,6 +211,15 @@
             this.panelCadastro.TabIndex = 1;
             this.panelCadastro.Visible = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(172, 431);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 20);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Status Formulario";
+            // 
             // labelConfirmaSenha
             // 
             this.labelConfirmaSenha.AutoSize = true;
@@ -229,6 +240,7 @@
             // 
             // textBoxSenhaConfirm
             // 
+            this.textBoxSenhaConfirm.Enabled = false;
             this.textBoxSenhaConfirm.Location = new System.Drawing.Point(138, 392);
             this.textBoxSenhaConfirm.MaxLength = 8;
             this.textBoxSenhaConfirm.Name = "textBoxSenhaConfirm";
@@ -239,20 +251,24 @@
             // 
             // textBoxSenhaInsert
             // 
+            this.textBoxSenhaInsert.Enabled = false;
             this.textBoxSenhaInsert.Location = new System.Drawing.Point(138, 360);
             this.textBoxSenhaInsert.MaxLength = 8;
             this.textBoxSenhaInsert.Name = "textBoxSenhaInsert";
             this.textBoxSenhaInsert.PasswordChar = '*';
             this.textBoxSenhaInsert.Size = new System.Drawing.Size(169, 26);
             this.textBoxSenhaInsert.TabIndex = 22;
+            this.textBoxSenhaInsert.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSenhaInsert_KeyPress);
             // 
             // textBoxUsuarioInsert
             // 
+            this.textBoxUsuarioInsert.Enabled = false;
             this.textBoxUsuarioInsert.Location = new System.Drawing.Point(138, 326);
             this.textBoxUsuarioInsert.MaxLength = 50;
             this.textBoxUsuarioInsert.Name = "textBoxUsuarioInsert";
             this.textBoxUsuarioInsert.Size = new System.Drawing.Size(318, 26);
             this.textBoxUsuarioInsert.TabIndex = 21;
+            this.textBoxUsuarioInsert.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsuarioInsert_KeyPress);
             // 
             // label14
             // 
@@ -305,6 +321,7 @@
             // 
             // buttonCadastrar
             // 
+            this.buttonCadastrar.Enabled = false;
             this.buttonCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCadastrar.Location = new System.Drawing.Point(138, 463);
             this.buttonCadastrar.Name = "buttonCadastrar";
@@ -317,6 +334,7 @@
             // comboBoxUf
             // 
             this.comboBoxUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxUf.Enabled = false;
             this.comboBoxUf.FormattingEnabled = true;
             this.comboBoxUf.Items.AddRange(new object[] {
             "Selecione...",
@@ -351,46 +369,60 @@
             this.comboBoxUf.Name = "comboBoxUf";
             this.comboBoxUf.Size = new System.Drawing.Size(121, 28);
             this.comboBoxUf.TabIndex = 14;
+            this.comboBoxUf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxUf_KeyPress);
+            this.comboBoxUf.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxUf_Validating);
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Location = new System.Drawing.Point(138, 294);
             this.textBoxEmail.MaxLength = 100;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(438, 26);
             this.textBoxEmail.TabIndex = 13;
+            this.textBoxEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEmail_KeyPress);
+            this.textBoxEmail.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxEmail_Validating);
             // 
             // textBoxEndereco
             // 
+            this.textBoxEndereco.Enabled = false;
             this.textBoxEndereco.Location = new System.Drawing.Point(138, 188);
             this.textBoxEndereco.MaxLength = 100;
             this.textBoxEndereco.Name = "textBoxEndereco";
             this.textBoxEndereco.Size = new System.Drawing.Size(438, 26);
             this.textBoxEndereco.TabIndex = 12;
+            this.textBoxEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEndereco_KeyPress);
+            this.textBoxEndereco.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxEndereco_Validating);
             // 
             // maskedTextBoxCelular
             // 
+            this.maskedTextBoxCelular.Enabled = false;
             this.maskedTextBoxCelular.Location = new System.Drawing.Point(138, 257);
             this.maskedTextBoxCelular.Mask = "(00) 00000-9999";
             this.maskedTextBoxCelular.Name = "maskedTextBoxCelular";
             this.maskedTextBoxCelular.Size = new System.Drawing.Size(131, 26);
             this.maskedTextBoxCelular.TabIndex = 11;
+            this.maskedTextBoxCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBoxCelular_KeyPress);
             // 
             // maskedTextBoxNascimento
             // 
+            this.maskedTextBoxNascimento.Enabled = false;
             this.maskedTextBoxNascimento.Location = new System.Drawing.Point(451, 154);
             this.maskedTextBoxNascimento.Mask = "00/00/0000";
             this.maskedTextBoxNascimento.Name = "maskedTextBoxNascimento";
             this.maskedTextBoxNascimento.Size = new System.Drawing.Size(125, 26);
             this.maskedTextBoxNascimento.TabIndex = 10;
+            this.maskedTextBoxNascimento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBoxNascimento_KeyPress);
             // 
             // maskedTextBoxCpf
             // 
+            this.maskedTextBoxCpf.Enabled = false;
             this.maskedTextBoxCpf.Location = new System.Drawing.Point(138, 154);
             this.maskedTextBoxCpf.Mask = "000.000.000-00";
             this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
             this.maskedTextBoxCpf.Size = new System.Drawing.Size(169, 26);
             this.maskedTextBoxCpf.TabIndex = 9;
+            this.maskedTextBoxCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBoxCpf_KeyPress);
             // 
             // textBoxNome
             // 
@@ -399,6 +431,8 @@
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(438, 26);
             this.textBoxNome.TabIndex = 8;
+            this.textBoxNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNome_KeyPress);
+            this.textBoxNome.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxNome_Validating);
             // 
             // label11
             // 
@@ -426,7 +460,6 @@
             this.label9.Size = new System.Drawing.Size(31, 20);
             this.label9.TabIndex = 5;
             this.label9.Text = "UF";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -461,6 +494,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label5.Location = new System.Drawing.Point(41, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 20);
@@ -781,5 +815,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label15;
     }
 }
