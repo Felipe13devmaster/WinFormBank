@@ -30,17 +30,20 @@ namespace WinFormBank.Controller
 
         public void salvar(Usuario usuario)
         {
-            string sqlQuery = @"INSERT INTO PERFIL(NOME_USUARIO, SENHA, ID_CLIENTE)" +
-               " VALUES(@NOME_USUARIO, @SENHA, @ID_CLIENTE)";
+            string sqlQuery = "declare @IDENTITY_CLIENTE INT" + 
+                " SELECT @IDENTITY_CLIENTE = (SELECT TOP 1 ID_CLIENTE FROM CLIENTE ORDER BY ID_CLIENTE DESC)" +
+                " INSERT INTO PERFIL(NOME_USUARIO, SENHA, ID_CLIENTE)" +
+                " VALUES(@NOME_USUARIO, @SENHA, @IDENTITY_CLIENTE)";
+
 
             try
             {
                 command = new SqlCommand(sqlQuery, connection);
-               // command.Parameters.AddWithValue("@ID_USUARIO", usuario.Id);
                 command.Parameters.AddWithValue("@NOME_USUARIO", usuario.Nome);
                 command.Parameters.AddWithValue("@SENHA", usuario.Senha);
-                command.Parameters.AddWithValue("@ID_CLIENTE", usuario.IdCliente);
                 command.ExecuteNonQuery();
+
+                MessageBox.Show("Bem vindo "+ usuario.Nome);
             }
             catch (Exception e)
             {

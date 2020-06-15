@@ -30,17 +30,15 @@ namespace WinFormBank.Controller
 
         public void salvar(Cliente cliente)
         {
-            string sqlQuery = "INSERT INTO CLIENTE( NOME, CPF,  ENDERECO, UF, CELULAR, EMAIL)" +
-                " VALUES( @NOME, @CPF,  @ENDERECO, @UF, @CELULAR, @EMAIL)";
+            string sqlQuery = "INSERT INTO CLIENTE( NOME, CPF, NASCIMENTO, ENDERECO, UF, CELULAR, EMAIL)" +
+                " VALUES( @NOME, @CPF, @NASCIMENTO, @ENDERECO, @UF, @CELULAR, @EMAIL)";
 
             try
             {
                 command = new SqlCommand(sqlQuery, connection);
-                //command.Parameters.AddWithValue("@ID_CLIENTE", cliente.Id);
                 command.Parameters.AddWithValue("@NOME", cliente.Nome);
                 command.Parameters.AddWithValue("@CPF", cliente.Cpf);
-               // command.Parameters.AddWithValue("@NASCIMENTO", cliente.Nascimento.ToString("yyyy-MM-dd"));
-               // MessageBox.Show(cliente.Nascimento.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@NASCIMENTO", cliente.Nascimento.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@ENDERECO", cliente.Endereco);
                 command.Parameters.AddWithValue("@UF", cliente.Uf);
                 command.Parameters.AddWithValue("@CELULAR", cliente.Celular);
