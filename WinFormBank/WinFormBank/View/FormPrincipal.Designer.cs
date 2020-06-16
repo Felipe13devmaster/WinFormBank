@@ -84,6 +84,7 @@
             this.labelAgencia = new System.Windows.Forms.Label();
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
+            this.buttonSair = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
@@ -126,6 +127,7 @@
             this.buttonEntrar.TabIndex = 5;
             this.buttonEntrar.Text = "Entrar";
             this.buttonEntrar.UseVisualStyleBackColor = true;
+            this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
             // 
             // textBoxSenha
             // 
@@ -513,6 +515,7 @@
             // 
             // panelConta
             // 
+            this.panelConta.Controls.Add(this.buttonSair);
             this.panelConta.Controls.Add(this.buttonPagar);
             this.panelConta.Controls.Add(this.buttonDepositar);
             this.panelConta.Controls.Add(this.buttonTransferir);
@@ -525,11 +528,12 @@
             this.panelConta.Size = new System.Drawing.Size(893, 511);
             this.panelConta.TabIndex = 18;
             this.panelConta.Visible = false;
+            this.panelConta.VisibleChanged += new System.EventHandler(this.panelConta_VisibleChanged);
             // 
             // buttonPagar
             // 
             this.buttonPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPagar.Location = new System.Drawing.Point(749, 363);
+            this.buttonPagar.Location = new System.Drawing.Point(749, 250);
             this.buttonPagar.Name = "buttonPagar";
             this.buttonPagar.Size = new System.Drawing.Size(91, 29);
             this.buttonPagar.TabIndex = 5;
@@ -539,17 +543,18 @@
             // buttonDepositar
             // 
             this.buttonDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDepositar.Location = new System.Drawing.Point(749, 278);
+            this.buttonDepositar.Location = new System.Drawing.Point(749, 285);
             this.buttonDepositar.Name = "buttonDepositar";
             this.buttonDepositar.Size = new System.Drawing.Size(91, 29);
             this.buttonDepositar.TabIndex = 4;
             this.buttonDepositar.Text = "Depositar";
             this.buttonDepositar.UseVisualStyleBackColor = true;
+            this.buttonDepositar.Click += new System.EventHandler(this.buttonDepositar_Click);
             // 
             // buttonTransferir
             // 
             this.buttonTransferir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTransferir.Location = new System.Drawing.Point(749, 320);
+            this.buttonTransferir.Location = new System.Drawing.Point(749, 325);
             this.buttonTransferir.Name = "buttonTransferir";
             this.buttonTransferir.Size = new System.Drawing.Size(91, 29);
             this.buttonTransferir.TabIndex = 3;
@@ -730,15 +735,25 @@
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
+            // buttonSair
+            // 
+            this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSair.Location = new System.Drawing.Point(749, 363);
+            this.buttonSair.Name = "buttonSair";
+            this.buttonSair.Size = new System.Drawing.Size(91, 29);
+            this.buttonSair.TabIndex = 6;
+            this.buttonSair.Text = "Sair";
+            this.buttonSair.UseVisualStyleBackColor = true;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(932, 535);
-            this.Controls.Add(this.panelCadastro);
             this.Controls.Add(this.panelConta);
             this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panelCadastro);
             this.Name = "FormPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);
@@ -816,5 +831,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button buttonSair;
     }
 }

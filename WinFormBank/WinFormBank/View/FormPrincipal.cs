@@ -18,71 +18,7 @@ namespace WinFormBank.View
         {
             InitializeComponent();
         }
-
-        private void buttonCadastre_Click(object sender, EventArgs e)
-        {
-            panelCadastro.Visible = true;
-            panelLogin.Visible = false;
-            textBoxNome.Focus();
-            comboBoxUf.SelectedIndex = 0;
-        }
-
-        private void buttonVoltar_Click(object sender, EventArgs e)
-        {
-            panelCadastro.Visible = false;
-            panelLogin.Visible = true;
-        }
-
-        private void buttonLimpar_Click(object sender, EventArgs e)
-        {
-            textBoxNome.Text = "";
-            maskedTextBoxCpf.Text = "";
-            maskedTextBoxNascimento.Text = "";
-            textBoxEndereco.Text = "";
-            comboBoxUf.SelectedIndex = 0;
-            maskedTextBoxCelular.Text = "";
-            textBoxEmail.Text = "";
-            textBoxUsuarioInsert.Text = "";
-            textBoxSenhaInsert.Text = "";
-            textBoxSenhaConfirm.Text = "";
-        }
-
-        private void buttonCadastrar_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = new Cliente();
-            Usuario usuario = new Usuario();
-            ClienteDAO clienteDAO = new ClienteDAO();
-            UsuarioDAO usuarioDAO = new UsuarioDAO();
-
-            cliente.Nome = textBoxNome.Text;
-            cliente.Cpf = maskedTextBoxCpf.Text;
-            string dia = maskedTextBoxNascimento.Text.Substring(0, 2);
-            string mes = maskedTextBoxNascimento.Text.Substring(2, 4);
-            string ano = maskedTextBoxNascimento.Text.Substring(6, 4);
-            string data = ano + mes + dia;
-            cliente.Nascimento = DateTime.Parse(data);
-            cliente.Endereco = textBoxEndereco.Text;
-            cliente.Uf = comboBoxUf.Text;
-            cliente.Celular = maskedTextBoxCelular.Text;
-            cliente.Email = textBoxEmail.Text;
-            usuario.Nome = textBoxUsuarioInsert.Text;
-            usuario.Senha = textBoxSenhaConfirm.Text;
-
-            clienteDAO.salvar(cliente);
-            usuarioDAO.salvar(usuario);
-            //Limpa os campos após salvar
-            textBoxNome.Text = "";
-            maskedTextBoxCpf.Text = "";
-            maskedTextBoxNascimento.Text = "";
-            textBoxEndereco.Text = "";
-            comboBoxUf.SelectedIndex = 0;
-            maskedTextBoxCelular.Text = "";
-            textBoxEmail.Text = "";
-            textBoxUsuarioInsert.Text = "";
-            textBoxSenhaInsert.Text = "";
-            textBoxSenhaConfirm.Text = "";
-        }
-
+    // EVENTOS=========================================================================================================================
         private void textBoxNome_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrWhiteSpace(textBoxNome.Text))
@@ -281,6 +217,108 @@ namespace WinFormBank.View
                 labelConfirmaSenha.Text = "Senhas não conferem.";
                 buttonCadastrar.Enabled = false;
             }
+        }
+
+        private void panelConta_VisibleChanged(object sender, EventArgs e)
+        {
+            if (panelConta.Visible == true)
+            {
+                labelNome.Text = "Seu nome";
+                labelAgencia.Text = "Agencia: 0001 - 7";
+                labelBanco.Text = "Banco: 13";
+            }
+        }
+
+        // BOTÕES =============================================================================================================
+        private void buttonEntrar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            bool temAcesso;
+
+            usuario.Nome = textBoxUsuario.Text;
+            usuario.Senha = textBoxSenha.Text;
+
+            temAcesso = usuarioDAO.verificarLogin(usuario.Nome, usuario.Senha);
+
+            if (temAcesso == true)
+            {
+                panelLogin.Visible = false;
+                panelConta.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Senha e/ou login incorretos.");
+            }
+        }
+
+        private void buttonCadastre_Click(object sender, EventArgs e)
+        {
+            panelCadastro.Visible = true;
+            panelLogin.Visible = false;
+            textBoxNome.Focus();
+            comboBoxUf.SelectedIndex = 0;
+        }
+
+        private void buttonVoltar_Click(object sender, EventArgs e)
+        {
+            panelCadastro.Visible = false;
+            panelLogin.Visible = true;
+        }
+
+        private void buttonLimpar_Click(object sender, EventArgs e)
+        {
+            textBoxNome.Text = "";
+            maskedTextBoxCpf.Text = "";
+            maskedTextBoxNascimento.Text = "";
+            textBoxEndereco.Text = "";
+            comboBoxUf.SelectedIndex = 0;
+            maskedTextBoxCelular.Text = "";
+            textBoxEmail.Text = "";
+            textBoxUsuarioInsert.Text = "";
+            textBoxSenhaInsert.Text = "";
+            textBoxSenhaConfirm.Text = "";
+        }
+
+        private void buttonCadastrar_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            Usuario usuario = new Usuario();
+            ClienteDAO clienteDAO = new ClienteDAO();
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+
+            cliente.Nome = textBoxNome.Text;
+            cliente.Cpf = maskedTextBoxCpf.Text;
+            string dia = maskedTextBoxNascimento.Text.Substring(0, 2);
+            string mes = maskedTextBoxNascimento.Text.Substring(2, 4);
+            string ano = maskedTextBoxNascimento.Text.Substring(6, 4);
+            string data = ano + mes + dia;
+            cliente.Nascimento = DateTime.Parse(data);
+            cliente.Endereco = textBoxEndereco.Text;
+            cliente.Uf = comboBoxUf.Text;
+            cliente.Celular = maskedTextBoxCelular.Text;
+            cliente.Email = textBoxEmail.Text;
+            usuario.Nome = textBoxUsuarioInsert.Text;
+            usuario.Senha = textBoxSenhaConfirm.Text;
+
+            clienteDAO.salvar(cliente);
+            usuarioDAO.salvar(usuario);
+            //Limpa os campos após salvar
+            textBoxNome.Text = "";
+            maskedTextBoxCpf.Text = "";
+            maskedTextBoxNascimento.Text = "";
+            textBoxEndereco.Text = "";
+            comboBoxUf.SelectedIndex = 0;
+            maskedTextBoxCelular.Text = "";
+            textBoxEmail.Text = "";
+            textBoxUsuarioInsert.Text = "";
+            textBoxSenhaInsert.Text = "";
+            textBoxSenhaConfirm.Text = "";
+        }
+
+        private void buttonDepositar_Click(object sender, EventArgs e)
+        {
+
         }
 
         

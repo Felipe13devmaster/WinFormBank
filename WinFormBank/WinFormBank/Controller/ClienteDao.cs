@@ -7,6 +7,7 @@ using WinFormBank.Util;
 using WinFormBank.Model;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace WinFormBank.Controller
 {
@@ -48,6 +49,13 @@ namespace WinFormBank.Controller
             catch(Exception e)
             {
                 MessageBox.Show("Erro ao salvar cliente!"+ e);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
     }
