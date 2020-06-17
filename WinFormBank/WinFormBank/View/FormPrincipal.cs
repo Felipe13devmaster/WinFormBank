@@ -226,6 +226,7 @@ namespace WinFormBank.View
                 labelNome.Text = "Seu nome";
                 labelAgencia.Text = "Agencia: 0001 - 7";
                 labelBanco.Text = "Banco: 13";
+                labelConta.Text = "Conta: 59017";
             }
         }
 
