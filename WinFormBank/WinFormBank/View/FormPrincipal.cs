@@ -27,6 +27,39 @@ namespace WinFormBank.View
                 buttonCadastrar.Enabled = false;
                 
             }
+            else
+            {
+                label5.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void maskedTextBoxCpf_Validating(object sender, CancelEventArgs e)
+        {
+            if (maskedTextBoxCpf.Text.Length < 14)
+            {
+                label6.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label6.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void maskedTextBoxNascimento_Validating(object sender, CancelEventArgs e)
+        {
+            if (maskedTextBoxNascimento.Text.Length < 10)
+            {
+                label7.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label7.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
         }
 
         private void textBoxEndereco_Validating(object sender, CancelEventArgs e)
@@ -38,6 +71,21 @@ namespace WinFormBank.View
             }
             else
             {
+                label8.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void maskedTextBoxCelular_Validating(object sender, CancelEventArgs e)
+        {
+            if (maskedTextBoxCelular.Text.Length < 15)
+            {
+                label10.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label10.ForeColor = Color.Black;
                 buttonCadastrar.Enabled = true;
             }
         }
@@ -51,19 +99,67 @@ namespace WinFormBank.View
             }
             else
             {
+                label11.ForeColor = Color.Black;
                 buttonCadastrar.Enabled = true;
             }
         }
 
-        private void comboBoxUf_Validating(object sender, CancelEventArgs e)
+        private void textBoxUsuarioInsert_Validating(object sender, CancelEventArgs e)
         {
-            string itemUf = comboBoxUf.Text;
-            if(itemUf.Equals("Selecione..."))
+            if (textBoxUsuarioInsert.Text.Length < 4)
             {
+                label12.ForeColor = Color.Red;
                 buttonCadastrar.Enabled = false;
             }
             else
             {
+                label12.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void textBoxSenhaInsert_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxSenhaInsert.Text.Length < 4)
+            {
+                buttonCadastrar.Enabled = true;
+                label13.ForeColor = Color.Red;
+                label14.ForeColor = Color.Red;
+            }
+            else
+            {
+                buttonCadastrar.Enabled = false;
+                label13.ForeColor = Color.Black;
+                label14.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBoxSenhaConfirm_Validating(object sender, CancelEventArgs e)
+        {
+            if (textBoxSenhaConfirm.Text.Length < textBoxSenhaInsert.Text.Length)
+            {
+                label13.ForeColor = Color.Red;
+                label14.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = true;
+            }
+            else
+            {
+                label13.ForeColor = Color.Black;
+                label14.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = false;
+            }
+        }
+
+        private void comboBoxUf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxUf.SelectedIndex == 0)
+            {
+                label9.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label9.ForeColor = Color.Black;
                 buttonCadastrar.Enabled = true;
             }
         }
@@ -71,138 +167,141 @@ namespace WinFormBank.View
         private void textBoxNome_KeyPress(object sender, KeyPressEventArgs e)
         {
             //ignora as teclas numericas quando pressionadas
-            if (!System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"^[a-zA-Z]+$"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"[^a-zA-Z\s]"))
                 e.Handled = true;
-            if ((e.KeyChar == (char)Keys.Enter) && (textBoxNome.Text.Length > 0))
+        }
+
+        private void textBoxNome_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBoxNome.Text))
             {
-                maskedTextBoxCpf.Enabled = true;
-                maskedTextBoxCpf.Focus();
+                label5.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+
             }
             else
             {
-                label15.Text = "Por favor insira seu nome.";
+                label5.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void maskedTextBoxCpf_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBoxCpf.Text.Length < 14)
+            {
+                label6.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label6.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void maskedTextBoxNascimento_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBoxNascimento.Text.Length < 10)
+            {
+                label7.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label7.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void textBoxEndereco_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBoxEndereco.Text))
+            {
+                label8.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label8.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void maskedTextBoxCelular_Click(object sender, EventArgs e)
+        {
+            if (maskedTextBoxCelular.Text.Length < 15)
+            {
+                label10.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label10.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void textBoxEmail_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(textBoxEmail.Text))
+            {
+                label11.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label11.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void textBoxUsuarioInsert_Click(object sender, EventArgs e)
+        {
+            if (textBoxUsuarioInsert.Text.Length < 4)
+            {
+                label12.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
+            }
+            else
+            {
+                label12.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
+            }
+        }
+
+        private void textBoxSenhaInsert_Click(object sender, EventArgs e)
+        {
+            if (textBoxSenhaInsert.Text.Length < 4)
+            {
+                label13.ForeColor = Color.Red;
+                label14.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = true;
+            }
+            else
+            {
+                label13.ForeColor = Color.Black;
+                label14.ForeColor = Color.Black;
                 buttonCadastrar.Enabled = false;
             }
         }
 
-        private void maskedTextBoxCpf_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBoxSenhaConfirm_Click(object sender, EventArgs e)
         {
-            if ((e.KeyChar == (char)Keys.Enter) && (maskedTextBoxCpf.Text.Length == 14))
+            if (textBoxSenhaConfirm.Text.Length < textBoxSenhaInsert.Text.Length)
             {
-                maskedTextBoxNascimento.Enabled = true;
-                maskedTextBoxNascimento.Focus();
+                label13.ForeColor = Color.Red;
+                label14.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = true;
             }
             else
             {
-                label15.Text = "Por favor insira seu CPF.";
+                label13.ForeColor = Color.Black;
+                label14.ForeColor = Color.Black;
                 buttonCadastrar.Enabled = false;
             }
         }
 
-        private void maskedTextBoxNascimento_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == (char)Keys.Enter) && (maskedTextBoxNascimento.Text.Length == 10))
-            {
-                textBoxEndereco.Enabled = true;
-                textBoxEndereco.Focus();
-            }
-            else
-            {
-                label15.Text = "Por favor insira sua data de nascimento.";
-                buttonCadastrar.Enabled = false;
-            }
-        }
-
-        private void textBoxEndereco_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == (char)Keys.Enter) && (textBoxEndereco.Text.Length > 0))
-            {
-                comboBoxUf.Enabled = true;
-                comboBoxUf.Focus();
-                buttonCadastrar.Enabled = false;
-            }
-            else
-            {
-                label15.Text = "Por favor insira seu enderço (nome da rua, numero).";
-                buttonCadastrar.Enabled = false;
-            }
-        }
-
-        private void comboBoxUf_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == (char)Keys.Enter) && (comboBoxUf.SelectedIndex != 0))
-            {
-                maskedTextBoxCelular.Enabled = true;
-                maskedTextBoxCelular.Focus();
-                buttonCadastrar.Enabled = false;
-            }
-            else
-            {
-                label15.Text = "Por favor selecione o estado onde reside.";
-                buttonCadastrar.Enabled = false;
-            }
-        }
-
-        private void maskedTextBoxCelular_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == (char)Keys.Enter) && (maskedTextBoxCelular.Text.Length == 15))
-            {
-                textBoxEmail.Enabled = true;
-                textBoxEmail.Focus();
-                buttonCadastrar.Enabled = false;
-            }
-            else
-            {
-                label15.Text = "Por favor insira seu numero de celular.";
-                buttonCadastrar.Enabled = false;
-            }
-        }
-
-        private void textBoxEmail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == (char)Keys.Enter) && (textBoxEmail.Text.Length > 0))
-            {
-                textBoxUsuarioInsert.Enabled = true;
-                textBoxUsuarioInsert.Focus();
-                buttonCadastrar.Enabled = false;
-            }
-            else
-            {
-                label15.Text = "Por favor insira um email valido.";
-                buttonCadastrar.Enabled = false;
-            }
-        }
-
-        private void textBoxUsuarioInsert_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == (char)Keys.Enter) && (textBoxUsuarioInsert.Text.Length >= 4))
-            {
-                textBoxSenhaInsert.Enabled = true;
-                textBoxSenhaInsert.Focus();
-                buttonCadastrar.Enabled = false;
-            }
-            else
-            {
-                label15.Text = "Por favor insira seu nome de usuario com no minimo 4 digitos.";
-                buttonCadastrar.Enabled = false;
-            }
-        }
-
-        private void textBoxSenhaInsert_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar == (char)Keys.Enter) && (textBoxSenhaInsert.Text.Length >= 4))
-            {
-                textBoxSenhaConfirm.Enabled = true;
-                textBoxSenhaConfirm.Focus();
-                buttonCadastrar.Enabled = false;
-            }
-            else
-            {
-                label15.Text = "A senha deve conter no minimo 4 digitos.";
-                buttonCadastrar.Enabled = false;
-            }
-        }
-    
         private void textBoxSenhaConfirm_TextChanged(object sender, EventArgs e)
         {
             string textSenhaInsert = textBoxSenhaInsert.Text;
@@ -211,11 +310,15 @@ namespace WinFormBank.View
             {
                 labelConfirmaSenha.Text = "Senha validada com sucesso.";
                 buttonCadastrar.Enabled = true;
+                label13.ForeColor = Color.Black;
+                label14.ForeColor = Color.Black;
             }
             else
             {
                 labelConfirmaSenha.Text = "Senhas não conferem.";
                 buttonCadastrar.Enabled = false;
+                label13.ForeColor = Color.Red;
+                label14.ForeColor = Color.Red;
             }
         }
 
@@ -320,8 +423,6 @@ namespace WinFormBank.View
         private void buttonDepositar_Click(object sender, EventArgs e)
         {
 
-        }
-
-        
+        }  
     }
 }
