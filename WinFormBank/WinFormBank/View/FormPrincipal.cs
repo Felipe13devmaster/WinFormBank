@@ -312,6 +312,8 @@ namespace WinFormBank.View
             {
                 panelLogin.Visible = false;
                 panelConta.Visible = true;
+                textBoxUsuario.Text = "";
+                textBoxSenha.Text = "";
             }
             else
             {
@@ -372,16 +374,22 @@ namespace WinFormBank.View
 
                 bool validadoC = cliente.ValidaCliente(cliente);
                 clienteDAO.Salvar(cliente, validadoC);
-                int idCliente = clienteDAO.PegaIdCliente();
                 bool validadoU = usuario.ValidaUsuario(usuario);
-                usuarioDAO.Salvar(usuario, validadoU, idCliente);
+                string cpfCliente = cliente.Cpf;
+                usuarioDAO.Salvar(usuario, validadoU, cpfCliente);
             }
             catch (ArgumentOutOfRangeException )
             {
-
                 MessageBox.Show("Por favor informe sua data de nascimento. ");
             }
-            
+            catch (FormatException )
+            {
+                MessageBox.Show("Formato de data de nascimento invalida!. ");
+            }
+
+            panelLogin.Visible = true;
+            panelCadastro.Visible = false;
+
             //Limpa os campos após salvar
             textBoxNome.Text = "";
             maskedTextBoxCpf.Text = "";
@@ -398,6 +406,12 @@ namespace WinFormBank.View
         private void buttonDepositar_Click(object sender, EventArgs e)
         {
 
-        }  
+        }
+
+        private void buttonSair_Click(object sender, EventArgs e)
+        {
+            panelLogin.Visible = true;
+            panelConta.Visible = false;
+        }
     }
 }

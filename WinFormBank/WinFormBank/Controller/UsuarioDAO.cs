@@ -30,19 +30,21 @@ namespace WinFormBank.Controller
             }
         }
 
-        public void Salvar(Usuario usuario, bool validado, int idCliente)
+        public void Salvar(Usuario usuario, bool validado, string cpf)
         {
             if (validado == true)
             {
-                string sqlQuery = " INSERT INTO PERFIL_ACESSO (ID_PERFIL, SENHA, ID_CLIENTE)" +
-                " VALUES(@NOME, @SENHA, @ID_CLIENTE)";
+                string sqlQuery =" DECLARE @RETORNA_ID_CLIENTE INT" +
+                                 " SELECT @RETORNA_ID_CLIENTE = (SELECT ID FROM CLIENTE WHERE CPF = @CPF)" +  
+                                 " INSERT INTO PERFIL_ACESSO (ID_PERFIL, SENHA, ID_CLIENTE)" +
+                                 " VALUES(@NOME, @SENHA, @RETORNA_ID_CLIENTE)";
 
                 try
                 {
                     command = new SqlCommand(sqlQuery, connection);
+                    command.Parameters.AddWithValue("@CPF", cpf);
                     command.Parameters.AddWithValue("@NOME", usuario.IdNome);
                     command.Parameters.AddWithValue("@SENHA", usuario.Senha);
-                    command.Parameters.AddWithValue("@ID_CLIENTE", idCliente);
                     command.ExecuteNonQuery();
                 }
                 catch (Exception e)

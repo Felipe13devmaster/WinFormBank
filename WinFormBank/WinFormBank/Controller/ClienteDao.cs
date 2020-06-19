@@ -66,35 +66,5 @@ namespace WinFormBank.Controller
                 MessageBox.Show("Por favor preencha todos os campos.");
             }
         }
-
-        public int PegaIdCliente()
-        {
-            int idCliente = 0;
-            string sqlQuery = "SELECT ID FROM CLIENTE WHERE CPF = @CPF ";
-            string resultado = "";
-
-            try
-            {
-                command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@CPF", cliente.Cpf);
-                dataReader = command.ExecuteReader();
-                resultado = dataReader.GetString(0);
-                idCliente = Convert.ToInt32(resultado);
-            }
-            catch (SqlException)
-            {
-
-                throw;
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-            }
-
-            return idCliente;
-        }
     }
 }

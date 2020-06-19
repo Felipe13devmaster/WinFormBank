@@ -545,6 +545,7 @@
             this.buttonSair.TabIndex = 6;
             this.buttonSair.Text = "Sair";
             this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
             // 
             // buttonPagar
             // 
@@ -757,9 +758,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(932, 535);
+            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelCadastro);
             this.Controls.Add(this.panelConta);
-            this.Controls.Add(this.panelLogin);
             this.Name = "FormPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);
