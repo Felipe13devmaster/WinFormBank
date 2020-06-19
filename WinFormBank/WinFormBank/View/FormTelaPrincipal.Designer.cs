@@ -1,6 +1,6 @@
 ﻿namespace WinFormBank.View
 {
-    partial class FormPrincipal
+    partial class FormTelaPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -85,6 +85,20 @@
             this.labelAgencia = new System.Windows.Forms.Label();
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
+            this.panelSaque = new System.Windows.Forms.Panel();
+            this.buttonSacar = new System.Windows.Forms.Button();
+            this.panelPagamentos = new System.Windows.Forms.Panel();
+            this.panelDeposito = new System.Windows.Forms.Panel();
+            this.panelTransferencia = new System.Windows.Forms.Panel();
+            this.labelSaque = new System.Windows.Forms.Label();
+            this.labelValorDisponivel = new System.Windows.Forms.Label();
+            this.labelValorDisponivelSaque = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBoxValorSaque = new System.Windows.Forms.TextBox();
+            this.buttonLimpa = new System.Windows.Forms.Button();
+            this.buttonConfirma = new System.Windows.Forms.Button();
+            this.buttonCancela = new System.Windows.Forms.Button();
+            this.labemensagem = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
@@ -92,6 +106,8 @@
             this.panelTransacao.SuspendLayout();
             this.panelContaCorrente.SuspendLayout();
             this.panelDadosUsuario.SuspendLayout();
+            this.panelSaque.SuspendLayout();
+            this.panelTransferencia.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLogin
@@ -521,6 +537,9 @@
             // 
             // panelConta
             // 
+            this.panelConta.Controls.Add(this.panelSaque);
+            this.panelConta.Controls.Add(this.panelPagamentos);
+            this.panelConta.Controls.Add(this.buttonSacar);
             this.panelConta.Controls.Add(this.buttonSair);
             this.panelConta.Controls.Add(this.buttonPagar);
             this.panelConta.Controls.Add(this.buttonDepositar);
@@ -658,6 +677,7 @@
             // panelContaCorrente
             // 
             this.panelContaCorrente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelContaCorrente.Controls.Add(this.panelTransferencia);
             this.panelContaCorrente.Controls.Add(this.labelSaldoCorrente);
             this.panelContaCorrente.Controls.Add(this.label16);
             this.panelContaCorrente.Controls.Add(this.label19);
@@ -754,7 +774,157 @@
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
-            // FormPrincipal
+            // panelSaque
+            // 
+            this.panelSaque.BackColor = System.Drawing.Color.Silver;
+            this.panelSaque.Controls.Add(this.labemensagem);
+            this.panelSaque.Controls.Add(this.buttonCancela);
+            this.panelSaque.Controls.Add(this.buttonConfirma);
+            this.panelSaque.Controls.Add(this.buttonLimpa);
+            this.panelSaque.Controls.Add(this.textBoxValorSaque);
+            this.panelSaque.Controls.Add(this.label22);
+            this.panelSaque.Controls.Add(this.labelValorDisponivelSaque);
+            this.panelSaque.Controls.Add(this.labelValorDisponivel);
+            this.panelSaque.Controls.Add(this.labelSaque);
+            this.panelSaque.Location = new System.Drawing.Point(281, 134);
+            this.panelSaque.Name = "panelSaque";
+            this.panelSaque.Size = new System.Drawing.Size(344, 276);
+            this.panelSaque.TabIndex = 7;
+            this.panelSaque.Visible = false;
+            // 
+            // buttonSacar
+            // 
+            this.buttonSacar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSacar.Location = new System.Drawing.Point(749, 211);
+            this.buttonSacar.Name = "buttonSacar";
+            this.buttonSacar.Size = new System.Drawing.Size(91, 33);
+            this.buttonSacar.TabIndex = 8;
+            this.buttonSacar.Text = "Sacar";
+            this.buttonSacar.UseVisualStyleBackColor = true;
+            this.buttonSacar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panelPagamentos
+            // 
+            this.panelPagamentos.BackColor = System.Drawing.Color.Silver;
+            this.panelPagamentos.Location = new System.Drawing.Point(8, 240);
+            this.panelPagamentos.Name = "panelPagamentos";
+            this.panelPagamentos.Size = new System.Drawing.Size(344, 276);
+            this.panelPagamentos.TabIndex = 8;
+            this.panelPagamentos.Visible = false;
+            // 
+            // panelDeposito
+            // 
+            this.panelDeposito.BackColor = System.Drawing.Color.Silver;
+            this.panelDeposito.Location = new System.Drawing.Point(8, 22);
+            this.panelDeposito.Name = "panelDeposito";
+            this.panelDeposito.Size = new System.Drawing.Size(344, 276);
+            this.panelDeposito.TabIndex = 8;
+            this.panelDeposito.Visible = false;
+            // 
+            // panelTransferencia
+            // 
+            this.panelTransferencia.BackColor = System.Drawing.Color.Silver;
+            this.panelTransferencia.Controls.Add(this.panelDeposito);
+            this.panelTransferencia.Location = new System.Drawing.Point(19, 30);
+            this.panelTransferencia.Name = "panelTransferencia";
+            this.panelTransferencia.Size = new System.Drawing.Size(344, 276);
+            this.panelTransferencia.TabIndex = 8;
+            this.panelTransferencia.Visible = false;
+            // 
+            // labelSaque
+            // 
+            this.labelSaque.AutoSize = true;
+            this.labelSaque.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaque.Location = new System.Drawing.Point(111, 12);
+            this.labelSaque.Name = "labelSaque";
+            this.labelSaque.Size = new System.Drawing.Size(92, 31);
+            this.labelSaque.TabIndex = 0;
+            this.labelSaque.Text = "Saque";
+            // 
+            // labelValorDisponivel
+            // 
+            this.labelValorDisponivel.AutoSize = true;
+            this.labelValorDisponivel.BackColor = System.Drawing.Color.Yellow;
+            this.labelValorDisponivel.Location = new System.Drawing.Point(13, 189);
+            this.labelValorDisponivel.Name = "labelValorDisponivel";
+            this.labelValorDisponivel.Size = new System.Drawing.Size(114, 13);
+            this.labelValorDisponivel.TabIndex = 1;
+            this.labelValorDisponivel.Text = "Disponivel para Saque";
+            // 
+            // labelValorDisponivelSaque
+            // 
+            this.labelValorDisponivelSaque.AutoSize = true;
+            this.labelValorDisponivelSaque.BackColor = System.Drawing.SystemColors.Desktop;
+            this.labelValorDisponivelSaque.Font = new System.Drawing.Font("Impact", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValorDisponivelSaque.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelValorDisponivelSaque.Location = new System.Drawing.Point(11, 204);
+            this.labelValorDisponivelSaque.Name = "labelValorDisponivelSaque";
+            this.labelValorDisponivelSaque.Size = new System.Drawing.Size(133, 45);
+            this.labelValorDisponivelSaque.TabIndex = 2;
+            this.labelValorDisponivelSaque.Text = "R$ 0,00";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(12, 82);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(54, 24);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Valor";
+            // 
+            // textBoxValorSaque
+            // 
+            this.textBoxValorSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxValorSaque.Location = new System.Drawing.Point(72, 77);
+            this.textBoxValorSaque.Name = "textBoxValorSaque";
+            this.textBoxValorSaque.Size = new System.Drawing.Size(255, 29);
+            this.textBoxValorSaque.TabIndex = 4;
+            // 
+            // buttonLimpa
+            // 
+            this.buttonLimpa.Location = new System.Drawing.Point(54, 114);
+            this.buttonLimpa.Name = "buttonLimpa";
+            this.buttonLimpa.Size = new System.Drawing.Size(84, 31);
+            this.buttonLimpa.TabIndex = 5;
+            this.buttonLimpa.Text = "Limpar";
+            this.buttonLimpa.UseVisualStyleBackColor = true;
+            this.buttonLimpa.Click += new System.EventHandler(this.buttonLimpa_Click);
+            // 
+            // buttonConfirma
+            // 
+            this.buttonConfirma.Location = new System.Drawing.Point(144, 114);
+            this.buttonConfirma.Name = "buttonConfirma";
+            this.buttonConfirma.Size = new System.Drawing.Size(85, 31);
+            this.buttonConfirma.TabIndex = 6;
+            this.buttonConfirma.Text = "Confirma";
+            this.buttonConfirma.UseVisualStyleBackColor = true;
+            // 
+            // buttonCancela
+            // 
+            this.buttonCancela.Location = new System.Drawing.Point(235, 114);
+            this.buttonCancela.Name = "buttonCancela";
+            this.buttonCancela.Size = new System.Drawing.Size(89, 31);
+            this.buttonCancela.TabIndex = 7;
+            this.buttonCancela.Text = "Cancelar";
+            this.buttonCancela.UseVisualStyleBackColor = true;
+            this.buttonCancela.Click += new System.EventHandler(this.buttonCancela_Click);
+            // 
+            // labemensagem
+            // 
+            this.labemensagem.AutoSize = true;
+            this.labemensagem.BackColor = System.Drawing.Color.Lime;
+            this.labemensagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labemensagem.Location = new System.Drawing.Point(89, 158);
+            this.labemensagem.Name = "labemensagem";
+            this.labemensagem.Size = new System.Drawing.Size(76, 16);
+            this.labemensagem.TabIndex = 8;
+            this.labemensagem.Text = "Mensagem";
+            this.labemensagem.Visible = false;
+            // 
+            // FormTelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -763,7 +933,7 @@
             this.Controls.Add(this.panelConta);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelCadastro);
-            this.Name = "FormPrincipal";
+            this.Name = "FormTelaPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
@@ -778,6 +948,9 @@
             this.panelContaCorrente.PerformLayout();
             this.panelDadosUsuario.ResumeLayout(false);
             this.panelDadosUsuario.PerformLayout();
+            this.panelSaque.ResumeLayout(false);
+            this.panelSaque.PerformLayout();
+            this.panelTransferencia.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -841,5 +1014,19 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button buttonSair;
+        private System.Windows.Forms.Button buttonSacar;
+        private System.Windows.Forms.Panel panelSaque;
+        private System.Windows.Forms.Panel panelPagamentos;
+        private System.Windows.Forms.Panel panelDeposito;
+        private System.Windows.Forms.Panel panelTransferencia;
+        private System.Windows.Forms.Label labemensagem;
+        private System.Windows.Forms.Button buttonCancela;
+        private System.Windows.Forms.Button buttonConfirma;
+        private System.Windows.Forms.Button buttonLimpa;
+        private System.Windows.Forms.TextBox textBoxValorSaque;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label labelValorDisponivelSaque;
+        private System.Windows.Forms.Label labelValorDisponivel;
+        private System.Windows.Forms.Label labelSaque;
     }
 }

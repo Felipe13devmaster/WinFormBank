@@ -12,9 +12,9 @@ using WinFormBank.Controller;
 
 namespace WinFormBank.View
 {
-    public partial class FormPrincipal : Form
+    public partial class FormTelaPrincipal : Form
     {
-        public FormPrincipal()
+        public FormTelaPrincipal()
         {
             InitializeComponent();
         }
@@ -424,6 +424,22 @@ namespace WinFormBank.View
             MessageBox.Show("Até logo!");
             panelLogin.Visible = true;
             panelConta.Visible = false;
-        }        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelSaque.Visible = true;
+        }
+
+        private void buttonLimpa_Click(object sender, EventArgs e)
+        {
+            textBoxValorSaque.Text = "";
+        }
+
+        private void buttonCancela_Click(object sender, EventArgs e)
+        {
+            panelSaque.Visible = false;
+            textBoxValorSaque.Text = "";
+        }
     }
 }
