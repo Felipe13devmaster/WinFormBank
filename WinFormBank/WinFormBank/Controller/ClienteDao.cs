@@ -16,7 +16,6 @@ namespace WinFormBank.Controller
         private Cliente cliente;
         private SqlConnection connection;
         private SqlCommand command;
-        private SqlDataReader dataReader;
 
         public ClienteDAO()
         {

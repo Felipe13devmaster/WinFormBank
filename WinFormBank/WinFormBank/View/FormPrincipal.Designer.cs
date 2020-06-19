@@ -556,6 +556,7 @@
             this.buttonPagar.TabIndex = 5;
             this.buttonPagar.Text = "Pagar";
             this.buttonPagar.UseVisualStyleBackColor = true;
+            this.buttonPagar.Click += new System.EventHandler(this.buttonPagar_Click);
             // 
             // buttonDepositar
             // 
@@ -577,6 +578,7 @@
             this.buttonTransferir.TabIndex = 3;
             this.buttonTransferir.Text = "Transferir";
             this.buttonTransferir.UseVisualStyleBackColor = true;
+            this.buttonTransferir.Click += new System.EventHandler(this.buttonTransferir_Click);
             // 
             // panelContaPoupanca
             // 
@@ -758,9 +760,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(932, 535);
+            this.Controls.Add(this.panelConta);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelCadastro);
-            this.Controls.Add(this.panelConta);
             this.Name = "FormPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);

@@ -403,15 +403,27 @@ namespace WinFormBank.View
             textBoxSenhaConfirm.Text = "";
         }
 
+        //Botoes Panel Conta
+        private void buttonPagar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonDepositar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTransferir_Click(object sender, EventArgs e)
         {
 
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Até logo!");
             panelLogin.Visible = true;
             panelConta.Visible = false;
-        }
+        }        
     }
 }
