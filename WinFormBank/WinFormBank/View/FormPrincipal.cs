@@ -24,13 +24,11 @@ namespace WinFormBank.View
             if (String.IsNullOrWhiteSpace(textBoxNome.Text))
             {
                 label5.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
                 
             }
             else
             {
                 label5.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -39,12 +37,10 @@ namespace WinFormBank.View
             if (maskedTextBoxCpf.Text.Length < 14)
             {
                 label6.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label6.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -53,12 +49,10 @@ namespace WinFormBank.View
             if (maskedTextBoxNascimento.Text.Length < 10)
             {
                 label7.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label7.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -67,12 +61,10 @@ namespace WinFormBank.View
             if (String.IsNullOrWhiteSpace(textBoxEndereco.Text))
             {
                 label8.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label8.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -81,12 +73,10 @@ namespace WinFormBank.View
             if (maskedTextBoxCelular.Text.Length < 15)
             {
                 label10.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label10.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -95,26 +85,22 @@ namespace WinFormBank.View
             if (String.IsNullOrWhiteSpace(textBoxEmail.Text))
             {
                 label11.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label11.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
         private void textBoxUsuarioInsert_Validating(object sender, CancelEventArgs e)
         {
-            if (textBoxUsuarioInsert.Text.Length < 4)
+            if (textBoxUsuarioInsert.Text.Length < 1)
             {
                 label12.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label12.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -122,13 +108,11 @@ namespace WinFormBank.View
         {
             if (textBoxSenhaInsert.Text.Length < 4)
             {
-                buttonCadastrar.Enabled = true;
                 label13.ForeColor = Color.Red;
                 label14.ForeColor = Color.Red;
             }
             else
             {
-                buttonCadastrar.Enabled = false;
                 label13.ForeColor = Color.Black;
                 label14.ForeColor = Color.Black;
             }
@@ -140,13 +124,11 @@ namespace WinFormBank.View
             {
                 label13.ForeColor = Color.Red;
                 label14.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = true;
             }
             else
             {
                 label13.ForeColor = Color.Black;
                 label14.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = false;
             }
         }
 
@@ -176,13 +158,10 @@ namespace WinFormBank.View
             if (String.IsNullOrWhiteSpace(textBoxNome.Text))
             {
                 label5.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
-
             }
             else
             {
                 label5.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -191,12 +170,10 @@ namespace WinFormBank.View
             if (maskedTextBoxCpf.Text.Length < 14)
             {
                 label6.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label6.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -205,12 +182,10 @@ namespace WinFormBank.View
             if (maskedTextBoxNascimento.Text.Length < 10)
             {
                 label7.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label7.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -219,12 +194,10 @@ namespace WinFormBank.View
             if (String.IsNullOrWhiteSpace(textBoxEndereco.Text))
             {
                 label8.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label8.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -233,12 +206,10 @@ namespace WinFormBank.View
             if (maskedTextBoxCelular.Text.Length < 15)
             {
                 label10.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label10.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -247,12 +218,10 @@ namespace WinFormBank.View
             if (String.IsNullOrWhiteSpace(textBoxEmail.Text))
             {
                 label11.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label11.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -261,12 +230,10 @@ namespace WinFormBank.View
             if (textBoxUsuarioInsert.Text.Length < 4)
             {
                 label12.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label12.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -276,13 +243,11 @@ namespace WinFormBank.View
             {
                 label13.ForeColor = Color.Red;
                 label14.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = true;
             }
             else
             {
                 label13.ForeColor = Color.Black;
                 label14.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = false;
             }
         }
 
@@ -292,13 +257,11 @@ namespace WinFormBank.View
             {
                 label13.ForeColor = Color.Red;
                 label14.ForeColor = Color.Red;
-                buttonCadastrar.Enabled = true;
             }
             else
             {
                 label13.ForeColor = Color.Black;
                 label14.ForeColor = Color.Black;
-                buttonCadastrar.Enabled = false;
             }
         }
 
@@ -340,10 +303,10 @@ namespace WinFormBank.View
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             bool temAcesso;
 
-            usuario.Nome = textBoxUsuario.Text;
+            usuario.IdNome = textBoxUsuario.Text;
             usuario.Senha = textBoxSenha.Text;
 
-            temAcesso = usuarioDAO.verificarLogin(usuario.Nome, usuario.Senha);
+            temAcesso = usuarioDAO.VerificarLogin(usuario.IdNome, usuario.Senha);
 
             if (temAcesso == true)
             {
@@ -391,22 +354,34 @@ namespace WinFormBank.View
             ClienteDAO clienteDAO = new ClienteDAO();
             UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-            cliente.Nome = textBoxNome.Text;
-            cliente.Cpf = maskedTextBoxCpf.Text;
-            string dia = maskedTextBoxNascimento.Text.Substring(0, 2);
-            string mes = maskedTextBoxNascimento.Text.Substring(2, 4);
-            string ano = maskedTextBoxNascimento.Text.Substring(6, 4);
-            string data = ano + mes + dia;
-            cliente.Nascimento = DateTime.Parse(data);
-            cliente.Endereco = textBoxEndereco.Text;
-            cliente.Uf = comboBoxUf.Text;
-            cliente.Celular = maskedTextBoxCelular.Text;
-            cliente.Email = textBoxEmail.Text;
-            usuario.Nome = textBoxUsuarioInsert.Text;
-            usuario.Senha = textBoxSenhaConfirm.Text;
+            try
+            {
+                cliente.Nome = textBoxNome.Text;
+                cliente.Cpf = maskedTextBoxCpf.Text;
+                string dia = maskedTextBoxNascimento.Text.Substring(0, 2);
+                string mes = maskedTextBoxNascimento.Text.Substring(2, 4);
+                string ano = maskedTextBoxNascimento.Text.Substring(6, 4);
+                string data = ano + mes + dia;
+                cliente.Nascimento = DateTime.Parse(data);
+                cliente.Endereco = textBoxEndereco.Text;
+                cliente.Uf = comboBoxUf.Text;
+                cliente.Celular = maskedTextBoxCelular.Text;
+                cliente.Email = textBoxEmail.Text;
+                usuario.IdNome = textBoxUsuarioInsert.Text;
+                usuario.Senha = textBoxSenhaConfirm.Text;
 
-            clienteDAO.salvar(cliente);
-            usuarioDAO.salvar(usuario);
+                bool validadoC = cliente.ValidaCliente(cliente);
+                clienteDAO.Salvar(cliente, validadoC);
+                int idCliente = clienteDAO.PegaIdCliente();
+                bool validadoU = usuario.ValidaUsuario(usuario);
+                usuarioDAO.Salvar(usuario, validadoU, idCliente);
+            }
+            catch (ArgumentOutOfRangeException )
+            {
+
+                MessageBox.Show("Por favor informe sua data de nascimento. ");
+            }
+            
             //Limpa os campos após salvar
             textBoxNome.Text = "";
             maskedTextBoxCpf.Text = "";

@@ -39,5 +39,17 @@ namespace WinFormBank.Model
         public string Uf { get => uf; set => uf = value; }
         public string Celular { get => celular; set => celular = value; }
         public string Email { get => email; set => email = value; }
+
+        public bool ValidaCliente(Cliente cliente)
+        {
+            bool validado = true;
+
+            if ((cliente.nome == "") || (cliente.cpf.Length < 14) || (cliente.nascimento.ToString() == "    -  -  ") || (cliente.endereco == "")
+                   || (cliente.uf == "") || (cliente.celular.Length < 15) || (cliente.email == ""))
+            {
+                validado = false;
+            }
+            return validado;
+        }
     }
 }

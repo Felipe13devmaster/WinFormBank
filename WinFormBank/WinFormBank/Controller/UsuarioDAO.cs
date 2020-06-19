@@ -17,7 +17,7 @@ namespace WinFormBank.Controller
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataReader dataReader;
-
+        
         public UsuarioDAO()
         {
             try
@@ -30,44 +30,51 @@ namespace WinFormBank.Controller
             }
         }
 
-        public void salvar(Usuario usuario)
+        public void Salvar(Usuario usuario, bool validado, int idCliente)
         {
-            string sqlQuery = "declare @IDENTITY_CLIENTE INT" + 
-                " SELECT @IDENTITY_CLIENTE = (SELECT TOP 1 ID_CLIENTE FROM CLIENTE ORDER BY ID_CLIENTE DESC)" +
-                " INSERT INTO PERFIL(NOME_USUARIO, SENHA, ID_CLIENTE)" +
-                " VALUES(@NOME, @SENHA, @IDENTITY_CLIENTE)";
+            if (validado == true)
+            {
+                string sqlQuery = " INSERT INTO PERFIL_ACESSO (ID_PERFIL, SENHA, ID_CLIENTE)" +
+                " VALUES(@NOME, @SENHA, @ID_CLIENTE)";
 
-            try
-            {
-                command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@NOME", usuario.Nome);
-                command.Parameters.AddWithValue("@SENHA", usuario.Senha);
-                command.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Erro ao salvar usuario!"+ e);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
+                try
                 {
-                    connection.Close();
+                    command = new SqlCommand(sqlQuery, connection);
+                    command.Parameters.AddWithValue("@NOME", usuario.IdNome);
+                    command.Parameters.AddWithValue("@SENHA", usuario.Senha);
+                    command.Parameters.AddWithValue("@ID_CLIENTE", idCliente);
+                    command.ExecuteNonQuery();
                 }
-            }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Erro ao salvar usuario!" + e);
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
 
-            MessageBox.Show("Bem vindo " + usuario.Nome);
+                MessageBox.Show("Bem vindo " + usuario.IdNome);
+            }
+            else
+            {
+                MessageBox.Show("Falta pouco, vamos lá!.");
+            }
+            
         }
 
-        public bool verificarLogin(string nome, string senha)
+        public bool VerificarLogin(string idNome, string senha)
         {
             bool tem = false;
-            string sqlQuery = "SELECT * FROM PERFIL WHERE NOME_USUARIO = @NOME AND SENHA = @SENHA";
+            string sqlQuery = "SELECT * FROM PERFIL_ACESSO WHERE ID_PERFIL = @NOME AND SENHA = @SENHA";
 
             try
             {
                 command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@NOME", nome);
+                command.Parameters.AddWithValue("@NOME", idNome);
                 command.Parameters.AddWithValue("@SENHA", senha);
                 dataReader = command.ExecuteReader();
 

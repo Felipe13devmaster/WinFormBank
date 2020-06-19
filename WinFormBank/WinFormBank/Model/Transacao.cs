@@ -10,16 +10,18 @@ namespace WinFormBank.Model
     {
         private int id;
         private string tipo;
+        private string descricao;
         private decimal valor;
         private string dataHora;
         private int numeroConta;
 
         public Transacao() { }
 
-        public Transacao(int id, string tipo, decimal valor, string dataHora, int numeroConta)
+        public Transacao(int id, string tipo, string descricao, decimal valor, string dataHora, int numeroConta)
         {
             this.id = id;
             this.tipo = tipo;
+            this.descricao = descricao;
             this.valor = valor;
             this.dataHora = dataHora;
             this.numeroConta = numeroConta;
@@ -27,6 +29,7 @@ namespace WinFormBank.Model
 
         public int Id { get => id; set => id = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+        public string Descricao { get => descricao; set => descricao = value; }
         public decimal Valor { get => valor; set => valor = value; }
         public string DataHora { get => dataHora; set => dataHora = value; }
         public int NumeroConta { get => numeroConta; set => numeroConta = value; }

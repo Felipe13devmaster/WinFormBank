@@ -8,24 +8,32 @@ namespace WinFormBank.Model
 {
     class Usuario
     {
-        private int id;
-        private string nome;
+        private string idNome;
         private string senha;
         private int idCliente;
 
         public Usuario() { }
 
-        public Usuario(int id, string nome, string senha, int idCliente)
+        public Usuario(string idNome, string senha, int idCliente)
         {
-            this.id = id;
-            this.nome = nome;
+            this.idNome = idNome;
             this.senha = senha;
             this.idCliente = idCliente;
         }
 
-        public int Id { get => id; set => id = value; }
-        public string Nome { get => nome; set => nome = value; }
+        public string IdNome { get => idNome; set => idNome = value; }
         public string Senha { get => senha; set => senha = value; }
         public int IdCliente { get => idCliente; set => idCliente = value; }
+
+        public bool ValidaUsuario(Usuario usuario)
+        {
+            bool validado = true;
+           
+            if ((usuario.idNome == "") || (usuario.senha == ""))
+            {
+                validado = false;
+            }
+            return validado;
+        }
     }
 }
