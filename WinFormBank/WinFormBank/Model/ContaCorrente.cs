@@ -8,7 +8,10 @@ namespace WinFormBank.Model
 {
     class ContaCorrente:Conta
     {
-        public ContaCorrente() { }
+        public ContaCorrente() 
+        {
+            this.Tipo = "Corrente";
+        }
 
         public bool PagarBoleto(string numBoleto, decimal valor) 
         {

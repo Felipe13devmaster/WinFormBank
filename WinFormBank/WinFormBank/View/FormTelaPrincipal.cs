@@ -353,8 +353,12 @@ namespace WinFormBank.View
         {
             Cliente cliente = new Cliente();
             Usuario usuario = new Usuario();
+            Conta conta = new Conta();
+            ContaCorrente contaCorrente = new ContaCorrente();
             ClienteDAO clienteDAO = new ClienteDAO();
             UsuarioDAO usuarioDAO = new UsuarioDAO();
+            ContaDAO contaDAO = new ContaDAO();
+            ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
 
             try
             {
@@ -371,12 +375,16 @@ namespace WinFormBank.View
                 cliente.Email = textBoxEmail.Text;
                 usuario.IdNome = textBoxUsuarioInsert.Text;
                 usuario.Senha = textBoxSenhaConfirm.Text;
-
+                // metodos
                 bool validadoC = cliente.ValidaCliente(cliente);
                 clienteDAO.Salvar(cliente, validadoC);
                 bool validadoU = usuario.ValidaUsuario(usuario);
                 string cpfCliente = cliente.Cpf;
                 usuarioDAO.Salvar(usuario, validadoU, cpfCliente);
+                conta = contaCorrente.CriarConta();
+                contaDAO.Salvar(validadoC, conta, cpfCliente);
+                
+
             }
             catch (ArgumentOutOfRangeException )
             {

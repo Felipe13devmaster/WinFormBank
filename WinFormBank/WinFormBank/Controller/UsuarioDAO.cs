@@ -13,7 +13,6 @@ namespace WinFormBank.Controller
 {
     class UsuarioDAO
     {
-        private Usuario usuario;
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataReader dataReader;
@@ -65,7 +64,6 @@ namespace WinFormBank.Controller
             {
                 MessageBox.Show("Falta pouco, vamos lá!.");
             }
-            
         }
 
         public bool VerificarLogin(string idNome, string senha)

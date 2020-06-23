@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\ClienteDAO.cs" />
     <Compile Include="Controller\ContaCorrenteDAO.cs" />
+    <Compile Include="Controller\ContaDAO.cs" />
     <Compile Include="Controller\ContaPoupacaDAO.cs" />
     <Compile Include="Controller\UsuarioDAO.cs" />
     <Compile Include="Model\Cliente.cs" />
