@@ -99,6 +99,8 @@
             this.labelAgencia = new System.Windows.Forms.Label();
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.buttonSairDeposito = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
@@ -106,7 +108,7 @@
             this.panelContaPoupanca.SuspendLayout();
             this.panelTransacao.SuspendLayout();
             this.panelContaCorrente.SuspendLayout();
-            this.panelTransferencia.SuspendLayout();
+            this.panelDeposito.SuspendLayout();
             this.panelDadosUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -537,8 +539,8 @@
             // 
             // panelConta
             // 
+            this.panelConta.Controls.Add(this.panelDeposito);
             this.panelConta.Controls.Add(this.panelSaque);
-            this.panelConta.Controls.Add(this.panelPagamentos);
             this.panelConta.Controls.Add(this.buttonSacar);
             this.panelConta.Controls.Add(this.buttonSair);
             this.panelConta.Controls.Add(this.buttonPagar);
@@ -548,6 +550,7 @@
             this.panelConta.Controls.Add(this.panelTransacao);
             this.panelConta.Controls.Add(this.panelContaCorrente);
             this.panelConta.Controls.Add(this.panelDadosUsuario);
+            this.panelConta.Controls.Add(this.panelPagamentos);
             this.panelConta.Location = new System.Drawing.Point(12, 12);
             this.panelConta.Name = "panelConta";
             this.panelConta.Size = new System.Drawing.Size(893, 511);
@@ -808,10 +811,10 @@
             // panelContaCorrente
             // 
             this.panelContaCorrente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelContaCorrente.Controls.Add(this.panelTransferencia);
             this.panelContaCorrente.Controls.Add(this.labelSaldoCorrente);
             this.panelContaCorrente.Controls.Add(this.label16);
             this.panelContaCorrente.Controls.Add(this.label19);
+            this.panelContaCorrente.Controls.Add(this.panelTransferencia);
             this.panelContaCorrente.Location = new System.Drawing.Point(35, 156);
             this.panelContaCorrente.Name = "panelContaCorrente";
             this.panelContaCorrente.Size = new System.Drawing.Size(200, 236);
@@ -820,7 +823,6 @@
             // panelTransferencia
             // 
             this.panelTransferencia.BackColor = System.Drawing.Color.Silver;
-            this.panelTransferencia.Controls.Add(this.panelDeposito);
             this.panelTransferencia.Location = new System.Drawing.Point(19, 30);
             this.panelTransferencia.Name = "panelTransferencia";
             this.panelTransferencia.Size = new System.Drawing.Size(344, 276);
@@ -830,7 +832,9 @@
             // panelDeposito
             // 
             this.panelDeposito.BackColor = System.Drawing.Color.Silver;
-            this.panelDeposito.Location = new System.Drawing.Point(8, 22);
+            this.panelDeposito.Controls.Add(this.buttonSairDeposito);
+            this.panelDeposito.Controls.Add(this.label23);
+            this.panelDeposito.Location = new System.Drawing.Point(269, 28);
             this.panelDeposito.Name = "panelDeposito";
             this.panelDeposito.Size = new System.Drawing.Size(344, 276);
             this.panelDeposito.TabIndex = 8;
@@ -924,15 +928,34 @@
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(92, 32);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(49, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Deposito";
+            // 
+            // buttonSairDeposito
+            // 
+            this.buttonSairDeposito.Location = new System.Drawing.Point(179, 198);
+            this.buttonSairDeposito.Name = "buttonSairDeposito";
+            this.buttonSairDeposito.Size = new System.Drawing.Size(96, 33);
+            this.buttonSairDeposito.TabIndex = 1;
+            this.buttonSairDeposito.Text = "Cancelar";
+            this.buttonSairDeposito.UseVisualStyleBackColor = true;
+            this.buttonSairDeposito.Click += new System.EventHandler(this.buttonSairDeposito_Click);
+            // 
             // FormTelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(932, 535);
-            this.Controls.Add(this.panelCadastro);
             this.Controls.Add(this.panelConta);
             this.Controls.Add(this.panelLogin);
+            this.Controls.Add(this.panelCadastro);
             this.Name = "FormTelaPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);
@@ -948,7 +971,8 @@
             this.panelTransacao.PerformLayout();
             this.panelContaCorrente.ResumeLayout(false);
             this.panelContaCorrente.PerformLayout();
-            this.panelTransferencia.ResumeLayout(false);
+            this.panelDeposito.ResumeLayout(false);
+            this.panelDeposito.PerformLayout();
             this.panelDadosUsuario.ResumeLayout(false);
             this.panelDadosUsuario.PerformLayout();
             this.ResumeLayout(false);
@@ -1028,5 +1052,7 @@
         private System.Windows.Forms.Label labelValorDisponivelSaque;
         private System.Windows.Forms.Label labelValorDisponivel;
         private System.Windows.Forms.Label labelSaque;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button buttonSairDeposito;
     }
 }

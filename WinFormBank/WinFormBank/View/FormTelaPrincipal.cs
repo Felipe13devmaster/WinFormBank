@@ -289,10 +289,22 @@ namespace WinFormBank.View
         {
             if (panelConta.Visible == true)
             {
-                labelNome.Text = "Seu nome";
+
+                Cliente cliente = new Cliente();
+                Conta conta = new Conta();
+                ContaDAO contaDAO = new ContaDAO();
+
+                string idUsuario = textBoxUsuario.Text;
+
+                cliente = contaDAO.ConsultarDados(cliente, idUsuario);
+                conta = contaDAO.ConsultarDados(conta, idUsuario);
+
+                labelNome.Text = "Nome: "+ cliente.Nome;
                 labelAgencia.Text = "Agencia: 0001 - 7";
                 labelBanco.Text = "Banco: 13";
-                labelConta.Text = "Conta: 59017";
+                labelConta.Text = "Conta: "+ conta.Numero;
+                labelSaldoCorrente.Text = "R$ "+conta.Saldo.ToString("0.00");
+                labelValorDisponivelSaque.Text = "R$ " + conta.Saldo.ToString("0.00");
             }
         }
 
@@ -419,7 +431,7 @@ namespace WinFormBank.View
 
         private void buttonDepositar_Click(object sender, EventArgs e)
         {
-
+            panelDeposito.Visible = true;
         }
 
         private void buttonTransferir_Click(object sender, EventArgs e)
@@ -448,6 +460,11 @@ namespace WinFormBank.View
         {
             panelSaque.Visible = false;
             textBoxValorSaque.Text = "";
+        }
+
+        private void buttonSairDeposito_Click(object sender, EventArgs e)
+        {
+            panelDeposito.Visible = false;
         }
     }
 }

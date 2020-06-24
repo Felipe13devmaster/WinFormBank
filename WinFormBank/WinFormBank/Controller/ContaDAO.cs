@@ -59,13 +59,88 @@ namespace WinFormBank.Controller
                     }
                 }
 
-                MessageBox.Show("Esta é sua conta " + conta.Tipo + ": " + conta.Numero); ;
+                MessageBox.Show("Esta é sua conta " + conta.Tipo + ": " + conta.Numero); 
             }
             else
             {
                 MessageBox.Show("Erro ao gerar Conta!");
             }
         }
+
+        public Cliente ConsultarDados(Cliente cliente, string idUsuario)
+        {
+
+
+            string sqlQuery = " DECLARE @RETORNA_ID_CLIENTE INT" +
+                              " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL_ACESSO WHERE ID_PERFIL = @ID_PERFIL)" +
+                              " SELECT NOME FROM CLIENTE WHERE ID = @RETORNA_ID_CLIENTE";
+
+            try
+            {
+                command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_PERFIL", idUsuario);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    cliente.Nome = (string)dataReader["NOME"];
+                }
+                
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro ao consultar conta!" + e);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            return cliente;
+        }
+
+        public Conta ConsultarDados(Conta conta, string idUsuario)
+        {
+
+
+            string sqlQuery = " DECLARE @RETORNA_ID_CLIENTE INT" +
+                              " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL_ACESSO WHERE ID_PERFIL = @ID_PERFIL)" +
+                              " SELECT CONTA, TIPO, SALDO FROM CONTA WHERE ID_CLIENTE = @RETORNA_ID_CLIENTE";
+
+            try
+            {   
+                if(connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_PERFIL", idUsuario);
+
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    conta.Numero = (int)dataReader["CONTA"];
+                    conta.Tipo = (string)dataReader["TIPO"];
+                    conta.Saldo = (decimal)dataReader["SALDO"];
+                }
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro ao consultar conta!" + e);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            return conta;
+        }
     }
+    
 }
 
