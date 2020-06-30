@@ -65,6 +65,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelConta = new System.Windows.Forms.Panel();
+            this.panelDeposito = new System.Windows.Forms.Panel();
+            this.buttonSairDeposito = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
             this.panelSaque = new System.Windows.Forms.Panel();
             this.labemensagem = new System.Windows.Forms.Label();
             this.buttonCancela = new System.Windows.Forms.Button();
@@ -75,7 +78,6 @@
             this.labelValorDisponivelSaque = new System.Windows.Forms.Label();
             this.labelValorDisponivel = new System.Windows.Forms.Label();
             this.labelSaque = new System.Windows.Forms.Label();
-            this.panelPagamentos = new System.Windows.Forms.Panel();
             this.buttonSacar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
             this.buttonPagar = new System.Windows.Forms.Button();
@@ -89,26 +91,24 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panelContaCorrente = new System.Windows.Forms.Panel();
-            this.panelTransferencia = new System.Windows.Forms.Panel();
-            this.panelDeposito = new System.Windows.Forms.Panel();
             this.labelSaldoCorrente = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.panelTransferencia = new System.Windows.Forms.Panel();
             this.panelDadosUsuario = new System.Windows.Forms.Panel();
             this.labelConta = new System.Windows.Forms.Label();
             this.labelAgencia = new System.Windows.Forms.Label();
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.buttonSairDeposito = new System.Windows.Forms.Button();
+            this.panelPagamentos = new System.Windows.Forms.Panel();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
+            this.panelDeposito.SuspendLayout();
             this.panelSaque.SuspendLayout();
             this.panelContaPoupanca.SuspendLayout();
             this.panelTransacao.SuspendLayout();
             this.panelContaCorrente.SuspendLayout();
-            this.panelDeposito.SuspendLayout();
             this.panelDadosUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,7 +284,7 @@
             // textBoxUsuarioInsert
             // 
             this.textBoxUsuarioInsert.Location = new System.Drawing.Point(138, 326);
-            this.textBoxUsuarioInsert.MaxLength = 50;
+            this.textBoxUsuarioInsert.MaxLength = 20;
             this.textBoxUsuarioInsert.Name = "textBoxUsuarioInsert";
             this.textBoxUsuarioInsert.Size = new System.Drawing.Size(318, 26);
             this.textBoxUsuarioInsert.TabIndex = 21;
@@ -558,6 +558,36 @@
             this.panelConta.Visible = false;
             this.panelConta.VisibleChanged += new System.EventHandler(this.panelConta_VisibleChanged);
             // 
+            // panelDeposito
+            // 
+            this.panelDeposito.BackColor = System.Drawing.Color.Silver;
+            this.panelDeposito.Controls.Add(this.buttonSairDeposito);
+            this.panelDeposito.Controls.Add(this.label23);
+            this.panelDeposito.Location = new System.Drawing.Point(269, 28);
+            this.panelDeposito.Name = "panelDeposito";
+            this.panelDeposito.Size = new System.Drawing.Size(344, 276);
+            this.panelDeposito.TabIndex = 8;
+            this.panelDeposito.Visible = false;
+            // 
+            // buttonSairDeposito
+            // 
+            this.buttonSairDeposito.Location = new System.Drawing.Point(179, 198);
+            this.buttonSairDeposito.Name = "buttonSairDeposito";
+            this.buttonSairDeposito.Size = new System.Drawing.Size(96, 33);
+            this.buttonSairDeposito.TabIndex = 1;
+            this.buttonSairDeposito.Text = "Cancelar";
+            this.buttonSairDeposito.UseVisualStyleBackColor = true;
+            this.buttonSairDeposito.Click += new System.EventHandler(this.buttonSairDeposito_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(92, 32);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(49, 13);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "Deposito";
+            // 
             // panelSaque
             // 
             this.panelSaque.BackColor = System.Drawing.Color.Silver;
@@ -668,15 +698,6 @@
             this.labelSaque.Size = new System.Drawing.Size(92, 31);
             this.labelSaque.TabIndex = 0;
             this.labelSaque.Text = "Saque";
-            // 
-            // panelPagamentos
-            // 
-            this.panelPagamentos.BackColor = System.Drawing.Color.Silver;
-            this.panelPagamentos.Location = new System.Drawing.Point(8, 240);
-            this.panelPagamentos.Name = "panelPagamentos";
-            this.panelPagamentos.Size = new System.Drawing.Size(344, 276);
-            this.panelPagamentos.TabIndex = 8;
-            this.panelPagamentos.Visible = false;
             // 
             // buttonSacar
             // 
@@ -820,26 +841,6 @@
             this.panelContaCorrente.Size = new System.Drawing.Size(200, 236);
             this.panelContaCorrente.TabIndex = 1;
             // 
-            // panelTransferencia
-            // 
-            this.panelTransferencia.BackColor = System.Drawing.Color.Silver;
-            this.panelTransferencia.Location = new System.Drawing.Point(19, 30);
-            this.panelTransferencia.Name = "panelTransferencia";
-            this.panelTransferencia.Size = new System.Drawing.Size(344, 276);
-            this.panelTransferencia.TabIndex = 8;
-            this.panelTransferencia.Visible = false;
-            // 
-            // panelDeposito
-            // 
-            this.panelDeposito.BackColor = System.Drawing.Color.Silver;
-            this.panelDeposito.Controls.Add(this.buttonSairDeposito);
-            this.panelDeposito.Controls.Add(this.label23);
-            this.panelDeposito.Location = new System.Drawing.Point(269, 28);
-            this.panelDeposito.Name = "panelDeposito";
-            this.panelDeposito.Size = new System.Drawing.Size(344, 276);
-            this.panelDeposito.TabIndex = 8;
-            this.panelDeposito.Visible = false;
-            // 
             // labelSaldoCorrente
             // 
             this.labelSaldoCorrente.AutoSize = true;
@@ -871,6 +872,15 @@
             this.label19.Size = new System.Drawing.Size(44, 17);
             this.label19.TabIndex = 6;
             this.label19.Text = "Saldo";
+            // 
+            // panelTransferencia
+            // 
+            this.panelTransferencia.BackColor = System.Drawing.Color.Silver;
+            this.panelTransferencia.Location = new System.Drawing.Point(19, 30);
+            this.panelTransferencia.Name = "panelTransferencia";
+            this.panelTransferencia.Size = new System.Drawing.Size(344, 276);
+            this.panelTransferencia.TabIndex = 8;
+            this.panelTransferencia.Visible = false;
             // 
             // panelDadosUsuario
             // 
@@ -928,24 +938,14 @@
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
-            // label23
+            // panelPagamentos
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(92, 32);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(49, 13);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Deposito";
-            // 
-            // buttonSairDeposito
-            // 
-            this.buttonSairDeposito.Location = new System.Drawing.Point(179, 198);
-            this.buttonSairDeposito.Name = "buttonSairDeposito";
-            this.buttonSairDeposito.Size = new System.Drawing.Size(96, 33);
-            this.buttonSairDeposito.TabIndex = 1;
-            this.buttonSairDeposito.Text = "Cancelar";
-            this.buttonSairDeposito.UseVisualStyleBackColor = true;
-            this.buttonSairDeposito.Click += new System.EventHandler(this.buttonSairDeposito_Click);
+            this.panelPagamentos.BackColor = System.Drawing.Color.Silver;
+            this.panelPagamentos.Location = new System.Drawing.Point(8, 240);
+            this.panelPagamentos.Name = "panelPagamentos";
+            this.panelPagamentos.Size = new System.Drawing.Size(344, 276);
+            this.panelPagamentos.TabIndex = 8;
+            this.panelPagamentos.Visible = false;
             // 
             // FormTelaPrincipal
             // 
@@ -953,9 +953,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(932, 535);
+            this.Controls.Add(this.panelCadastro);
             this.Controls.Add(this.panelConta);
             this.Controls.Add(this.panelLogin);
-            this.Controls.Add(this.panelCadastro);
             this.Name = "FormTelaPrincipal";
             this.Text = "FuBank";
             this.panelLogin.ResumeLayout(false);
@@ -963,6 +963,8 @@
             this.panelCadastro.ResumeLayout(false);
             this.panelCadastro.PerformLayout();
             this.panelConta.ResumeLayout(false);
+            this.panelDeposito.ResumeLayout(false);
+            this.panelDeposito.PerformLayout();
             this.panelSaque.ResumeLayout(false);
             this.panelSaque.PerformLayout();
             this.panelContaPoupanca.ResumeLayout(false);
@@ -971,8 +973,6 @@
             this.panelTransacao.PerformLayout();
             this.panelContaCorrente.ResumeLayout(false);
             this.panelContaCorrente.PerformLayout();
-            this.panelDeposito.ResumeLayout(false);
-            this.panelDeposito.PerformLayout();
             this.panelDadosUsuario.ResumeLayout(false);
             this.panelDadosUsuario.PerformLayout();
             this.ResumeLayout(false);

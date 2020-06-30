@@ -35,7 +35,7 @@ namespace WinFormBank.Controller
             {
                 string sqlQuery =" DECLARE @RETORNA_ID_CLIENTE INT" +
                                  " SELECT @RETORNA_ID_CLIENTE = (SELECT ID FROM CLIENTE WHERE CPF = @CPF)" +  
-                                 " INSERT INTO PERFIL_ACESSO (ID_PERFIL, SENHA, ID_CLIENTE)" +
+                                 " INSERT INTO PERFIL (ID_PERFIL, SENHA, ID_CLIENTE)" +
                                  " VALUES(@NOME, @SENHA, @RETORNA_ID_CLIENTE)";
 
                 try
@@ -69,7 +69,7 @@ namespace WinFormBank.Controller
         public bool VerificarLogin(string idNome, string senha)
         {
             bool tem = false;
-            string sqlQuery = "SELECT * FROM PERFIL_ACESSO WHERE ID_PERFIL = @NOME AND SENHA = @SENHA";
+            string sqlQuery = "SELECT * FROM PERFIL WHERE ID_PERFIL = @NOME AND SENHA = @SENHA";
 
             try
             {

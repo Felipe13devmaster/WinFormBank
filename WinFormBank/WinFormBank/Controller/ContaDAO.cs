@@ -35,7 +35,7 @@ namespace WinFormBank.Controller
             {
                 string sqlQuery = " DECLARE @RETORNA_ID_CLIENTE INT" +
                                  " SELECT @RETORNA_ID_CLIENTE = (SELECT ID FROM CLIENTE WHERE CPF = @CPF)" +
-                                 " INSERT INTO CONTA (CONTA, TIPO, SALDO, ID_CLIENTE)" +
+                                 " INSERT INTO CONTA (NUMERO, TIPO, SALDO, ID_CLIENTE)" +
                                  " VALUES(@CONTA, @TIPO, @SALDO, @RETORNA_ID_CLIENTE)";
 
                 try
@@ -72,7 +72,7 @@ namespace WinFormBank.Controller
 
 
             string sqlQuery = " DECLARE @RETORNA_ID_CLIENTE INT" +
-                              " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL_ACESSO WHERE ID_PERFIL = @ID_PERFIL)" +
+                              " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL WHERE ID_PERFIL = @ID_PERFIL)" +
                               " SELECT NOME FROM CLIENTE WHERE ID = @RETORNA_ID_CLIENTE";
 
             try
@@ -105,8 +105,8 @@ namespace WinFormBank.Controller
 
 
             string sqlQuery = " DECLARE @RETORNA_ID_CLIENTE INT" +
-                              " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL_ACESSO WHERE ID_PERFIL = @ID_PERFIL)" +
-                              " SELECT CONTA, TIPO, SALDO FROM CONTA WHERE ID_CLIENTE = @RETORNA_ID_CLIENTE";
+                              " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL WHERE ID_PERFIL = @ID_PERFIL)" +
+                              " SELECT NUMERO, TIPO, SALDO FROM CONTA WHERE ID_CLIENTE = @RETORNA_ID_CLIENTE";
 
             try
             {   
@@ -121,7 +121,7 @@ namespace WinFormBank.Controller
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    conta.Numero = (int)dataReader["CONTA"];
+                    conta.Numero = (int)dataReader["NUMERO"];
                     conta.Tipo = (string)dataReader["TIPO"];
                     conta.Saldo = (decimal)dataReader["SALDO"];
                 }

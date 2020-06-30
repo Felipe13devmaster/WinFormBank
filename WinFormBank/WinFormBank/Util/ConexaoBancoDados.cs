@@ -17,7 +17,7 @@ namespace WinFormBank.Util
         {
             try
             {
-                string dadosConexao = ("Data Source=DESKTOP-IQV848Q;Initial Catalog=FUBANK;Integrated Security=True;");
+                string dadosConexao = ("Data Source=LAPTOP-JK3T3A00;Initial Catalog=FUBANK;Integrated Security=True;");
                 sqlConnection = new SqlConnection(dadosConexao);
 
                 if(sqlConnection.State == ConnectionState.Closed)
