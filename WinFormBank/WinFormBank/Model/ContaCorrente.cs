@@ -34,12 +34,7 @@ namespace WinFormBank.Model
             return aprovado;
         }
 
-        public bool Depositar(int numConta, decimal valor) 
-        {
-            bool aprovado = false;
-
-            return aprovado;
-        }
+        
 
         public bool TransferirParaPoupanca(int numContaPoupanca, decimal valorTransf)
         {

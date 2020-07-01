@@ -446,7 +446,7 @@ namespace WinFormBank.View
             panelConta.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSaque_Click(object sender, EventArgs e)
         {
             panelSaque.Visible = true;
         }
@@ -465,6 +465,30 @@ namespace WinFormBank.View
         private void buttonSairDeposito_Click(object sender, EventArgs e)
         {
             panelDeposito.Visible = false;
+        }
+
+        private void buttonLimparDeposito_Click(object sender, EventArgs e)
+        {
+            textBoxValorDeposito.Text = "";
+        }
+
+        private void buttonConfirmaDeposito_Click(object sender, EventArgs e)
+        {
+            ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
+
+            decimal valor = Convert.ToDecimal(textBoxValorDeposito.Text);
+            int conta = Convert.ToInt32(labelConta.Text.Substring(6));
+
+            bool aprovado = contaCorrenteDAO.Depositar(conta, valor);
+            // tenho que somar o valor do saldo + deposito antes de update
+            if (aprovado == true)
+            {
+                labelMensagemDeposito.Text = "Deposito confirmado.";
+            }
+            else
+            {
+                labelMensagemDeposito.Text = "Deposito fracassou.";
+            }
         }
     }
 }

@@ -23,9 +23,9 @@ namespace WinFormBank.Controller
             {
                 connection = DataAccess.connection();
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
-                MessageBox.Show("Erro de conectar cliente Dao com o bd!");
+                MessageBox.Show("Erro de conectar cliente Dao com o bd! "+e);
             }
         }
 
@@ -47,7 +47,7 @@ namespace WinFormBank.Controller
                     command.Parameters.AddWithValue("@CPF", cpf);
                     command.ExecuteNonQuery();
                 }
-                catch (Exception e)
+                catch (SqlException e)
                 {
                     MessageBox.Show("Erro ao salvar conta!" + e);
                 }

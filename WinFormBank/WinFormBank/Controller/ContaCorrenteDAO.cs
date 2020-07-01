@@ -30,5 +30,34 @@ namespace WinFormBank.Controller
             }
         }
 
+        public bool Depositar(int numConta, decimal valor)
+        {
+            bool aprovado = true;
+            string sqlQuery = " UPDATE CONTA " +
+                              " SET SALDO = @SALDO " +
+                              " WHERE NUMERO = @CONTA ";
+
+            try
+            {
+                command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@CONTA", numConta);
+                command.Parameters.AddWithValue("@SALDO", valor);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro ao depositar!" + e);
+                aprovado = false;
+                return aprovado;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            return aprovado;
+        }
     }
 }
