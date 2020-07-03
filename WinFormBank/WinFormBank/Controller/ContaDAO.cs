@@ -117,15 +117,13 @@ namespace WinFormBank.Controller
 
                 command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@ID_PERFIL", idUsuario);
-
                 dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
                     conta.Numero = (int)dataReader["NUMERO"];
                     conta.Tipo = (string)dataReader["TIPO"];
                     conta.Saldo = (decimal)dataReader["SALDO"];
-                }
-                
+                } 
             }
             catch (Exception e)
             {
@@ -139,6 +137,41 @@ namespace WinFormBank.Controller
                 }
             }
             return conta;
+        }
+
+        public decimal ConsultarSaldo(int numConta)
+        {
+            decimal saldo = 0;
+            string sqlQuery = " SELECT SALDO FROM CONTA " +
+                              " WHERE NUMERO = @NUMCONTA";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@NUMCONTA", numConta);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    saldo = (decimal)dataReader["SALDO"];
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Erro ao consultar saldo!" + e);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            return saldo;
         }
     }
     

@@ -132,6 +132,12 @@ namespace WinFormBank.View
             }
         }
 
+        private void textBoxValorSaque_Validating(object sender, CancelEventArgs e)
+        {
+            
+            
+        }
+
         private void comboBoxUf_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxUf.SelectedIndex == 0)
@@ -304,7 +310,6 @@ namespace WinFormBank.View
                 labelBanco.Text = "Banco: 13";
                 labelConta.Text = "Conta: "+ conta.Numero;
                 labelSaldoCorrente.Text = "R$ "+conta.Saldo.ToString("0.00");
-                labelValorDisponivelSaque.Text = "R$ " + conta.Saldo.ToString("0.00");
             }
         }
 
@@ -465,6 +470,8 @@ namespace WinFormBank.View
         private void buttonSairDeposito_Click(object sender, EventArgs e)
         {
             panelDeposito.Visible = false;
+            textBoxValorDeposito.Text = "";
+            
         }
 
         private void buttonLimparDeposito_Click(object sender, EventArgs e)
@@ -476,19 +483,93 @@ namespace WinFormBank.View
         {
             ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
 
-            decimal valor = Convert.ToDecimal(textBoxValorDeposito.Text);
-            int conta = Convert.ToInt32(labelConta.Text.Substring(6));
+            string input = textBoxValorDeposito.Text;
+            int valorValidacao = 0;
 
-            bool aprovado = contaCorrenteDAO.Depositar(conta, valor);
-            // tenho que somar o valor do saldo + deposito antes de update
-            if (aprovado == true)
+            if (!int.TryParse(input, out valorValidacao))
             {
-                labelMensagemDeposito.Text = "Deposito confirmado.";
+                textBoxValorDeposito.Focus();
+                labelMensagemDeposito.Text = "Digite um valor valido.";
+                labelMensagemDeposito.Visible = true;
+                MessageBox.Show("Valor de deposito invalido!", "Atenção");
             }
             else
             {
-                labelMensagemDeposito.Text = "Deposito fracassou.";
+                try
+                {
+                    decimal valor = Convert.ToDecimal(textBoxValorDeposito.Text);
+                    int conta = Convert.ToInt32(labelConta.Text.Substring(6));
+                    bool aprovado = contaCorrenteDAO.Depositar(conta, valor);
+
+                    if (aprovado == true && valor > 0)
+                    {
+                        labelMensagemDeposito.Text = "Deposito confirmado.";
+                        labelMensagemDeposito.Visible = true;
+                        textBoxValorDeposito.Text = "";
+                        decimal saldo = contaCorrenteDAO.ConsultarSaldo(conta);
+                        labelSaldoCorrente.Text = "R$ " + saldo.ToString("0.00");
+                    }
+                    else
+                    {
+                        labelMensagemDeposito.Text = "Deposito fracassou.";
+                        labelMensagemDeposito.Visible = true;
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Valor de deposito invalido!", "Atenção");
+                    labelMensagemDeposito.Text = "Digite um valor valido.";
+                    labelMensagemDeposito.Visible = true;
+                    textBoxValorDeposito.Focus();
+                }
             }
+        }
+
+        private void buttonConfirmaSaque_Click(object sender, EventArgs e)
+        {
+            ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
+
+            string input = textBoxValorSaque.Text;
+            int valorValidacao = 0;
+
+            if (!int.TryParse(input, out valorValidacao))
+            {
+                textBoxValorSaque.Focus();
+                labelMensagemSaque.Text = "Digite um valor valido.";
+                labelMensagemSaque.Visible = true;
+                MessageBox.Show("Valor de deposito invalido!", "Atenção");
+            }
+            else
+            {
+                try
+                {
+                    decimal valorSaque = Convert.ToDecimal(textBoxValorSaque.Text);
+                    int conta = Convert.ToInt32(labelConta.Text.Substring(6));
+                    decimal saldo = contaCorrenteDAO.ConsultarSaldo(conta);
+                    bool aprovado = contaCorrenteDAO.Sacar(conta, saldo, valorSaque);
+
+                    if (aprovado == true && valorSaque > 0)
+                    {
+                        labelMensagemSaque.Text = "Saque confirmado.";
+                        labelMensagemSaque.Visible = true;
+                        textBoxValorSaque.Text = "";
+                        decimal saldoAtual = contaCorrenteDAO.ConsultarSaldo(conta);
+                        labelSaldoCorrente.Text = "R$ " + saldoAtual.ToString("0.00");
+                    }
+                    else
+                    {
+                        labelMensagemSaque.Text = "Deposito fracassou.";
+                        labelMensagemSaque.Visible = true;
+                    }
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Valor de deposito invalido!", "Atenção");
+                    labelMensagemSaque.Text = "Digite um valor valido.";
+                    labelMensagemSaque.Visible = true;
+                    textBoxValorSaque.Focus();
+                }
+            }   
         }
     }
 }
