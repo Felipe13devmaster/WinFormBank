@@ -13,7 +13,6 @@ namespace WinFormBank.Controller
 {
     class ContaCorrenteDAO:ContaDAO
     {
-        // public int ConsultarSaldo() { }
         private SqlConnection connection;
         private SqlCommand command;
         private SqlDataReader dataReader;
@@ -67,10 +66,53 @@ namespace WinFormBank.Controller
             return aprovado;
         }
 
-        public bool Transferir(int numContaDestino, decimal valorTransf)
+        public bool Transferir(int numContaOrigem, int numContaDestino, decimal valorTransf)
         {
-            bool aprovado = false;
-
+            bool aprovado = true;
+            bool tem = VerificarConta(numContaDestino);
+            decimal saldo = ConsultarSaldo(numContaOrigem);
+            string sqlQuery = " UPDATE CONTA " +
+                              " SET SALDO = SALDO - @VALORTRANSF " +
+                              " WHERE NUMERO = @CONTA_ORIGEM " +
+                              " UPDATE CONTA " +
+                              " SET SALDO = @VALORTRANSF + SALDO " +
+                              " WHERE NUMERO = @CONTA_DESTINO " ;
+            try
+            {
+                if (tem == true)
+                {
+                    if (valorTransf <= saldo)
+                    {
+                        command = new SqlCommand(sqlQuery, connection);
+                        command.Parameters.AddWithValue("@CONTA_ORIGEM", numContaOrigem);
+                        command.Parameters.AddWithValue("@CONTA_DESTINO", numContaDestino);
+                        command.Parameters.AddWithValue("@VALORTRANSF", valorTransf);
+                        command.ExecuteNonQuery();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Valor de tranferencia indisponivel!");
+                        aprovado = false;
+                    }
+                }
+                else
+                {
+                    aprovado = false;
+                } 
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro ao Transferir!" + e);
+                aprovado = false;
+                return aprovado;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
             return aprovado;
         }
 
@@ -118,5 +160,7 @@ namespace WinFormBank.Controller
 
             return aprovado;
         }
+
+        
     }
 }

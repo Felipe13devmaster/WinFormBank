@@ -69,8 +69,6 @@ namespace WinFormBank.Controller
 
         public Cliente ConsultarDados(Cliente cliente, string idUsuario)
         {
-
-
             string sqlQuery = " DECLARE @RETORNA_ID_CLIENTE INT" +
                               " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL WHERE ID_PERFIL = @ID_PERFIL)" +
                               " SELECT NOME FROM CLIENTE WHERE ID = @RETORNA_ID_CLIENTE";
@@ -102,8 +100,6 @@ namespace WinFormBank.Controller
 
         public Conta ConsultarDados(Conta conta, string idUsuario)
         {
-
-
             string sqlQuery = " DECLARE @RETORNA_ID_CLIENTE INT" +
                               " SELECT @RETORNA_ID_CLIENTE = (SELECT ID_CLIENTE FROM PERFIL WHERE ID_PERFIL = @ID_PERFIL)" +
                               " SELECT NUMERO, TIPO, SALDO FROM CONTA WHERE ID_CLIENTE = @RETORNA_ID_CLIENTE";
@@ -139,6 +135,43 @@ namespace WinFormBank.Controller
             return conta;
         }
 
+        public string ConsultarNome(int numConta)
+        {
+            string nome = "";
+            string sqlQuery = " DECLARE @ID INT " +
+                              " SELECT @ID = (SELECT ID_CLIENTE FROM CONTA WHERE NUMERO = @NUM_CONTA) " +
+                              " SELECT NOME FROM CLIENTE WHERE ID = @ID ";
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+
+                command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@NUM_CONTA", numConta);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    nome = (string)dataReader["NOME"];
+                }
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("Erro ao consultar nome!" + e);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            return nome;
+        }
+
         public decimal ConsultarSaldo(int numConta)
         {
             decimal saldo = 0;
@@ -172,6 +205,40 @@ namespace WinFormBank.Controller
                 }
             }
             return saldo;
+        }
+
+        public bool VerificarConta(int numConta)
+        {
+            bool tem = false;
+            string sqlQuery = "SELECT NUMERO FROM CONTA WHERE NUMERO = @NUM_CONTA";
+
+            try
+            {
+                command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@NUM_CONTA", numConta);
+                dataReader = command.ExecuteReader();
+
+                if (dataReader.HasRows)//has rows retorna se tem linhas preenchidas no resultado da busca
+                {
+                    tem = true;
+                }
+                else
+                {
+                    MessageBox.Show("Conta informada nao existe", "Atenção");
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(" Erro ao verificar conta " + e);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            return tem;
         }
     }
     

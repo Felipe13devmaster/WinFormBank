@@ -83,10 +83,9 @@ namespace WinFormBank.Controller
                     tem = true;
                 }
             }
-            catch (SqlException)
+            catch (SqlException e)
             {
-
-                throw;
+                MessageBox.Show(" Erro ao verificar login " + e);
             }
             finally
             {

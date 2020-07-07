@@ -68,6 +68,20 @@ namespace WinFormBank.View
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panelConta = new System.Windows.Forms.Panel();
+            this.panelTransferencia = new System.Windows.Forms.Panel();
+            this.labelInfConta = new System.Windows.Forms.Label();
+            this.textBoxContaDestino = new System.Windows.Forms.TextBox();
+            this.comboBoxTipoConta = new System.Windows.Forms.ComboBox();
+            this.labelMensagemTransf = new System.Windows.Forms.Label();
+            this.buttonConfirmaTransf = new System.Windows.Forms.Button();
+            this.buttonLimparTransf = new System.Windows.Forms.Button();
+            this.textBoxValorTransf = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.buttonCancelarTransf = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.panelTransacao = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panelSaque = new System.Windows.Forms.Panel();
             this.labelMensagemSaque = new System.Windows.Forms.Label();
             this.buttonCancela = new System.Windows.Forms.Button();
@@ -84,10 +98,6 @@ namespace WinFormBank.View
             this.label25 = new System.Windows.Forms.Label();
             this.buttonSairDeposito = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
-            this.panelTransacao = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panelTransferencia = new System.Windows.Forms.Panel();
             this.panelContaPoupanca = new System.Windows.Forms.Panel();
             this.labelSaldoPoupanca = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -107,12 +117,14 @@ namespace WinFormBank.View
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
             this.panelPagamentos = new System.Windows.Forms.Panel();
+            this.labelNomeDestinoTransf = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
+            this.panelTransferencia.SuspendLayout();
+            this.panelTransacao.SuspendLayout();
             this.panelSaque.SuspendLayout();
             this.panelDeposito.SuspendLayout();
-            this.panelTransacao.SuspendLayout();
             this.panelContaPoupanca.SuspendLayout();
             this.panelContaCorrente.SuspendLayout();
             this.panelDadosUsuario.SuspendLayout();
@@ -545,9 +557,10 @@ namespace WinFormBank.View
             // 
             // panelConta
             // 
+            this.panelConta.Controls.Add(this.panelTransferencia);
+            this.panelConta.Controls.Add(this.panelTransacao);
             this.panelConta.Controls.Add(this.panelSaque);
             this.panelConta.Controls.Add(this.panelDeposito);
-            this.panelConta.Controls.Add(this.panelTransacao);
             this.panelConta.Controls.Add(this.panelContaPoupanca);
             this.panelConta.Controls.Add(this.buttonSacar);
             this.panelConta.Controls.Add(this.buttonSair);
@@ -562,6 +575,163 @@ namespace WinFormBank.View
             this.panelConta.TabIndex = 18;
             this.panelConta.Visible = false;
             this.panelConta.VisibleChanged += new System.EventHandler(this.panelConta_VisibleChanged);
+            // 
+            // panelTransferencia
+            // 
+            this.panelTransferencia.BackColor = System.Drawing.Color.Yellow;
+            this.panelTransferencia.Controls.Add(this.labelNomeDestinoTransf);
+            this.panelTransferencia.Controls.Add(this.labelInfConta);
+            this.panelTransferencia.Controls.Add(this.textBoxContaDestino);
+            this.panelTransferencia.Controls.Add(this.comboBoxTipoConta);
+            this.panelTransferencia.Controls.Add(this.labelMensagemTransf);
+            this.panelTransferencia.Controls.Add(this.buttonConfirmaTransf);
+            this.panelTransferencia.Controls.Add(this.buttonLimparTransf);
+            this.panelTransferencia.Controls.Add(this.textBoxValorTransf);
+            this.panelTransferencia.Controls.Add(this.label26);
+            this.panelTransferencia.Controls.Add(this.buttonCancelarTransf);
+            this.panelTransferencia.Controls.Add(this.label27);
+            this.panelTransferencia.Location = new System.Drawing.Point(596, 279);
+            this.panelTransferencia.Name = "panelTransferencia";
+            this.panelTransferencia.Size = new System.Drawing.Size(298, 232);
+            this.panelTransferencia.TabIndex = 8;
+            this.panelTransferencia.Visible = false;
+            // 
+            // labelInfConta
+            // 
+            this.labelInfConta.AutoSize = true;
+            this.labelInfConta.BackColor = System.Drawing.Color.Snow;
+            this.labelInfConta.Location = new System.Drawing.Point(12, 126);
+            this.labelInfConta.Name = "labelInfConta";
+            this.labelInfConta.Size = new System.Drawing.Size(81, 13);
+            this.labelInfConta.TabIndex = 23;
+            this.labelInfConta.Text = "Informe a conta";
+            this.labelInfConta.Visible = false;
+            // 
+            // textBoxContaDestino
+            // 
+            this.textBoxContaDestino.Location = new System.Drawing.Point(133, 123);
+            this.textBoxContaDestino.Name = "textBoxContaDestino";
+            this.textBoxContaDestino.Size = new System.Drawing.Size(160, 20);
+            this.textBoxContaDestino.TabIndex = 22;
+            this.textBoxContaDestino.Visible = false;
+            // 
+            // comboBoxTipoConta
+            // 
+            this.comboBoxTipoConta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTipoConta.FormattingEnabled = true;
+            this.comboBoxTipoConta.Items.AddRange(new object[] {
+            "Transferir para:",
+            "Outra Conta Corrente",
+            "Sua Conta Poupanca"});
+            this.comboBoxTipoConta.Location = new System.Drawing.Point(15, 94);
+            this.comboBoxTipoConta.Name = "comboBoxTipoConta";
+            this.comboBoxTipoConta.Size = new System.Drawing.Size(138, 21);
+            this.comboBoxTipoConta.TabIndex = 21;
+            this.comboBoxTipoConta.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipoConta_SelectedIndexChanged);
+            // 
+            // labelMensagemTransf
+            // 
+            this.labelMensagemTransf.AutoSize = true;
+            this.labelMensagemTransf.BackColor = System.Drawing.Color.Lime;
+            this.labelMensagemTransf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMensagemTransf.Location = new System.Drawing.Point(17, 204);
+            this.labelMensagemTransf.Name = "labelMensagemTransf";
+            this.labelMensagemTransf.Size = new System.Drawing.Size(76, 16);
+            this.labelMensagemTransf.TabIndex = 20;
+            this.labelMensagemTransf.Text = "Mensagem";
+            this.labelMensagemTransf.Visible = false;
+            // 
+            // buttonConfirmaTransf
+            // 
+            this.buttonConfirmaTransf.Location = new System.Drawing.Point(104, 169);
+            this.buttonConfirmaTransf.Name = "buttonConfirmaTransf";
+            this.buttonConfirmaTransf.Size = new System.Drawing.Size(85, 31);
+            this.buttonConfirmaTransf.TabIndex = 19;
+            this.buttonConfirmaTransf.Text = "Confirma";
+            this.buttonConfirmaTransf.UseVisualStyleBackColor = true;
+            this.buttonConfirmaTransf.Click += new System.EventHandler(this.buttonConfirmaTransf_Click);
+            // 
+            // buttonLimparTransf
+            // 
+            this.buttonLimparTransf.Location = new System.Drawing.Point(14, 169);
+            this.buttonLimparTransf.Name = "buttonLimparTransf";
+            this.buttonLimparTransf.Size = new System.Drawing.Size(84, 31);
+            this.buttonLimparTransf.TabIndex = 18;
+            this.buttonLimparTransf.Text = "Limpar";
+            this.buttonLimparTransf.UseVisualStyleBackColor = true;
+            this.buttonLimparTransf.Click += new System.EventHandler(this.buttonLimparTransf_Click);
+            // 
+            // textBoxValorTransf
+            // 
+            this.textBoxValorTransf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxValorTransf.Location = new System.Drawing.Point(76, 59);
+            this.textBoxValorTransf.Name = "textBoxValorTransf";
+            this.textBoxValorTransf.Size = new System.Drawing.Size(217, 29);
+            this.textBoxValorTransf.TabIndex = 17;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(13, 62);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(54, 24);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "Valor";
+            // 
+            // buttonCancelarTransf
+            // 
+            this.buttonCancelarTransf.Location = new System.Drawing.Point(194, 169);
+            this.buttonCancelarTransf.Name = "buttonCancelarTransf";
+            this.buttonCancelarTransf.Size = new System.Drawing.Size(93, 29);
+            this.buttonCancelarTransf.TabIndex = 15;
+            this.buttonCancelarTransf.Text = "Cancelar";
+            this.buttonCancelarTransf.UseVisualStyleBackColor = true;
+            this.buttonCancelarTransf.Click += new System.EventHandler(this.buttonCancelarTransf_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(70, 17);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(181, 31);
+            this.label27.TabIndex = 14;
+            this.label27.Text = "Transferencia";
+            // 
+            // panelTransacao
+            // 
+            this.panelTransacao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelTransacao.Controls.Add(this.label21);
+            this.panelTransacao.Controls.Add(this.label18);
+            this.panelTransacao.Location = new System.Drawing.Point(350, 131);
+            this.panelTransacao.Name = "panelTransacao";
+            this.panelTransacao.Size = new System.Drawing.Size(240, 368);
+            this.panelTransacao.TabIndex = 2;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.SystemColors.Control;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(91, 52);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(63, 17);
+            this.label21.TabIndex = 8;
+            this.label21.Text = "Histórico";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(73, 7);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(92, 20);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Transações";
             // 
             // panelSaque
             // 
@@ -628,7 +798,6 @@ namespace WinFormBank.View
             this.textBoxValorSaque.Name = "textBoxValorSaque";
             this.textBoxValorSaque.Size = new System.Drawing.Size(214, 29);
             this.textBoxValorSaque.TabIndex = 4;
-            this.textBoxValorSaque.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxValorSaque_Validating);
             // 
             // label22
             // 
@@ -739,48 +908,6 @@ namespace WinFormBank.View
             this.label23.Size = new System.Drawing.Size(122, 31);
             this.label23.TabIndex = 0;
             this.label23.Text = "Deposito";
-            // 
-            // panelTransacao
-            // 
-            this.panelTransacao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelTransacao.Controls.Add(this.label21);
-            this.panelTransacao.Controls.Add(this.label18);
-            this.panelTransacao.Controls.Add(this.panelTransferencia);
-            this.panelTransacao.Location = new System.Drawing.Point(350, 131);
-            this.panelTransacao.Name = "panelTransacao";
-            this.panelTransacao.Size = new System.Drawing.Size(240, 368);
-            this.panelTransacao.TabIndex = 2;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.SystemColors.Control;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(91, 52);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(63, 17);
-            this.label21.TabIndex = 8;
-            this.label21.Text = "Histórico";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(73, 7);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(92, 20);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "Transações";
-            // 
-            // panelTransferencia
-            // 
-            this.panelTransferencia.BackColor = System.Drawing.Color.Yellow;
-            this.panelTransferencia.Location = new System.Drawing.Point(67, 136);
-            this.panelTransferencia.Name = "panelTransferencia";
-            this.panelTransferencia.Size = new System.Drawing.Size(298, 232);
-            this.panelTransferencia.TabIndex = 8;
-            this.panelTransferencia.Visible = false;
             // 
             // panelContaPoupanca
             // 
@@ -989,6 +1116,17 @@ namespace WinFormBank.View
             this.panelPagamentos.TabIndex = 8;
             this.panelPagamentos.Visible = false;
             // 
+            // labelNomeDestinoTransf
+            // 
+            this.labelNomeDestinoTransf.AutoSize = true;
+            this.labelNomeDestinoTransf.BackColor = System.Drawing.Color.Snow;
+            this.labelNomeDestinoTransf.Location = new System.Drawing.Point(11, 150);
+            this.labelNomeDestinoTransf.Name = "labelNomeDestinoTransf";
+            this.labelNomeDestinoTransf.Size = new System.Drawing.Size(65, 13);
+            this.labelNomeDestinoTransf.TabIndex = 24;
+            this.labelNomeDestinoTransf.Text = "Beneficiario:";
+            this.labelNomeDestinoTransf.Visible = false;
+            // 
             // FormTelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1005,12 +1143,14 @@ namespace WinFormBank.View
             this.panelCadastro.ResumeLayout(false);
             this.panelCadastro.PerformLayout();
             this.panelConta.ResumeLayout(false);
+            this.panelTransferencia.ResumeLayout(false);
+            this.panelTransferencia.PerformLayout();
+            this.panelTransacao.ResumeLayout(false);
+            this.panelTransacao.PerformLayout();
             this.panelSaque.ResumeLayout(false);
             this.panelSaque.PerformLayout();
             this.panelDeposito.ResumeLayout(false);
             this.panelDeposito.PerformLayout();
-            this.panelTransacao.ResumeLayout(false);
-            this.panelTransacao.PerformLayout();
             this.panelContaPoupanca.ResumeLayout(false);
             this.panelContaPoupanca.PerformLayout();
             this.panelContaCorrente.ResumeLayout(false);
@@ -1099,5 +1239,16 @@ namespace WinFormBank.View
         private System.Windows.Forms.Button buttonLimparDeposito;
         private System.Windows.Forms.TextBox textBoxValorDeposito;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label labelMensagemTransf;
+        private System.Windows.Forms.Button buttonConfirmaTransf;
+        private System.Windows.Forms.Button buttonLimparTransf;
+        private System.Windows.Forms.TextBox textBoxValorTransf;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button buttonCancelarTransf;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox comboBoxTipoConta;
+        private System.Windows.Forms.Label labelInfConta;
+        private System.Windows.Forms.TextBox textBoxContaDestino;
+        private System.Windows.Forms.Label labelNomeDestinoTransf;
     }
 }

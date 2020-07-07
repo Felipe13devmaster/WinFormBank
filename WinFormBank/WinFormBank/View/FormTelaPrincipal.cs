@@ -132,12 +132,6 @@ namespace WinFormBank.View
             }
         }
 
-        private void textBoxValorSaque_Validating(object sender, CancelEventArgs e)
-        {
-            
-            
-        }
-
         private void comboBoxUf_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxUf.SelectedIndex == 0)
@@ -313,6 +307,21 @@ namespace WinFormBank.View
             }
         }
 
+        private void comboBoxTipoConta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indice = comboBoxTipoConta.SelectedIndex;
+            if (indice == 1)
+            {
+                textBoxContaDestino.Visible = true;
+                labelInfConta.Visible = true;
+            }
+            else
+            {
+                textBoxContaDestino.Visible = false;
+                labelInfConta.Visible = false;
+            }
+        }
+
         // BOTÕES =============================================================================================================
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
@@ -441,7 +450,8 @@ namespace WinFormBank.View
 
         private void buttonTransferir_Click(object sender, EventArgs e)
         {
-
+            panelTransferencia.Visible = true;
+            comboBoxTipoConta.SelectedIndex = 0;
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -570,6 +580,68 @@ namespace WinFormBank.View
                     textBoxValorSaque.Focus();
                 }
             }   
+        }
+
+        private void buttonLimparTransf_Click(object sender, EventArgs e)
+        {
+            textBoxValorTransf.Text = "";
+        }
+
+        private void buttonCancelarTransf_Click(object sender, EventArgs e)
+        {
+            panelTransferencia.Visible = false;
+            textBoxValorTransf.Text = "";
+        }
+
+        private void buttonConfirmaTransf_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
+                int contaOrigem = Convert.ToInt32(labelConta.Text.Substring(6));
+                int contaDestino = Convert.ToInt32(textBoxContaDestino.Text);
+                int valorTransf = Convert.ToInt32(textBoxValorTransf.Text);
+                bool aprovado = contaCorrenteDAO.Transferir(contaOrigem, contaDestino, valorTransf);
+
+                string nomeBeneficiario = contaCorrenteDAO.ConsultarNome(Convert.ToInt32(textBoxContaDestino.Text));
+
+                if (nomeBeneficiario.Length == 0)
+                {
+                    labelNomeDestinoTransf.Visible = false;
+                }
+                else
+                {
+                    labelNomeDestinoTransf.Visible = true;
+                    labelNomeDestinoTransf.Text = "Beneficiario: " + nomeBeneficiario;
+                    if (DialogResult.Cancel == MessageBox.Show("Deseja transferir R$ " + valorTransf.ToString("0.00") + " reais para: " + nomeBeneficiario + "?", "Confirmação", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+                    {
+                        aprovado = false;
+                    }
+                }
+
+                if (aprovado == true)
+                {
+                    labelMensagemTransf.Visible = true;
+                    labelMensagemTransf.Text = "Transferencia realizada com sucesso.";
+                    textBoxContaDestino.Text = "";
+                    textBoxValorTransf.Text = "";
+                    decimal saldoAnterior = Convert.ToDecimal(labelSaldoCorrente.Text.Substring(2));
+                    decimal saldoAtual = saldoAnterior - valorTransf;
+                    labelSaldoCorrente.Text = "R$ " + saldoAtual.ToString("0.00");
+                }
+                else
+                {
+                    labelMensagemTransf.Visible = true;
+                    labelMensagemTransf.Text = "Transferencia nao realizada.";
+                    labelMensagemTransf.ForeColor = Color.Red;
+                    textBoxContaDestino.Focus();
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Valor invalido e/ou Conta para transferencia nao informada.", "Atenção");
+                textBoxValorTransf.Focus();
+            }  
         }
     }
 }
