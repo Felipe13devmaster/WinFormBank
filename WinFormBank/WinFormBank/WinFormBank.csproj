@@ -50,6 +50,7 @@
     <Compile Include="Controller\ContaCorrenteDAO.cs" />
     <Compile Include="Controller\ContaDAO.cs" />
     <Compile Include="Controller\ContaPoupacaDAO.cs" />
+    <Compile Include="Controller\TransacaoDAO.cs" />
     <Compile Include="Controller\UsuarioDAO.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Conta.cs" />

@@ -69,6 +69,7 @@ namespace WinFormBank.View
             this.label4 = new System.Windows.Forms.Label();
             this.panelConta = new System.Windows.Forms.Panel();
             this.panelTransferencia = new System.Windows.Forms.Panel();
+            this.labelNomeDestinoTransf = new System.Windows.Forms.Label();
             this.labelInfConta = new System.Windows.Forms.Label();
             this.textBoxContaDestino = new System.Windows.Forms.TextBox();
             this.comboBoxTipoConta = new System.Windows.Forms.ComboBox();
@@ -117,7 +118,7 @@ namespace WinFormBank.View
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
             this.panelPagamentos = new System.Windows.Forms.Panel();
-            this.labelNomeDestinoTransf = new System.Windows.Forms.Label();
+            this.textBoxHistorico = new System.Windows.Forms.TextBox();
             this.panelLogin.SuspendLayout();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
@@ -557,7 +558,6 @@ namespace WinFormBank.View
             // 
             // panelConta
             // 
-            this.panelConta.Controls.Add(this.panelTransferencia);
             this.panelConta.Controls.Add(this.panelTransacao);
             this.panelConta.Controls.Add(this.panelSaque);
             this.panelConta.Controls.Add(this.panelDeposito);
@@ -569,6 +569,7 @@ namespace WinFormBank.View
             this.panelConta.Controls.Add(this.buttonTransferir);
             this.panelConta.Controls.Add(this.panelContaCorrente);
             this.panelConta.Controls.Add(this.panelDadosUsuario);
+            this.panelConta.Controls.Add(this.panelTransferencia);
             this.panelConta.Location = new System.Drawing.Point(12, 12);
             this.panelConta.Name = "panelConta";
             this.panelConta.Size = new System.Drawing.Size(908, 519);
@@ -595,6 +596,17 @@ namespace WinFormBank.View
             this.panelTransferencia.Size = new System.Drawing.Size(298, 232);
             this.panelTransferencia.TabIndex = 8;
             this.panelTransferencia.Visible = false;
+            // 
+            // labelNomeDestinoTransf
+            // 
+            this.labelNomeDestinoTransf.AutoSize = true;
+            this.labelNomeDestinoTransf.BackColor = System.Drawing.Color.Snow;
+            this.labelNomeDestinoTransf.Location = new System.Drawing.Point(11, 150);
+            this.labelNomeDestinoTransf.Name = "labelNomeDestinoTransf";
+            this.labelNomeDestinoTransf.Size = new System.Drawing.Size(65, 13);
+            this.labelNomeDestinoTransf.TabIndex = 24;
+            this.labelNomeDestinoTransf.Text = "Beneficiario:";
+            this.labelNomeDestinoTransf.Visible = false;
             // 
             // labelInfConta
             // 
@@ -704,11 +716,12 @@ namespace WinFormBank.View
             // panelTransacao
             // 
             this.panelTransacao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelTransacao.Controls.Add(this.textBoxHistorico);
             this.panelTransacao.Controls.Add(this.label21);
             this.panelTransacao.Controls.Add(this.label18);
             this.panelTransacao.Location = new System.Drawing.Point(350, 131);
             this.panelTransacao.Name = "panelTransacao";
-            this.panelTransacao.Size = new System.Drawing.Size(240, 368);
+            this.panelTransacao.Size = new System.Drawing.Size(241, 368);
             this.panelTransacao.TabIndex = 2;
             // 
             // label21
@@ -716,7 +729,7 @@ namespace WinFormBank.View
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.Control;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(91, 52);
+            this.label21.Location = new System.Drawing.Point(95, 46);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(63, 17);
             this.label21.TabIndex = 8;
@@ -727,7 +740,7 @@ namespace WinFormBank.View
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(73, 7);
+            this.label18.Location = new System.Drawing.Point(74, 14);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(92, 20);
             this.label18.TabIndex = 6;
@@ -1116,16 +1129,14 @@ namespace WinFormBank.View
             this.panelPagamentos.TabIndex = 8;
             this.panelPagamentos.Visible = false;
             // 
-            // labelNomeDestinoTransf
+            // textBoxHistorico
             // 
-            this.labelNomeDestinoTransf.AutoSize = true;
-            this.labelNomeDestinoTransf.BackColor = System.Drawing.Color.Snow;
-            this.labelNomeDestinoTransf.Location = new System.Drawing.Point(11, 150);
-            this.labelNomeDestinoTransf.Name = "labelNomeDestinoTransf";
-            this.labelNomeDestinoTransf.Size = new System.Drawing.Size(65, 13);
-            this.labelNomeDestinoTransf.TabIndex = 24;
-            this.labelNomeDestinoTransf.Text = "Beneficiario:";
-            this.labelNomeDestinoTransf.Visible = false;
+            this.textBoxHistorico.Location = new System.Drawing.Point(8, 75);
+            this.textBoxHistorico.Multiline = true;
+            this.textBoxHistorico.Name = "textBoxHistorico";
+            this.textBoxHistorico.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxHistorico.Size = new System.Drawing.Size(225, 287);
+            this.textBoxHistorico.TabIndex = 9;
             // 
             // FormTelaPrincipal
             // 
@@ -1250,5 +1261,6 @@ namespace WinFormBank.View
         private System.Windows.Forms.Label labelInfConta;
         private System.Windows.Forms.TextBox textBoxContaDestino;
         private System.Windows.Forms.Label labelNomeDestinoTransf;
+        private System.Windows.Forms.TextBox textBoxHistorico;
     }
 }

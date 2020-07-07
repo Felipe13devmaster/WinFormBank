@@ -289,10 +289,12 @@ namespace WinFormBank.View
         {
             if (panelConta.Visible == true)
             {
-
                 Cliente cliente = new Cliente();
                 Conta conta = new Conta();
                 ContaDAO contaDAO = new ContaDAO();
+                Transacao transacao = new Transacao();
+                TransacaoDAO transacaoDAO = new TransacaoDAO();
+                List<Transacao> transacoesList = new List<Transacao>();
 
                 string idUsuario = textBoxUsuario.Text;
 
@@ -304,6 +306,19 @@ namespace WinFormBank.View
                 labelBanco.Text = "Banco: 13";
                 labelConta.Text = "Conta: "+ conta.Numero;
                 labelSaldoCorrente.Text = "R$ "+conta.Saldo.ToString("0.00");
+
+
+                transacoesList = transacaoDAO.ConsultarDados(conta.Numero);
+
+                foreach (Transacao item in transacoesList)
+                {
+                    textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());//metodo newline para pular linha
+                    textBoxHistorico.AppendText("Data e Hora : " + item.DataHora.ToString() + " " + System.Environment.NewLine.ToString());
+                    textBoxHistorico.AppendText("Descrição: " + item.Descricao + " " + System.Environment.NewLine.ToString());
+                    textBoxHistorico.AppendText("Tipo: " + item.Tipo + " | ");
+                    textBoxHistorico.AppendText("Valor: R$" + item.Valor.ToString("0.00") + " " + System.Environment.NewLine.ToString());
+                    textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());
+                }
             }
         }
 
@@ -491,6 +506,8 @@ namespace WinFormBank.View
 
         private void buttonConfirmaDeposito_Click(object sender, EventArgs e)
         {
+            Transacao transacao = new Transacao();
+            TransacaoDAO transacaoDAO = new TransacaoDAO();
             ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
 
             string input = textBoxValorDeposito.Text;
@@ -518,6 +535,12 @@ namespace WinFormBank.View
                         textBoxValorDeposito.Text = "";
                         decimal saldo = contaCorrenteDAO.ConsultarSaldo(conta);
                         labelSaldoCorrente.Text = "R$ " + saldo.ToString("0.00");
+                        transacao.Tipo = "Deposito";
+                        transacao.Descricao = "Deposito em C/C";
+                        transacao.Valor = valor;
+                        transacao.DataHora = DateTime.Now;
+                        transacao.NumeroConta = conta;
+                        transacaoDAO.RegistrarDeposito(transacao);
                     }
                     else
                     {
