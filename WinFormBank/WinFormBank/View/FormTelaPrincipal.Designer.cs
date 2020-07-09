@@ -31,14 +31,6 @@ namespace WinFormBank.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelLogin = new System.Windows.Forms.Panel();
-            this.buttonCadastre = new System.Windows.Forms.Button();
-            this.buttonEntrar = new System.Windows.Forms.Button();
-            this.textBoxSenha = new System.Windows.Forms.TextBox();
-            this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelCadastro = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.labelConfirmaSenha = new System.Windows.Forms.Label();
@@ -81,6 +73,7 @@ namespace WinFormBank.View
             this.buttonCancelarTransf = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.panelTransacao = new System.Windows.Forms.Panel();
+            this.textBoxHistorico = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panelSaque = new System.Windows.Forms.Panel();
@@ -99,13 +92,8 @@ namespace WinFormBank.View
             this.label25 = new System.Windows.Forms.Label();
             this.buttonSairDeposito = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
-            this.panelContaPoupanca = new System.Windows.Forms.Panel();
-            this.labelSaldoPoupanca = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.buttonSacar = new System.Windows.Forms.Button();
             this.buttonSair = new System.Windows.Forms.Button();
-            this.buttonPagar = new System.Windows.Forms.Button();
             this.buttonDepositar = new System.Windows.Forms.Button();
             this.buttonTransferir = new System.Windows.Forms.Button();
             this.panelContaCorrente = new System.Windows.Forms.Panel();
@@ -117,101 +105,24 @@ namespace WinFormBank.View
             this.labelAgencia = new System.Windows.Forms.Label();
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
-            this.panelPagamentos = new System.Windows.Forms.Panel();
-            this.textBoxHistorico = new System.Windows.Forms.TextBox();
-            this.panelLogin.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxUsuario = new System.Windows.Forms.TextBox();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.buttonEntrar = new System.Windows.Forms.Button();
+            this.buttonCadastre = new System.Windows.Forms.Button();
+            this.panelLogin = new System.Windows.Forms.Panel();
             this.panelCadastro.SuspendLayout();
             this.panelConta.SuspendLayout();
             this.panelTransferencia.SuspendLayout();
             this.panelTransacao.SuspendLayout();
             this.panelSaque.SuspendLayout();
             this.panelDeposito.SuspendLayout();
-            this.panelContaPoupanca.SuspendLayout();
             this.panelContaCorrente.SuspendLayout();
             this.panelDadosUsuario.SuspendLayout();
+            this.panelLogin.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelLogin
-            // 
-            this.panelLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.panelLogin.Controls.Add(this.buttonCadastre);
-            this.panelLogin.Controls.Add(this.buttonEntrar);
-            this.panelLogin.Controls.Add(this.textBoxSenha);
-            this.panelLogin.Controls.Add(this.textBoxUsuario);
-            this.panelLogin.Controls.Add(this.label3);
-            this.panelLogin.Controls.Add(this.label2);
-            this.panelLogin.Controls.Add(this.label1);
-            this.panelLogin.Location = new System.Drawing.Point(229, 159);
-            this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(458, 295);
-            this.panelLogin.TabIndex = 0;
-            // 
-            // buttonCadastre
-            // 
-            this.buttonCadastre.Location = new System.Drawing.Point(299, 222);
-            this.buttonCadastre.Name = "buttonCadastre";
-            this.buttonCadastre.Size = new System.Drawing.Size(75, 23);
-            this.buttonCadastre.TabIndex = 6;
-            this.buttonCadastre.Text = "Cadastre-se";
-            this.buttonCadastre.UseVisualStyleBackColor = true;
-            this.buttonCadastre.Click += new System.EventHandler(this.buttonCadastre_Click);
-            // 
-            // buttonEntrar
-            // 
-            this.buttonEntrar.Location = new System.Drawing.Point(198, 222);
-            this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(75, 23);
-            this.buttonEntrar.TabIndex = 5;
-            this.buttonEntrar.Text = "Entrar";
-            this.buttonEntrar.UseVisualStyleBackColor = true;
-            this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
-            // 
-            // textBoxSenha
-            // 
-            this.textBoxSenha.Location = new System.Drawing.Point(130, 149);
-            this.textBoxSenha.MaxLength = 8;
-            this.textBoxSenha.Name = "textBoxSenha";
-            this.textBoxSenha.PasswordChar = '*';
-            this.textBoxSenha.Size = new System.Drawing.Size(244, 20);
-            this.textBoxSenha.TabIndex = 4;
-            // 
-            // textBoxUsuario
-            // 
-            this.textBoxUsuario.Location = new System.Drawing.Point(130, 105);
-            this.textBoxUsuario.MaxLength = 50;
-            this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(244, 20);
-            this.textBoxUsuario.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 147);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Senha";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Usuario";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(195, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Login";
             // 
             // panelCadastro
             // 
@@ -558,18 +469,17 @@ namespace WinFormBank.View
             // 
             // panelConta
             // 
+            this.panelConta.BackColor = System.Drawing.Color.DarkMagenta;
             this.panelConta.Controls.Add(this.panelTransacao);
-            this.panelConta.Controls.Add(this.panelSaque);
-            this.panelConta.Controls.Add(this.panelDeposito);
-            this.panelConta.Controls.Add(this.panelContaPoupanca);
             this.panelConta.Controls.Add(this.buttonSacar);
             this.panelConta.Controls.Add(this.buttonSair);
-            this.panelConta.Controls.Add(this.buttonPagar);
             this.panelConta.Controls.Add(this.buttonDepositar);
             this.panelConta.Controls.Add(this.buttonTransferir);
             this.panelConta.Controls.Add(this.panelContaCorrente);
             this.panelConta.Controls.Add(this.panelDadosUsuario);
             this.panelConta.Controls.Add(this.panelTransferencia);
+            this.panelConta.Controls.Add(this.panelDeposito);
+            this.panelConta.Controls.Add(this.panelSaque);
             this.panelConta.Location = new System.Drawing.Point(12, 12);
             this.panelConta.Name = "panelConta";
             this.panelConta.Size = new System.Drawing.Size(908, 519);
@@ -579,7 +489,7 @@ namespace WinFormBank.View
             // 
             // panelTransferencia
             // 
-            this.panelTransferencia.BackColor = System.Drawing.Color.Yellow;
+            this.panelTransferencia.BackColor = System.Drawing.Color.MintCream;
             this.panelTransferencia.Controls.Add(this.labelNomeDestinoTransf);
             this.panelTransferencia.Controls.Add(this.labelInfConta);
             this.panelTransferencia.Controls.Add(this.textBoxContaDestino);
@@ -591,9 +501,10 @@ namespace WinFormBank.View
             this.panelTransferencia.Controls.Add(this.label26);
             this.panelTransferencia.Controls.Add(this.buttonCancelarTransf);
             this.panelTransferencia.Controls.Add(this.label27);
-            this.panelTransferencia.Location = new System.Drawing.Point(596, 279);
+            this.panelTransferencia.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.panelTransferencia.Location = new System.Drawing.Point(33, 274);
             this.panelTransferencia.Name = "panelTransferencia";
-            this.panelTransferencia.Size = new System.Drawing.Size(298, 232);
+            this.panelTransferencia.Size = new System.Drawing.Size(308, 237);
             this.panelTransferencia.TabIndex = 8;
             this.panelTransferencia.Visible = false;
             // 
@@ -633,8 +544,7 @@ namespace WinFormBank.View
             this.comboBoxTipoConta.FormattingEnabled = true;
             this.comboBoxTipoConta.Items.AddRange(new object[] {
             "Transferir para:",
-            "Outra Conta Corrente",
-            "Sua Conta Poupanca"});
+            "Outra Conta Corrente"});
             this.comboBoxTipoConta.Location = new System.Drawing.Point(15, 94);
             this.comboBoxTipoConta.Name = "comboBoxTipoConta";
             this.comboBoxTipoConta.Size = new System.Drawing.Size(138, 21);
@@ -655,22 +565,28 @@ namespace WinFormBank.View
             // 
             // buttonConfirmaTransf
             // 
+            this.buttonConfirmaTransf.BackColor = System.Drawing.Color.Purple;
+            this.buttonConfirmaTransf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirmaTransf.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonConfirmaTransf.Location = new System.Drawing.Point(104, 169);
             this.buttonConfirmaTransf.Name = "buttonConfirmaTransf";
             this.buttonConfirmaTransf.Size = new System.Drawing.Size(85, 31);
             this.buttonConfirmaTransf.TabIndex = 19;
             this.buttonConfirmaTransf.Text = "Confirma";
-            this.buttonConfirmaTransf.UseVisualStyleBackColor = true;
+            this.buttonConfirmaTransf.UseVisualStyleBackColor = false;
             this.buttonConfirmaTransf.Click += new System.EventHandler(this.buttonConfirmaTransf_Click);
             // 
             // buttonLimparTransf
             // 
+            this.buttonLimparTransf.BackColor = System.Drawing.Color.Purple;
+            this.buttonLimparTransf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimparTransf.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonLimparTransf.Location = new System.Drawing.Point(14, 169);
             this.buttonLimparTransf.Name = "buttonLimparTransf";
             this.buttonLimparTransf.Size = new System.Drawing.Size(84, 31);
             this.buttonLimparTransf.TabIndex = 18;
             this.buttonLimparTransf.Text = "Limpar";
-            this.buttonLimparTransf.UseVisualStyleBackColor = true;
+            this.buttonLimparTransf.UseVisualStyleBackColor = false;
             this.buttonLimparTransf.Click += new System.EventHandler(this.buttonLimparTransf_Click);
             // 
             // textBoxValorTransf
@@ -694,19 +610,23 @@ namespace WinFormBank.View
             // 
             // buttonCancelarTransf
             // 
+            this.buttonCancelarTransf.BackColor = System.Drawing.Color.Purple;
+            this.buttonCancelarTransf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelarTransf.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonCancelarTransf.Location = new System.Drawing.Point(194, 169);
             this.buttonCancelarTransf.Name = "buttonCancelarTransf";
             this.buttonCancelarTransf.Size = new System.Drawing.Size(93, 29);
             this.buttonCancelarTransf.TabIndex = 15;
             this.buttonCancelarTransf.Text = "Cancelar";
-            this.buttonCancelarTransf.UseVisualStyleBackColor = true;
+            this.buttonCancelarTransf.UseVisualStyleBackColor = false;
             this.buttonCancelarTransf.Click += new System.EventHandler(this.buttonCancelarTransf_Click);
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label27.BackColor = System.Drawing.Color.DarkMagenta;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label27.Location = new System.Drawing.Point(70, 17);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(181, 31);
@@ -715,7 +635,7 @@ namespace WinFormBank.View
             // 
             // panelTransacao
             // 
-            this.panelTransacao.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelTransacao.BackColor = System.Drawing.Color.MintCream;
             this.panelTransacao.Controls.Add(this.textBoxHistorico);
             this.panelTransacao.Controls.Add(this.label21);
             this.panelTransacao.Controls.Add(this.label18);
@@ -724,10 +644,20 @@ namespace WinFormBank.View
             this.panelTransacao.Size = new System.Drawing.Size(241, 368);
             this.panelTransacao.TabIndex = 2;
             // 
+            // textBoxHistorico
+            // 
+            this.textBoxHistorico.BackColor = System.Drawing.SystemColors.Info;
+            this.textBoxHistorico.Location = new System.Drawing.Point(8, 75);
+            this.textBoxHistorico.Multiline = true;
+            this.textBoxHistorico.Name = "textBoxHistorico";
+            this.textBoxHistorico.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxHistorico.Size = new System.Drawing.Size(225, 287);
+            this.textBoxHistorico.TabIndex = 9;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.SystemColors.Control;
+            this.label21.BackColor = System.Drawing.Color.Plum;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(95, 46);
             this.label21.Name = "label21";
@@ -738,8 +668,9 @@ namespace WinFormBank.View
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label18.BackColor = System.Drawing.Color.DarkMagenta;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label18.Location = new System.Drawing.Point(74, 14);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(92, 20);
@@ -748,7 +679,7 @@ namespace WinFormBank.View
             // 
             // panelSaque
             // 
-            this.panelSaque.BackColor = System.Drawing.Color.Yellow;
+            this.panelSaque.BackColor = System.Drawing.Color.MintCream;
             this.panelSaque.Controls.Add(this.labelMensagemSaque);
             this.panelSaque.Controls.Add(this.buttonCancela);
             this.panelSaque.Controls.Add(this.buttonConfirma);
@@ -756,9 +687,9 @@ namespace WinFormBank.View
             this.panelSaque.Controls.Add(this.textBoxValorSaque);
             this.panelSaque.Controls.Add(this.label22);
             this.panelSaque.Controls.Add(this.labelSaque);
-            this.panelSaque.Location = new System.Drawing.Point(597, 235);
+            this.panelSaque.Location = new System.Drawing.Point(41, 289);
             this.panelSaque.Name = "panelSaque";
-            this.panelSaque.Size = new System.Drawing.Size(302, 194);
+            this.panelSaque.Size = new System.Drawing.Size(295, 180);
             this.panelSaque.TabIndex = 7;
             this.panelSaque.Visible = false;
             // 
@@ -776,32 +707,41 @@ namespace WinFormBank.View
             // 
             // buttonCancela
             // 
+            this.buttonCancela.BackColor = System.Drawing.Color.Purple;
+            this.buttonCancela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancela.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonCancela.Location = new System.Drawing.Point(197, 113);
             this.buttonCancela.Name = "buttonCancela";
             this.buttonCancela.Size = new System.Drawing.Size(89, 31);
             this.buttonCancela.TabIndex = 7;
             this.buttonCancela.Text = "Cancelar";
-            this.buttonCancela.UseVisualStyleBackColor = true;
+            this.buttonCancela.UseVisualStyleBackColor = false;
             this.buttonCancela.Click += new System.EventHandler(this.buttonCancela_Click);
             // 
             // buttonConfirma
             // 
+            this.buttonConfirma.BackColor = System.Drawing.Color.Purple;
+            this.buttonConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirma.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonConfirma.Location = new System.Drawing.Point(106, 113);
             this.buttonConfirma.Name = "buttonConfirma";
             this.buttonConfirma.Size = new System.Drawing.Size(85, 31);
             this.buttonConfirma.TabIndex = 6;
             this.buttonConfirma.Text = "Confirma";
-            this.buttonConfirma.UseVisualStyleBackColor = true;
+            this.buttonConfirma.UseVisualStyleBackColor = false;
             this.buttonConfirma.Click += new System.EventHandler(this.buttonConfirmaSaque_Click);
             // 
             // buttonLimpa
             // 
+            this.buttonLimpa.BackColor = System.Drawing.Color.Purple;
+            this.buttonLimpa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimpa.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonLimpa.Location = new System.Drawing.Point(16, 113);
             this.buttonLimpa.Name = "buttonLimpa";
             this.buttonLimpa.Size = new System.Drawing.Size(84, 31);
             this.buttonLimpa.TabIndex = 5;
             this.buttonLimpa.Text = "Limpar";
-            this.buttonLimpa.UseVisualStyleBackColor = true;
+            this.buttonLimpa.UseVisualStyleBackColor = false;
             this.buttonLimpa.Click += new System.EventHandler(this.buttonLimpa_Click);
             // 
             // textBoxValorSaque
@@ -826,8 +766,9 @@ namespace WinFormBank.View
             // labelSaque
             // 
             this.labelSaque.AutoSize = true;
-            this.labelSaque.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelSaque.BackColor = System.Drawing.Color.DarkMagenta;
             this.labelSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaque.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.labelSaque.Location = new System.Drawing.Point(111, 12);
             this.labelSaque.Name = "labelSaque";
             this.labelSaque.Size = new System.Drawing.Size(92, 31);
@@ -836,7 +777,7 @@ namespace WinFormBank.View
             // 
             // panelDeposito
             // 
-            this.panelDeposito.BackColor = System.Drawing.Color.Yellow;
+            this.panelDeposito.BackColor = System.Drawing.Color.MintCream;
             this.panelDeposito.Controls.Add(this.labelMensagemDeposito);
             this.panelDeposito.Controls.Add(this.buttonConfirmaDeposito);
             this.panelDeposito.Controls.Add(this.buttonLimparDeposito);
@@ -844,7 +785,7 @@ namespace WinFormBank.View
             this.panelDeposito.Controls.Add(this.label25);
             this.panelDeposito.Controls.Add(this.buttonSairDeposito);
             this.panelDeposito.Controls.Add(this.label23);
-            this.panelDeposito.Location = new System.Drawing.Point(597, 19);
+            this.panelDeposito.Location = new System.Drawing.Point(35, 278);
             this.panelDeposito.Name = "panelDeposito";
             this.panelDeposito.Size = new System.Drawing.Size(302, 207);
             this.panelDeposito.TabIndex = 8;
@@ -864,22 +805,28 @@ namespace WinFormBank.View
             // 
             // buttonConfirmaDeposito
             // 
+            this.buttonConfirmaDeposito.BackColor = System.Drawing.Color.DarkMagenta;
+            this.buttonConfirmaDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirmaDeposito.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonConfirmaDeposito.Location = new System.Drawing.Point(109, 126);
             this.buttonConfirmaDeposito.Name = "buttonConfirmaDeposito";
             this.buttonConfirmaDeposito.Size = new System.Drawing.Size(85, 31);
             this.buttonConfirmaDeposito.TabIndex = 12;
             this.buttonConfirmaDeposito.Text = "Confirma";
-            this.buttonConfirmaDeposito.UseVisualStyleBackColor = true;
+            this.buttonConfirmaDeposito.UseVisualStyleBackColor = false;
             this.buttonConfirmaDeposito.Click += new System.EventHandler(this.buttonConfirmaDeposito_Click);
             // 
             // buttonLimparDeposito
             // 
+            this.buttonLimparDeposito.BackColor = System.Drawing.Color.DarkMagenta;
+            this.buttonLimparDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimparDeposito.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonLimparDeposito.Location = new System.Drawing.Point(19, 126);
             this.buttonLimparDeposito.Name = "buttonLimparDeposito";
             this.buttonLimparDeposito.Size = new System.Drawing.Size(84, 31);
             this.buttonLimparDeposito.TabIndex = 11;
             this.buttonLimparDeposito.Text = "Limpar";
-            this.buttonLimparDeposito.UseVisualStyleBackColor = true;
+            this.buttonLimparDeposito.UseVisualStyleBackColor = false;
             this.buttonLimparDeposito.Click += new System.EventHandler(this.buttonLimparDeposito_Click);
             // 
             // textBoxValorDeposito
@@ -903,126 +850,88 @@ namespace WinFormBank.View
             // 
             // buttonSairDeposito
             // 
+            this.buttonSairDeposito.BackColor = System.Drawing.Color.DarkMagenta;
+            this.buttonSairDeposito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSairDeposito.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.buttonSairDeposito.Location = new System.Drawing.Point(199, 128);
             this.buttonSairDeposito.Name = "buttonSairDeposito";
             this.buttonSairDeposito.Size = new System.Drawing.Size(93, 29);
             this.buttonSairDeposito.TabIndex = 1;
             this.buttonSairDeposito.Text = "Cancelar";
-            this.buttonSairDeposito.UseVisualStyleBackColor = true;
+            this.buttonSairDeposito.UseVisualStyleBackColor = false;
             this.buttonSairDeposito.Click += new System.EventHandler(this.buttonSairDeposito_Click);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label23.BackColor = System.Drawing.Color.DarkMagenta;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label23.Location = new System.Drawing.Point(110, 26);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(122, 31);
             this.label23.TabIndex = 0;
             this.label23.Text = "Deposito";
             // 
-            // panelContaPoupanca
-            // 
-            this.panelContaPoupanca.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelContaPoupanca.Controls.Add(this.labelSaldoPoupanca);
-            this.panelContaPoupanca.Controls.Add(this.label20);
-            this.panelContaPoupanca.Controls.Add(this.label17);
-            this.panelContaPoupanca.Location = new System.Drawing.Point(35, 278);
-            this.panelContaPoupanca.Name = "panelContaPoupanca";
-            this.panelContaPoupanca.Size = new System.Drawing.Size(309, 141);
-            this.panelContaPoupanca.TabIndex = 2;
-            // 
-            // labelSaldoPoupanca
-            // 
-            this.labelSaldoPoupanca.AutoSize = true;
-            this.labelSaldoPoupanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSaldoPoupanca.Location = new System.Drawing.Point(9, 82);
-            this.labelSaldoPoupanca.Name = "labelSaldoPoupanca";
-            this.labelSaldoPoupanca.Size = new System.Drawing.Size(148, 46);
-            this.labelSaldoPoupanca.TabIndex = 9;
-            this.labelSaldoPoupanca.Text = "R$0,00";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.SystemColors.Control;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(104, 55);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(44, 17);
-            this.label20.TabIndex = 7;
-            this.label20.Text = "Saldo";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(64, 7);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(128, 20);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "Conta Poupança";
-            // 
             // buttonSacar
             // 
+            this.buttonSacar.BackColor = System.Drawing.Color.Purple;
+            this.buttonSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSacar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSacar.Location = new System.Drawing.Point(84, 466);
+            this.buttonSacar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonSacar.Location = new System.Drawing.Point(597, 359);
             this.buttonSacar.Name = "buttonSacar";
             this.buttonSacar.Size = new System.Drawing.Size(91, 33);
             this.buttonSacar.TabIndex = 8;
             this.buttonSacar.Text = "Sacar";
-            this.buttonSacar.UseVisualStyleBackColor = true;
+            this.buttonSacar.UseVisualStyleBackColor = false;
             this.buttonSacar.Click += new System.EventHandler(this.buttonSaque_Click);
             // 
             // buttonSair
             // 
+            this.buttonSair.BackColor = System.Drawing.Color.Purple;
+            this.buttonSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSair.Location = new System.Drawing.Point(181, 468);
+            this.buttonSair.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonSair.Location = new System.Drawing.Point(597, 470);
             this.buttonSair.Name = "buttonSair";
             this.buttonSair.Size = new System.Drawing.Size(91, 29);
             this.buttonSair.TabIndex = 6;
             this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
+            this.buttonSair.UseVisualStyleBackColor = false;
             this.buttonSair.Click += new System.EventHandler(this.buttonSair_Click);
-            // 
-            // buttonPagar
-            // 
-            this.buttonPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPagar.Location = new System.Drawing.Point(229, 431);
-            this.buttonPagar.Name = "buttonPagar";
-            this.buttonPagar.Size = new System.Drawing.Size(91, 29);
-            this.buttonPagar.TabIndex = 5;
-            this.buttonPagar.Text = "Pagar";
-            this.buttonPagar.UseVisualStyleBackColor = true;
-            this.buttonPagar.Click += new System.EventHandler(this.buttonPagar_Click);
             // 
             // buttonDepositar
             // 
+            this.buttonDepositar.BackColor = System.Drawing.Color.Purple;
+            this.buttonDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDepositar.Location = new System.Drawing.Point(35, 431);
+            this.buttonDepositar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonDepositar.Location = new System.Drawing.Point(597, 399);
             this.buttonDepositar.Name = "buttonDepositar";
             this.buttonDepositar.Size = new System.Drawing.Size(91, 29);
             this.buttonDepositar.TabIndex = 4;
             this.buttonDepositar.Text = "Depositar";
-            this.buttonDepositar.UseVisualStyleBackColor = true;
+            this.buttonDepositar.UseVisualStyleBackColor = false;
             this.buttonDepositar.Click += new System.EventHandler(this.buttonDepositar_Click);
             // 
             // buttonTransferir
             // 
+            this.buttonTransferir.BackColor = System.Drawing.Color.Purple;
+            this.buttonTransferir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTransferir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTransferir.Location = new System.Drawing.Point(132, 431);
+            this.buttonTransferir.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonTransferir.Location = new System.Drawing.Point(597, 434);
             this.buttonTransferir.Name = "buttonTransferir";
             this.buttonTransferir.Size = new System.Drawing.Size(91, 29);
             this.buttonTransferir.TabIndex = 3;
             this.buttonTransferir.Text = "Transferir";
-            this.buttonTransferir.UseVisualStyleBackColor = true;
+            this.buttonTransferir.UseVisualStyleBackColor = false;
             this.buttonTransferir.Click += new System.EventHandler(this.buttonTransferir_Click);
             // 
             // panelContaCorrente
             // 
-            this.panelContaCorrente.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelContaCorrente.BackColor = System.Drawing.Color.MintCream;
             this.panelContaCorrente.Controls.Add(this.labelSaldoCorrente);
             this.panelContaCorrente.Controls.Add(this.label16);
             this.panelContaCorrente.Controls.Add(this.label19);
@@ -1044,8 +953,9 @@ namespace WinFormBank.View
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label16.BackColor = System.Drawing.Color.DarkMagenta;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label16.Location = new System.Drawing.Point(74, 7);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(118, 20);
@@ -1055,7 +965,7 @@ namespace WinFormBank.View
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.Control;
+            this.label19.BackColor = System.Drawing.Color.Plum;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(102, 55);
             this.label19.Name = "label19";
@@ -1065,12 +975,11 @@ namespace WinFormBank.View
             // 
             // panelDadosUsuario
             // 
-            this.panelDadosUsuario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelDadosUsuario.BackColor = System.Drawing.Color.MintCream;
             this.panelDadosUsuario.Controls.Add(this.labelConta);
             this.panelDadosUsuario.Controls.Add(this.labelAgencia);
             this.panelDadosUsuario.Controls.Add(this.labelBanco);
             this.panelDadosUsuario.Controls.Add(this.labelNome);
-            this.panelDadosUsuario.Controls.Add(this.panelPagamentos);
             this.panelDadosUsuario.Location = new System.Drawing.Point(35, 19);
             this.panelDadosUsuario.Name = "panelDadosUsuario";
             this.panelDadosUsuario.Size = new System.Drawing.Size(556, 100);
@@ -1079,7 +988,7 @@ namespace WinFormBank.View
             // labelConta
             // 
             this.labelConta.AutoSize = true;
-            this.labelConta.BackColor = System.Drawing.SystemColors.Control;
+            this.labelConta.BackColor = System.Drawing.Color.Plum;
             this.labelConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelConta.Location = new System.Drawing.Point(388, 59);
             this.labelConta.Name = "labelConta";
@@ -1090,7 +999,7 @@ namespace WinFormBank.View
             // labelAgencia
             // 
             this.labelAgencia.AutoSize = true;
-            this.labelAgencia.BackColor = System.Drawing.SystemColors.Control;
+            this.labelAgencia.BackColor = System.Drawing.Color.Plum;
             this.labelAgencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAgencia.Location = new System.Drawing.Point(388, 19);
             this.labelAgencia.Name = "labelAgencia";
@@ -1101,7 +1010,7 @@ namespace WinFormBank.View
             // labelBanco
             // 
             this.labelBanco.AutoSize = true;
-            this.labelBanco.BackColor = System.Drawing.SystemColors.Control;
+            this.labelBanco.BackColor = System.Drawing.Color.Plum;
             this.labelBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBanco.Location = new System.Drawing.Point(15, 59);
             this.labelBanco.Name = "labelBanco";
@@ -1112,7 +1021,7 @@ namespace WinFormBank.View
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.BackColor = System.Drawing.SystemColors.Control;
+            this.labelNome.BackColor = System.Drawing.Color.Plum;
             this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNome.Location = new System.Drawing.Point(15, 20);
             this.labelNome.Name = "labelNome";
@@ -1120,37 +1029,99 @@ namespace WinFormBank.View
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
-            // panelPagamentos
+            // label1
             // 
-            this.panelPagamentos.BackColor = System.Drawing.Color.Yellow;
-            this.panelPagamentos.Location = new System.Drawing.Point(49, 18);
-            this.panelPagamentos.Name = "panelPagamentos";
-            this.panelPagamentos.Size = new System.Drawing.Size(301, 243);
-            this.panelPagamentos.TabIndex = 8;
-            this.panelPagamentos.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(195, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Login";
             // 
-            // textBoxHistorico
+            // label2
             // 
-            this.textBoxHistorico.Location = new System.Drawing.Point(8, 75);
-            this.textBoxHistorico.Multiline = true;
-            this.textBoxHistorico.Name = "textBoxHistorico";
-            this.textBoxHistorico.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxHistorico.Size = new System.Drawing.Size(225, 287);
-            this.textBoxHistorico.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 103);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Usuario";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(60, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Senha";
+            // 
+            // textBoxUsuario
+            // 
+            this.textBoxUsuario.Location = new System.Drawing.Point(130, 105);
+            this.textBoxUsuario.MaxLength = 50;
+            this.textBoxUsuario.Name = "textBoxUsuario";
+            this.textBoxUsuario.Size = new System.Drawing.Size(244, 20);
+            this.textBoxUsuario.TabIndex = 3;
+            // 
+            // textBoxSenha
+            // 
+            this.textBoxSenha.Location = new System.Drawing.Point(130, 149);
+            this.textBoxSenha.MaxLength = 8;
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
+            this.textBoxSenha.Size = new System.Drawing.Size(244, 20);
+            this.textBoxSenha.TabIndex = 4;
+            // 
+            // buttonEntrar
+            // 
+            this.buttonEntrar.Location = new System.Drawing.Point(198, 222);
+            this.buttonEntrar.Name = "buttonEntrar";
+            this.buttonEntrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEntrar.TabIndex = 5;
+            this.buttonEntrar.Text = "Entrar";
+            this.buttonEntrar.UseVisualStyleBackColor = true;
+            this.buttonEntrar.Click += new System.EventHandler(this.buttonEntrar_Click);
+            // 
+            // buttonCadastre
+            // 
+            this.buttonCadastre.Location = new System.Drawing.Point(299, 222);
+            this.buttonCadastre.Name = "buttonCadastre";
+            this.buttonCadastre.Size = new System.Drawing.Size(75, 23);
+            this.buttonCadastre.TabIndex = 6;
+            this.buttonCadastre.Text = "Cadastre-se";
+            this.buttonCadastre.UseVisualStyleBackColor = true;
+            this.buttonCadastre.Click += new System.EventHandler(this.buttonCadastre_Click);
+            // 
+            // panelLogin
+            // 
+            this.panelLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.panelLogin.Controls.Add(this.buttonCadastre);
+            this.panelLogin.Controls.Add(this.buttonEntrar);
+            this.panelLogin.Controls.Add(this.textBoxSenha);
+            this.panelLogin.Controls.Add(this.textBoxUsuario);
+            this.panelLogin.Controls.Add(this.label3);
+            this.panelLogin.Controls.Add(this.label2);
+            this.panelLogin.Controls.Add(this.label1);
+            this.panelLogin.Location = new System.Drawing.Point(229, 159);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(458, 295);
+            this.panelLogin.TabIndex = 0;
             // 
             // FormTelaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.Color.DarkMagenta;
             this.ClientSize = new System.Drawing.Size(932, 535);
             this.Controls.Add(this.panelConta);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panelCadastro);
             this.Name = "FormTelaPrincipal";
             this.Text = "FuBank";
-            this.panelLogin.ResumeLayout(false);
-            this.panelLogin.PerformLayout();
             this.panelCadastro.ResumeLayout(false);
             this.panelCadastro.PerformLayout();
             this.panelConta.ResumeLayout(false);
@@ -1162,26 +1133,17 @@ namespace WinFormBank.View
             this.panelSaque.PerformLayout();
             this.panelDeposito.ResumeLayout(false);
             this.panelDeposito.PerformLayout();
-            this.panelContaPoupanca.ResumeLayout(false);
-            this.panelContaPoupanca.PerformLayout();
             this.panelContaCorrente.ResumeLayout(false);
             this.panelContaCorrente.PerformLayout();
             this.panelDadosUsuario.ResumeLayout(false);
             this.panelDadosUsuario.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelLogin;
-        private System.Windows.Forms.Button buttonCadastre;
-        private System.Windows.Forms.Button buttonEntrar;
-        private System.Windows.Forms.TextBox textBoxSenha;
-        private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelCadastro;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -1202,24 +1164,19 @@ namespace WinFormBank.View
         private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.Button buttonCadastrar;
         private System.Windows.Forms.Panel panelConta;
-        private System.Windows.Forms.Panel panelContaPoupanca;
         private System.Windows.Forms.Panel panelTransacao;
         private System.Windows.Forms.Panel panelContaCorrente;
         private System.Windows.Forms.Panel panelDadosUsuario;
-        private System.Windows.Forms.Button buttonPagar;
         private System.Windows.Forms.Button buttonDepositar;
         private System.Windows.Forms.Button buttonTransferir;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label labelConta;
         private System.Windows.Forms.Label labelAgencia;
         private System.Windows.Forms.Label labelBanco;
         private System.Windows.Forms.Label labelNome;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label labelSaldoPoupanca;
         private System.Windows.Forms.Label labelSaldoCorrente;
         private System.Windows.Forms.Label labelConfirmaSenha;
         private System.Windows.Forms.Label labelCriaSenha;
@@ -1233,7 +1190,6 @@ namespace WinFormBank.View
         private System.Windows.Forms.Button buttonSair;
         private System.Windows.Forms.Button buttonSacar;
         private System.Windows.Forms.Panel panelSaque;
-        private System.Windows.Forms.Panel panelPagamentos;
         private System.Windows.Forms.Panel panelDeposito;
         private System.Windows.Forms.Panel panelTransferencia;
         private System.Windows.Forms.Label labelMensagemSaque;
@@ -1262,5 +1218,13 @@ namespace WinFormBank.View
         private System.Windows.Forms.TextBox textBoxContaDestino;
         private System.Windows.Forms.Label labelNomeDestinoTransf;
         private System.Windows.Forms.TextBox textBoxHistorico;
+        private System.Windows.Forms.Panel panelLogin;
+        private System.Windows.Forms.Button buttonCadastre;
+        private System.Windows.Forms.Button buttonEntrar;
+        private System.Windows.Forms.TextBox textBoxSenha;
+        private System.Windows.Forms.TextBox textBoxUsuario;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

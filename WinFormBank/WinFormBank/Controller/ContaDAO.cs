@@ -58,7 +58,6 @@ namespace WinFormBank.Controller
                         connection.Close();
                     }
                 }
-
                 MessageBox.Show("Esta é sua conta " + conta.Tipo + ": " + conta.Numero); 
             }
             else

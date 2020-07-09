@@ -453,20 +453,12 @@ namespace WinFormBank.View
         }
 
         //Botoes Panel Conta
-        private void buttonPagar_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void buttonDepositar_Click(object sender, EventArgs e)
         {
             panelDeposito.Visible = true;
-        }
-
-        private void buttonTransferir_Click(object sender, EventArgs e)
-        {
-            panelTransferencia.Visible = true;
-            comboBoxTipoConta.SelectedIndex = 0;
+            panelSaque.Visible = false;
+            panelTransferencia.Visible = false;
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -479,6 +471,8 @@ namespace WinFormBank.View
         private void buttonSaque_Click(object sender, EventArgs e)
         {
             panelSaque.Visible = true;
+            panelTransferencia.Visible = false;
+            panelDeposito.Visible = false;
         }
 
         private void buttonLimpa_Click(object sender, EventArgs e)
@@ -509,7 +503,7 @@ namespace WinFormBank.View
             Transacao transacao = new Transacao();
             TransacaoDAO transacaoDAO = new TransacaoDAO();
             ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
-
+            List<Transacao> transacoesList = new List<Transacao>();
             string input = textBoxValorDeposito.Text;
             int valorValidacao = 0;
 
@@ -541,6 +535,17 @@ namespace WinFormBank.View
                         transacao.DataHora = DateTime.Now;
                         transacao.NumeroConta = conta;
                         transacaoDAO.RegistrarDeposito(transacao);
+                        transacoesList = transacaoDAO.ConsultarDados(conta);
+
+                        foreach (Transacao item in transacoesList)
+                        {
+                            textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("Data e Hora : " + item.DataHora.ToString() + " " + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("Descrição: " + item.Descricao + " " + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("Tipo: " + item.Tipo + " | ");
+                            textBoxHistorico.AppendText("Valor: R$" + item.Valor.ToString("0.00") + " " + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());
+                        }
                     }
                     else
                     {
@@ -560,8 +565,11 @@ namespace WinFormBank.View
 
         private void buttonConfirmaSaque_Click(object sender, EventArgs e)
         {
+            Transacao transacao = new Transacao();
+            TransacaoDAO transacaoDAO = new TransacaoDAO();
             ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
-
+            List<Transacao> transacoesList = new List<Transacao>();
+            
             string input = textBoxValorSaque.Text;
             int valorValidacao = 0;
 
@@ -588,10 +596,27 @@ namespace WinFormBank.View
                         textBoxValorSaque.Text = "";
                         decimal saldoAtual = contaCorrenteDAO.ConsultarSaldo(conta);
                         labelSaldoCorrente.Text = "R$ " + saldoAtual.ToString("0.00");
+                        transacao.Tipo = "Saque";
+                        transacao.Descricao = "Saque em C/C";
+                        transacao.Valor = valorSaque;
+                        transacao.DataHora = DateTime.Now;
+                        transacao.NumeroConta = conta;
+                        transacaoDAO.RegistrarDeposito(transacao);
+                        transacoesList = transacaoDAO.ConsultarDados(conta);
+
+                        foreach (Transacao item in transacoesList)
+                        {
+                            textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("Data e Hora : " + item.DataHora.ToString() + " " + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("Descrição: " + item.Descricao + " " + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("Tipo: " + item.Tipo + " | ");
+                            textBoxHistorico.AppendText("Valor: R$" + item.Valor.ToString("0.00") + " " + System.Environment.NewLine.ToString());
+                            textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());
+                        }
                     }
                     else
                     {
-                        labelMensagemSaque.Text = "Deposito fracassou.";
+                        labelMensagemSaque.Text = "Saque fracassou.";
                         labelMensagemSaque.Visible = true;
                     }
                 }
@@ -620,12 +645,15 @@ namespace WinFormBank.View
         {
             try
             {
+                Transacao transacao = new Transacao();
+                TransacaoDAO transacaoDAO = new TransacaoDAO();
                 ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
+                List<Transacao> transacoesList = new List<Transacao>();
+
                 int contaOrigem = Convert.ToInt32(labelConta.Text.Substring(6));
                 int contaDestino = Convert.ToInt32(textBoxContaDestino.Text);
                 int valorTransf = Convert.ToInt32(textBoxValorTransf.Text);
                 bool aprovado = contaCorrenteDAO.Transferir(contaOrigem, contaDestino, valorTransf);
-
                 string nomeBeneficiario = contaCorrenteDAO.ConsultarNome(Convert.ToInt32(textBoxContaDestino.Text));
 
                 if (nomeBeneficiario.Length == 0)
@@ -651,6 +679,23 @@ namespace WinFormBank.View
                     decimal saldoAnterior = Convert.ToDecimal(labelSaldoCorrente.Text.Substring(2));
                     decimal saldoAtual = saldoAnterior - valorTransf;
                     labelSaldoCorrente.Text = "R$ " + saldoAtual.ToString("0.00");
+                    transacao.Tipo = "Transferencia";
+                    transacao.Descricao = "Transferencia para " + nomeBeneficiario+ " C/C: " + contaDestino.ToString();
+                    transacao.Valor = valorTransf;
+                    transacao.DataHora = DateTime.Now;
+                    transacao.NumeroConta = contaOrigem;
+                    transacaoDAO.RegistrarDeposito(transacao);
+                    transacoesList = transacaoDAO.ConsultarDados(contaOrigem);
+
+                    foreach (Transacao item in transacoesList)
+                    {
+                        textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());
+                        textBoxHistorico.AppendText("Data e Hora : " + item.DataHora.ToString() + " " + System.Environment.NewLine.ToString());
+                        textBoxHistorico.AppendText("Descrição: " + item.Descricao + " " + System.Environment.NewLine.ToString());
+                        textBoxHistorico.AppendText("Tipo: " + item.Tipo + " | ");
+                        textBoxHistorico.AppendText("Valor: R$" + item.Valor.ToString("0.00") + " " + System.Environment.NewLine.ToString());
+                        textBoxHistorico.AppendText("=================================" + System.Environment.NewLine.ToString());
+                    }
                 }
                 else
                 {
@@ -665,6 +710,13 @@ namespace WinFormBank.View
                 MessageBox.Show("Valor invalido e/ou Conta para transferencia nao informada.", "Atenção");
                 textBoxValorTransf.Focus();
             }  
+        }
+
+        private void buttonTransferir_Click(object sender, EventArgs e)
+        {
+            panelTransferencia.Visible = true;
+            panelSaque.Visible = false;
+            panelDeposito.Visible = false;
         }
     }
 }
