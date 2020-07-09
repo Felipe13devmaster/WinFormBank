@@ -272,14 +272,12 @@ namespace WinFormBank.View
             if (textSenhaInsert.Equals(textSenhaConfirm))
             {
                 labelConfirmaSenha.Text = "Senha validada com sucesso.";
-                buttonCadastrar.Enabled = true;
                 label13.ForeColor = Color.Black;
                 label14.ForeColor = Color.Black;
             }
             else
             {
                 labelConfirmaSenha.Text = "Senhas não conferem.";
-                buttonCadastrar.Enabled = false;
                 label13.ForeColor = Color.Red;
                 label14.ForeColor = Color.Red;
             }
@@ -368,12 +366,24 @@ namespace WinFormBank.View
             panelLogin.Visible = false;
             textBoxNome.Focus();
             comboBoxUf.SelectedIndex = 0;
+            textBoxUsuario.Text = "";
+            textBoxSenha.Text = "";
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
             panelCadastro.Visible = false;
             panelLogin.Visible = true;
+            textBoxNome.Text = "";
+            maskedTextBoxCpf.Text = "";
+            maskedTextBoxNascimento.Text = "";
+            textBoxEndereco.Text = "";
+            comboBoxUf.SelectedIndex = 0;
+            maskedTextBoxCelular.Text = "";
+            textBoxEmail.Text = "";
+            textBoxUsuarioInsert.Text = "";
+            textBoxSenhaInsert.Text = "";
+            textBoxSenhaConfirm.Text = "";
         }
 
         private void buttonLimpar_Click(object sender, EventArgs e)
@@ -459,6 +469,9 @@ namespace WinFormBank.View
             panelDeposito.Visible = true;
             panelSaque.Visible = false;
             panelTransferencia.Visible = false;
+            labelMensagemTransf.Visible = false;
+            labelMensagemSaque.Visible = false;
+            labelMensagemDeposito.Visible = false;
         }
 
         private void buttonSair_Click(object sender, EventArgs e)
@@ -473,6 +486,12 @@ namespace WinFormBank.View
             panelSaque.Visible = true;
             panelTransferencia.Visible = false;
             panelDeposito.Visible = false;
+            labelMensagemTransf.Visible = false;
+            labelMensagemSaque.Visible = false;
+            labelMensagemDeposito.Visible = false;
+            labelMensagemTransf.Visible = false;
+            labelMensagemSaque.Visible = false;
+            labelMensagemDeposito.Visible = false;
         }
 
         private void buttonLimpa_Click(object sender, EventArgs e)
@@ -482,8 +501,9 @@ namespace WinFormBank.View
 
         private void buttonCancela_Click(object sender, EventArgs e)
         {
-            panelSaque.Visible = false;
             textBoxValorSaque.Text = "";
+            panelSaque.Visible = false;
+            labelMensagemSaque.Visible = false;
         }
 
         private void buttonSairDeposito_Click(object sender, EventArgs e)
@@ -496,6 +516,7 @@ namespace WinFormBank.View
         private void buttonLimparDeposito_Click(object sender, EventArgs e)
         {
             textBoxValorDeposito.Text = "";
+            labelMensagemDeposito.Visible = false;
         }
 
         private void buttonConfirmaDeposito_Click(object sender, EventArgs e)
@@ -637,8 +658,9 @@ namespace WinFormBank.View
 
         private void buttonCancelarTransf_Click(object sender, EventArgs e)
         {
-            panelTransferencia.Visible = false;
             textBoxValorTransf.Text = "";
+            panelTransferencia.Visible = false;
+            labelMensagemTransf.Visible = false;
         }
 
         private void buttonConfirmaTransf_Click(object sender, EventArgs e)
@@ -717,6 +739,10 @@ namespace WinFormBank.View
             panelTransferencia.Visible = true;
             panelSaque.Visible = false;
             panelDeposito.Visible = false;
+            labelMensagemTransf.Visible = false;
+            labelMensagemSaque.Visible = false;
+            labelMensagemDeposito.Visible = false;
+            comboBoxTipoConta.SelectedIndex = 0;
         }
     }
 }
