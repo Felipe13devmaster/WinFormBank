@@ -124,11 +124,13 @@ namespace WinFormBank.View
             {
                 label13.ForeColor = Color.Red;
                 label14.ForeColor = Color.Red;
+                buttonCadastrar.Enabled = false;
             }
             else
             {
                 label13.ForeColor = Color.Black;
                 label14.ForeColor = Color.Black;
+                buttonCadastrar.Enabled = true;
             }
         }
 
@@ -555,7 +557,7 @@ namespace WinFormBank.View
                         transacao.Valor = valor;
                         transacao.DataHora = DateTime.Now;
                         transacao.NumeroConta = conta;
-                        transacaoDAO.RegistrarDeposito(transacao);
+                        transacaoDAO.RegistrarTransacao(transacao);
                         transacoesList = transacaoDAO.ConsultarDados(conta);
 
                         foreach (Transacao item in transacoesList)
@@ -622,7 +624,7 @@ namespace WinFormBank.View
                         transacao.Valor = valorSaque;
                         transacao.DataHora = DateTime.Now;
                         transacao.NumeroConta = conta;
-                        transacaoDAO.RegistrarDeposito(transacao);
+                        transacaoDAO.RegistrarTransacao(transacao);
                         transacoesList = transacaoDAO.ConsultarDados(conta);
 
                         foreach (Transacao item in transacoesList)
@@ -667,7 +669,8 @@ namespace WinFormBank.View
         {
             try
             {
-                Transacao transacao = new Transacao();
+                Transacao transacaoTransfEnvio = new Transacao();
+                Transacao transacaoTransfReceb = new Transacao();
                 TransacaoDAO transacaoDAO = new TransacaoDAO();
                 ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
                 List<Transacao> transacoesList = new List<Transacao>();
@@ -701,12 +704,19 @@ namespace WinFormBank.View
                     decimal saldoAnterior = Convert.ToDecimal(labelSaldoCorrente.Text.Substring(2));
                     decimal saldoAtual = saldoAnterior - valorTransf;
                     labelSaldoCorrente.Text = "R$ " + saldoAtual.ToString("0.00");
-                    transacao.Tipo = "Transferencia";
-                    transacao.Descricao = "Transferencia para " + nomeBeneficiario+ " C/C: " + contaDestino.ToString();
-                    transacao.Valor = valorTransf;
-                    transacao.DataHora = DateTime.Now;
-                    transacao.NumeroConta = contaOrigem;
-                    transacaoDAO.RegistrarDeposito(transacao);
+                    transacaoTransfEnvio.Tipo = "Transferencia";
+                    transacaoTransfEnvio.Descricao = "Transferencia efetuada para " + nomeBeneficiario + " C/C: " + contaDestino.ToString();
+                    transacaoTransfEnvio.Valor = valorTransf;
+                    transacaoTransfEnvio.DataHora = DateTime.Now;
+                    transacaoTransfEnvio.NumeroConta = contaOrigem;
+                    transacaoDAO.RegistrarTransacao(transacaoTransfEnvio);
+                    string nomeRemetente = labelNome.Text;
+                    transacaoTransfReceb.Tipo = "Transferencia";
+                    transacaoTransfReceb.Descricao = "Transferencia recebida de " + nomeRemetente.Substring(6) + " C/C: " + contaOrigem.ToString();
+                    transacaoTransfReceb.Valor = valorTransf;
+                    transacaoTransfReceb.DataHora = DateTime.Now;
+                    transacaoTransfReceb.NumeroConta = contaDestino;
+                    transacaoDAO.RegistrarTransacao(transacaoTransfReceb);
                     transacoesList = transacaoDAO.ConsultarDados(contaOrigem);
 
                     foreach (Transacao item in transacoesList)

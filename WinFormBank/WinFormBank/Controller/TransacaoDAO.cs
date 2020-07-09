@@ -64,7 +64,7 @@ namespace WinFormBank.Controller
             return listaTransacoes;
         }
 
-        public void RegistrarDeposito(Transacao transacao)
+        public void RegistrarTransacao(Transacao transacao)
         {
             string sqlQuery = " INSERT INTO TRANSACAO (TIPO, DESCRICAO, VALOR, DATA_HORA, NUMERO_CONTA) " +
                               " VALUES (@TIPO, @DESCRICAO, @VALOR, @DATA_HORA, @NUMERO_CONTA)";
