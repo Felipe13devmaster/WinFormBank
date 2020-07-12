@@ -479,6 +479,14 @@ namespace WinFormBank.View
             MessageBox.Show("Até logo!");
             panelLogin.Visible = true;
             panelConta.Visible = false;
+            panelTransferencia.Visible = false;
+            panelSaque.Visible = false;
+            panelDeposito.Visible = false;
+            textBoxHistorico.Text = "";
+            textBoxValorDeposito.Text = "";
+            textBoxValorTransf.Text = "";
+            textBoxValorSaque.Text = "";
+            textBoxContaDestino.Text = "";
         }
 
         private void buttonSaque_Click(object sender, EventArgs e)
@@ -548,6 +556,7 @@ namespace WinFormBank.View
                         labelMensagemDeposito.Text = "Deposito confirmado.";
                         labelMensagemDeposito.Visible = true;
                         textBoxValorDeposito.Text = "";
+                        textBoxHistorico.Text = "";
                         decimal saldo = contaCorrenteDAO.ConsultarSaldo(conta);
                         labelSaldoCorrente.Text = "R$ " + saldo.ToString("0.00");
                         transacao.Tipo = "Deposito";
@@ -572,6 +581,7 @@ namespace WinFormBank.View
                     {
                         labelMensagemDeposito.Text = "Deposito fracassou.";
                         labelMensagemDeposito.Visible = true;
+                        labelMensagemDeposito.BackColor = Color.Red;
                     }
                 }
                 catch (FormatException)
@@ -615,6 +625,7 @@ namespace WinFormBank.View
                         labelMensagemSaque.Text = "Saque confirmado.";
                         labelMensagemSaque.Visible = true;
                         textBoxValorSaque.Text = "";
+                        textBoxHistorico.Text = "";
                         decimal saldoAtual = contaCorrenteDAO.ConsultarSaldo(conta);
                         labelSaldoCorrente.Text = "R$ " + saldoAtual.ToString("0.00");
                         transacao.Tipo = "Saque";
@@ -639,6 +650,7 @@ namespace WinFormBank.View
                     {
                         labelMensagemSaque.Text = "Saque fracassou.";
                         labelMensagemSaque.Visible = true;
+                        labelMensagemSaque.BackColor = Color.Red;
                     }
                 }
                 catch (FormatException)
@@ -693,12 +705,13 @@ namespace WinFormBank.View
                     }
                 }
 
-                if (aprovado == true)
+                if (aprovado == true && valorTransf > 0)
                 {
                     labelMensagemTransf.Visible = true;
                     labelMensagemTransf.Text = "Transferencia realizada com sucesso.";
                     textBoxContaDestino.Text = "";
                     textBoxValorTransf.Text = "";
+                    textBoxHistorico.Text = "";
                     decimal saldoAnterior = Convert.ToDecimal(labelSaldoCorrente.Text.Substring(2));
                     decimal saldoAtual = saldoAnterior - valorTransf;
                     labelSaldoCorrente.Text = "R$ " + saldoAtual.ToString("0.00");
@@ -731,7 +744,7 @@ namespace WinFormBank.View
                 {
                     labelMensagemTransf.Visible = true;
                     labelMensagemTransf.Text = "Transferencia nao realizada.";
-                    labelMensagemTransf.ForeColor = Color.Red;
+                    labelMensagemTransf.BackColor = Color.Red;
                     textBoxContaDestino.Focus();
                 }
             }
