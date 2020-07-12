@@ -80,14 +80,6 @@ namespace WinFormBank.View
             this.labelAgencia = new System.Windows.Forms.Label();
             this.labelBanco = new System.Windows.Forms.Label();
             this.labelNome = new System.Windows.Forms.Label();
-            this.panelSaque = new System.Windows.Forms.Panel();
-            this.labelMensagemSaque = new System.Windows.Forms.Label();
-            this.buttonCancela = new System.Windows.Forms.Button();
-            this.buttonConfirma = new System.Windows.Forms.Button();
-            this.buttonLimpa = new System.Windows.Forms.Button();
-            this.textBoxValorSaque = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.labelSaque = new System.Windows.Forms.Label();
             this.panelTransferencia = new System.Windows.Forms.Panel();
             this.labelNomeDestinoTransf = new System.Windows.Forms.Label();
             this.labelInfConta = new System.Windows.Forms.Label();
@@ -108,6 +100,14 @@ namespace WinFormBank.View
             this.label25 = new System.Windows.Forms.Label();
             this.buttonSairDeposito = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
+            this.panelSaque = new System.Windows.Forms.Panel();
+            this.labelMensagemSaque = new System.Windows.Forms.Label();
+            this.buttonCancela = new System.Windows.Forms.Button();
+            this.buttonConfirma = new System.Windows.Forms.Button();
+            this.buttonLimpa = new System.Windows.Forms.Button();
+            this.textBoxValorSaque = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.labelSaque = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -124,9 +124,9 @@ namespace WinFormBank.View
             this.panelTransacao.SuspendLayout();
             this.panelContaCorrente.SuspendLayout();
             this.panelDadosUsuario.SuspendLayout();
-            this.panelSaque.SuspendLayout();
             this.panelTransferencia.SuspendLayout();
             this.panelDeposito.SuspendLayout();
+            this.panelSaque.SuspendLayout();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -735,104 +735,6 @@ namespace WinFormBank.View
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome";
             // 
-            // panelSaque
-            // 
-            this.panelSaque.BackColor = System.Drawing.Color.MintCream;
-            this.panelSaque.Controls.Add(this.labelMensagemSaque);
-            this.panelSaque.Controls.Add(this.buttonCancela);
-            this.panelSaque.Controls.Add(this.buttonConfirma);
-            this.panelSaque.Controls.Add(this.buttonLimpa);
-            this.panelSaque.Controls.Add(this.textBoxValorSaque);
-            this.panelSaque.Controls.Add(this.label22);
-            this.panelSaque.Controls.Add(this.labelSaque);
-            this.panelSaque.Location = new System.Drawing.Point(36, 281);
-            this.panelSaque.Name = "panelSaque";
-            this.panelSaque.Size = new System.Drawing.Size(305, 218);
-            this.panelSaque.TabIndex = 7;
-            this.panelSaque.Visible = false;
-            // 
-            // labelMensagemSaque
-            // 
-            this.labelMensagemSaque.AutoSize = true;
-            this.labelMensagemSaque.BackColor = System.Drawing.Color.Lime;
-            this.labelMensagemSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMensagemSaque.Location = new System.Drawing.Point(89, 158);
-            this.labelMensagemSaque.Name = "labelMensagemSaque";
-            this.labelMensagemSaque.Size = new System.Drawing.Size(76, 16);
-            this.labelMensagemSaque.TabIndex = 8;
-            this.labelMensagemSaque.Text = "Mensagem";
-            this.labelMensagemSaque.Visible = false;
-            // 
-            // buttonCancela
-            // 
-            this.buttonCancela.BackColor = System.Drawing.Color.Purple;
-            this.buttonCancela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancela.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonCancela.Location = new System.Drawing.Point(197, 113);
-            this.buttonCancela.Name = "buttonCancela";
-            this.buttonCancela.Size = new System.Drawing.Size(89, 31);
-            this.buttonCancela.TabIndex = 7;
-            this.buttonCancela.Text = "Cancelar";
-            this.buttonCancela.UseVisualStyleBackColor = false;
-            this.buttonCancela.Click += new System.EventHandler(this.buttonCancela_Click);
-            // 
-            // buttonConfirma
-            // 
-            this.buttonConfirma.BackColor = System.Drawing.Color.Purple;
-            this.buttonConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonConfirma.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonConfirma.Location = new System.Drawing.Point(106, 113);
-            this.buttonConfirma.Name = "buttonConfirma";
-            this.buttonConfirma.Size = new System.Drawing.Size(85, 31);
-            this.buttonConfirma.TabIndex = 6;
-            this.buttonConfirma.Text = "Confirma";
-            this.buttonConfirma.UseVisualStyleBackColor = false;
-            this.buttonConfirma.Click += new System.EventHandler(this.buttonConfirmaSaque_Click);
-            // 
-            // buttonLimpa
-            // 
-            this.buttonLimpa.BackColor = System.Drawing.Color.Purple;
-            this.buttonLimpa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLimpa.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.buttonLimpa.Location = new System.Drawing.Point(16, 113);
-            this.buttonLimpa.Name = "buttonLimpa";
-            this.buttonLimpa.Size = new System.Drawing.Size(84, 31);
-            this.buttonLimpa.TabIndex = 5;
-            this.buttonLimpa.Text = "Limpar";
-            this.buttonLimpa.UseVisualStyleBackColor = false;
-            this.buttonLimpa.Click += new System.EventHandler(this.buttonLimpa_Click);
-            // 
-            // textBoxValorSaque
-            // 
-            this.textBoxValorSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxValorSaque.Location = new System.Drawing.Point(72, 77);
-            this.textBoxValorSaque.Name = "textBoxValorSaque";
-            this.textBoxValorSaque.Size = new System.Drawing.Size(214, 29);
-            this.textBoxValorSaque.TabIndex = 4;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(12, 82);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(54, 24);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "Valor";
-            // 
-            // labelSaque
-            // 
-            this.labelSaque.AutoSize = true;
-            this.labelSaque.BackColor = System.Drawing.Color.DarkMagenta;
-            this.labelSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSaque.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.labelSaque.Location = new System.Drawing.Point(111, 12);
-            this.labelSaque.Name = "labelSaque";
-            this.labelSaque.Size = new System.Drawing.Size(92, 31);
-            this.labelSaque.TabIndex = 0;
-            this.labelSaque.Text = "Saque";
-            // 
             // panelTransferencia
             // 
             this.panelTransferencia.BackColor = System.Drawing.Color.MintCream;
@@ -858,7 +760,8 @@ namespace WinFormBank.View
             // 
             this.labelNomeDestinoTransf.AutoSize = true;
             this.labelNomeDestinoTransf.BackColor = System.Drawing.Color.Snow;
-            this.labelNomeDestinoTransf.Location = new System.Drawing.Point(18, 126);
+            this.labelNomeDestinoTransf.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelNomeDestinoTransf.Location = new System.Drawing.Point(15, 134);
             this.labelNomeDestinoTransf.Name = "labelNomeDestinoTransf";
             this.labelNomeDestinoTransf.Size = new System.Drawing.Size(65, 13);
             this.labelNomeDestinoTransf.TabIndex = 24;
@@ -869,7 +772,8 @@ namespace WinFormBank.View
             // 
             this.labelInfConta.AutoSize = true;
             this.labelInfConta.BackColor = System.Drawing.Color.Snow;
-            this.labelInfConta.Location = new System.Drawing.Point(12, 126);
+            this.labelInfConta.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelInfConta.Location = new System.Drawing.Point(16, 112);
             this.labelInfConta.Name = "labelInfConta";
             this.labelInfConta.Size = new System.Drawing.Size(81, 13);
             this.labelInfConta.TabIndex = 23;
@@ -878,7 +782,7 @@ namespace WinFormBank.View
             // 
             // textBoxContaDestino
             // 
-            this.textBoxContaDestino.Location = new System.Drawing.Point(133, 123);
+            this.textBoxContaDestino.Location = new System.Drawing.Point(133, 109);
             this.textBoxContaDestino.Name = "textBoxContaDestino";
             this.textBoxContaDestino.Size = new System.Drawing.Size(160, 20);
             this.textBoxContaDestino.TabIndex = 22;
@@ -891,7 +795,7 @@ namespace WinFormBank.View
             this.comboBoxTipoConta.Items.AddRange(new object[] {
             "Transferir para:",
             "Outra Conta Corrente"});
-            this.comboBoxTipoConta.Location = new System.Drawing.Point(15, 94);
+            this.comboBoxTipoConta.Location = new System.Drawing.Point(16, 83);
             this.comboBoxTipoConta.Name = "comboBoxTipoConta";
             this.comboBoxTipoConta.Size = new System.Drawing.Size(138, 21);
             this.comboBoxTipoConta.TabIndex = 21;
@@ -938,7 +842,7 @@ namespace WinFormBank.View
             // textBoxValorTransf
             // 
             this.textBoxValorTransf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxValorTransf.Location = new System.Drawing.Point(76, 59);
+            this.textBoxValorTransf.Location = new System.Drawing.Point(77, 48);
             this.textBoxValorTransf.Name = "textBoxValorTransf";
             this.textBoxValorTransf.Size = new System.Drawing.Size(217, 29);
             this.textBoxValorTransf.TabIndex = 17;
@@ -948,7 +852,8 @@ namespace WinFormBank.View
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(13, 62);
+            this.label26.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label26.Location = new System.Drawing.Point(14, 51);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(54, 24);
             this.label26.TabIndex = 16;
@@ -973,7 +878,7 @@ namespace WinFormBank.View
             this.label27.BackColor = System.Drawing.Color.DarkMagenta;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label27.Location = new System.Drawing.Point(70, 17);
+            this.label27.Location = new System.Drawing.Point(71, 6);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(181, 31);
             this.label27.TabIndex = 14;
@@ -1076,6 +981,104 @@ namespace WinFormBank.View
             this.label23.Size = new System.Drawing.Size(122, 31);
             this.label23.TabIndex = 0;
             this.label23.Text = "Deposito";
+            // 
+            // panelSaque
+            // 
+            this.panelSaque.BackColor = System.Drawing.Color.MintCream;
+            this.panelSaque.Controls.Add(this.labelMensagemSaque);
+            this.panelSaque.Controls.Add(this.buttonCancela);
+            this.panelSaque.Controls.Add(this.buttonConfirma);
+            this.panelSaque.Controls.Add(this.buttonLimpa);
+            this.panelSaque.Controls.Add(this.textBoxValorSaque);
+            this.panelSaque.Controls.Add(this.label22);
+            this.panelSaque.Controls.Add(this.labelSaque);
+            this.panelSaque.Location = new System.Drawing.Point(36, 281);
+            this.panelSaque.Name = "panelSaque";
+            this.panelSaque.Size = new System.Drawing.Size(305, 218);
+            this.panelSaque.TabIndex = 7;
+            this.panelSaque.Visible = false;
+            // 
+            // labelMensagemSaque
+            // 
+            this.labelMensagemSaque.AutoSize = true;
+            this.labelMensagemSaque.BackColor = System.Drawing.Color.Lime;
+            this.labelMensagemSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMensagemSaque.Location = new System.Drawing.Point(89, 158);
+            this.labelMensagemSaque.Name = "labelMensagemSaque";
+            this.labelMensagemSaque.Size = new System.Drawing.Size(76, 16);
+            this.labelMensagemSaque.TabIndex = 8;
+            this.labelMensagemSaque.Text = "Mensagem";
+            this.labelMensagemSaque.Visible = false;
+            // 
+            // buttonCancela
+            // 
+            this.buttonCancela.BackColor = System.Drawing.Color.Purple;
+            this.buttonCancela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancela.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonCancela.Location = new System.Drawing.Point(197, 113);
+            this.buttonCancela.Name = "buttonCancela";
+            this.buttonCancela.Size = new System.Drawing.Size(89, 31);
+            this.buttonCancela.TabIndex = 7;
+            this.buttonCancela.Text = "Cancelar";
+            this.buttonCancela.UseVisualStyleBackColor = false;
+            this.buttonCancela.Click += new System.EventHandler(this.buttonCancela_Click);
+            // 
+            // buttonConfirma
+            // 
+            this.buttonConfirma.BackColor = System.Drawing.Color.Purple;
+            this.buttonConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConfirma.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonConfirma.Location = new System.Drawing.Point(106, 113);
+            this.buttonConfirma.Name = "buttonConfirma";
+            this.buttonConfirma.Size = new System.Drawing.Size(85, 31);
+            this.buttonConfirma.TabIndex = 6;
+            this.buttonConfirma.Text = "Confirma";
+            this.buttonConfirma.UseVisualStyleBackColor = false;
+            this.buttonConfirma.Click += new System.EventHandler(this.buttonConfirmaSaque_Click);
+            // 
+            // buttonLimpa
+            // 
+            this.buttonLimpa.BackColor = System.Drawing.Color.Purple;
+            this.buttonLimpa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimpa.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.buttonLimpa.Location = new System.Drawing.Point(16, 113);
+            this.buttonLimpa.Name = "buttonLimpa";
+            this.buttonLimpa.Size = new System.Drawing.Size(84, 31);
+            this.buttonLimpa.TabIndex = 5;
+            this.buttonLimpa.Text = "Limpar";
+            this.buttonLimpa.UseVisualStyleBackColor = false;
+            this.buttonLimpa.Click += new System.EventHandler(this.buttonLimpa_Click);
+            // 
+            // textBoxValorSaque
+            // 
+            this.textBoxValorSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxValorSaque.Location = new System.Drawing.Point(72, 77);
+            this.textBoxValorSaque.Name = "textBoxValorSaque";
+            this.textBoxValorSaque.Size = new System.Drawing.Size(214, 29);
+            this.textBoxValorSaque.TabIndex = 4;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(12, 82);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(54, 24);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Valor";
+            // 
+            // labelSaque
+            // 
+            this.labelSaque.AutoSize = true;
+            this.labelSaque.BackColor = System.Drawing.Color.DarkMagenta;
+            this.labelSaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSaque.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.labelSaque.Location = new System.Drawing.Point(111, 12);
+            this.labelSaque.Name = "labelSaque";
+            this.labelSaque.Size = new System.Drawing.Size(92, 31);
+            this.labelSaque.TabIndex = 0;
+            this.labelSaque.Text = "Saque";
             // 
             // label1
             // 
@@ -1201,12 +1204,12 @@ namespace WinFormBank.View
             this.panelContaCorrente.PerformLayout();
             this.panelDadosUsuario.ResumeLayout(false);
             this.panelDadosUsuario.PerformLayout();
-            this.panelSaque.ResumeLayout(false);
-            this.panelSaque.PerformLayout();
             this.panelTransferencia.ResumeLayout(false);
             this.panelTransferencia.PerformLayout();
             this.panelDeposito.ResumeLayout(false);
             this.panelDeposito.PerformLayout();
+            this.panelSaque.ResumeLayout(false);
+            this.panelSaque.PerformLayout();
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

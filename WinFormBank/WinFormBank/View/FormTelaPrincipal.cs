@@ -436,8 +436,6 @@ namespace WinFormBank.View
                 usuarioDAO.Salvar(usuario, validadoU, cpfCliente);
                 conta = contaCorrente.CriarConta();
                 contaDAO.Salvar(validadoC, conta, cpfCliente);
-                
-
             }
             catch (ArgumentOutOfRangeException )
             {

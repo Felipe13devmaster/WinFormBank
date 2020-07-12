@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using WinFormBank.Util;
 using WinFormBank.Model;
@@ -94,7 +90,6 @@ namespace WinFormBank.Controller
                     connection.Close();
                 }
             }
-
             return tem;
         }
     }

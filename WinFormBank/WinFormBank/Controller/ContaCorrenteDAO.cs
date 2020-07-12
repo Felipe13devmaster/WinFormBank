@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WinFormBank.Util;
-using WinFormBank.Model;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
@@ -15,7 +10,6 @@ namespace WinFormBank.Controller
     {
         private SqlConnection connection;
         private SqlCommand command;
-        private SqlDataReader dataReader;
 
         public ContaCorrenteDAO()
         {
@@ -153,14 +147,5 @@ namespace WinFormBank.Controller
             }
             return aprovado;
         }
-
-        public bool TransferirParaPoupanca(int numContaPoupanca, decimal valorTransf)
-        {
-            bool aprovado = false;
-
-            return aprovado;
-        }
-
-        
     }
 }
