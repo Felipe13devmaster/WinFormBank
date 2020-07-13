@@ -8,8 +8,20 @@ Este é um pequeno projeto de um banco digital, que desenvolvi como parte do meu
  - Sql Server
  
  **Funcionalidades**
- - Saque
- - Transferência entre contas cadastradas
- - Deposito
- - Extrato com registro de todas as transações
-
+ - Deposito:
+ 
+ ![Deposito](https://github.com/Felipe13devmaster/Windows-Forms-Bank/blob/master/Fubank%20Deposito.gif)
+ 
+ - Saque:
+ 
+ ![Saque](https://github.com/Felipe13devmaster/Windows-Forms-Bank/blob/master/Fubank%20Saque.gif)
+ 
+ - Transferencia entre contas cadastradas:
+ 
+ ![Transf pt1](https://github.com/Felipe13devmaster/Windows-Forms-Bank/blob/master/Fubank%20Transferencia%20pt1.gif)
+ 
+ ![Transf pt2](https://github.com/Felipe13devmaster/Windows-Forms-Bank/blob/master/Fubank%20Transferencia%20pt2.gif)
+ 
+  - Extrato exibe o registro de todas as transações:
+  
+  ![Extrato](https://github.com/Felipe13devmaster/Windows-Forms-Bank/blob/master/Historico%20Fubank.png)
