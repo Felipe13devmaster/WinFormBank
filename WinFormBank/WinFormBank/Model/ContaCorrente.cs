@@ -1,10 +1,10 @@
 ﻿namespace WinFormBank.Model
 {
-    class ContaCorrente:Conta
+    class ContaCorrente : Conta
     {
-        public ContaCorrente() 
+        public ContaCorrente()
         {
             this.Tipo = "Corrente";
-        }   
+        }
     }
 }

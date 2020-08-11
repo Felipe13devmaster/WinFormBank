@@ -4,44 +4,23 @@ namespace WinFormBank.Model
 {
     class Cliente
     {
-        private int id;
-        private string nome;
-        private string cpf;
-        private DateTime nascimento;
-        private string endereco;
-        private string uf;
-        private string celular;
-        private string email;
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Cpf { get; set; }
+        public DateTime Nascimento { get; set; }
+        public string Endereco { get; set; }
+        public string Uf { get; set; }
+        public string Celular { get; set; }
+        public string Email { get; set; }
 
         public Cliente() { }
-
-        public Cliente(int id, string nome, string cpf, DateTime nascimento, string endereco, string uf, string celular, string email)
-        {
-            this.id = id;
-            this.nome = nome;
-            this.cpf = cpf;
-            this.nascimento = nascimento;
-            this.endereco = endereco;
-            this.uf = uf;
-            this.celular = celular;
-            this.email = email;
-        }
-
-        public int Id { get => id; set => id = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Cpf { get => cpf; set => cpf = value; }
-        public DateTime Nascimento { get => nascimento; set => nascimento = value; }
-        public string Endereco { get => endereco; set => endereco = value; }
-        public string Uf { get => uf; set => uf = value; }
-        public string Celular { get => celular; set => celular = value; }
-        public string Email { get => email; set => email = value; }
 
         public bool ValidaCliente(Cliente cliente)
         {
             bool validado = true;
 
-            if ((cliente.nome == "") || (cliente.cpf.Length < 14) || (cliente.nascimento.ToString() == "    -  -  ") || (cliente.endereco == "")
-                   || (cliente.uf == "") || (cliente.celular.Length < 15) || (cliente.email == ""))
+            if ((cliente.Nome == "") || (cliente.Cpf.Length < 14) || (cliente.Nascimento.ToString() == "    -  -  ") || (cliente.Endereco == "")
+                   || (cliente.Uf == "") || (cliente.Celular.Length < 15) || (cliente.Email == ""))
             {
                 validado = false;
             }

@@ -2,28 +2,17 @@
 {
     class Usuario
     {
-        private string idNome;
-        private string senha;
-        private int idCliente;
+        public string IdNome { get; set; }
+        public string Senha { get; set; }
+        public int IdCliente { get; set; }
 
         public Usuario() { }
-
-        public Usuario(string idNome, string senha, int idCliente)
-        {
-            this.idNome = idNome;
-            this.senha = senha;
-            this.idCliente = idCliente;
-        }
-
-        public string IdNome { get => idNome; set => idNome = value; }
-        public string Senha { get => senha; set => senha = value; }
-        public int IdCliente { get => idCliente; set => idCliente = value; }
 
         public bool ValidaUsuario(Usuario usuario)
         {
             bool validado = true;
-           
-            if ((usuario.idNome == "") || (usuario.senha == ""))
+
+            if ((usuario.IdNome == "") || (usuario.Senha == ""))
             {
                 validado = false;
             }
