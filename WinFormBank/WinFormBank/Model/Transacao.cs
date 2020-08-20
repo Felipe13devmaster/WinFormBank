@@ -10,7 +10,6 @@ namespace WinFormBank.Model
         public decimal Valor { get; set; }
         public DateTime DataHora { get; set; }
         public int NumeroConta { get; set; }
-        public Transacao() { }
 
         public Transacao(string tipo, string descricao, decimal valor, DateTime dataHora)
         {

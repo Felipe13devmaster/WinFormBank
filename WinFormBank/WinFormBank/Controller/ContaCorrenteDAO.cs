@@ -6,7 +6,7 @@ using System.Data;
 
 namespace WinFormBank.Controller
 {
-    class ContaCorrenteDAO:ContaDAO
+    class ContaCorrenteDAO : ContaDAO
     {
         private SqlConnection connection;
         private SqlCommand command;
@@ -70,7 +70,7 @@ namespace WinFormBank.Controller
                               " WHERE NUMERO = @CONTA_ORIGEM " +
                               " UPDATE CONTA " +
                               " SET SALDO = @VALORTRANSF + SALDO " +
-                              " WHERE NUMERO = @CONTA_DESTINO " ;
+                              " WHERE NUMERO = @CONTA_DESTINO ";
             try
             {
                 if (tem == true)
@@ -92,7 +92,7 @@ namespace WinFormBank.Controller
                 else
                 {
                     aprovado = false;
-                } 
+                }
             }
             catch (SqlException e)
             {
@@ -130,7 +130,7 @@ namespace WinFormBank.Controller
                 {
                     MessageBox.Show("Valor de saque indisponivel!");
                     aprovado = false;
-                }  
+                }
             }
             catch (SqlException e)
             {

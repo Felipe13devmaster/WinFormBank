@@ -13,8 +13,6 @@ namespace WinFormBank.Model
         public string Celular { get; set; }
         public string Email { get; set; }
 
-        public Cliente() { }
-
         public bool ValidaCliente(Cliente cliente)
         {
             bool validado = true;

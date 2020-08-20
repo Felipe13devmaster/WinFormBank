@@ -6,8 +6,6 @@
         public string Senha { get; set; }
         public int IdCliente { get; set; }
 
-        public Usuario() { }
-
         public bool ValidaUsuario(Usuario usuario)
         {
             bool validado = true;

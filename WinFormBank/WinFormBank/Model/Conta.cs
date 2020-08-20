@@ -8,7 +8,6 @@ namespace WinFormBank.Model
         public string Tipo { get; set; }
         public decimal Saldo { get; set; }
         public int IdCliente { get; set; }
-        public Conta() { }
 
         public Conta CriarConta()
         {
