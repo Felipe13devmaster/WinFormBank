@@ -6,9 +6,9 @@ using System.Windows.Forms;
 using WinFormBank.Model;
 using WinFormBank.Util;
 
-namespace WinFormBank.Controller
+namespace WinFormBank.DAL
 {
-    class TransacaoDAO
+    public class TransacaoDAO
     {
         private SqlConnection connection;
         private SqlCommand command;
@@ -18,7 +18,7 @@ namespace WinFormBank.Controller
         {
             try
             {
-                connection = DataAccess.connection();
+                connection = ConnectionFactory.connection();
             }
             catch (SqlException e)
             {

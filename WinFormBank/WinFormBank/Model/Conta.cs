@@ -2,7 +2,7 @@
 
 namespace WinFormBank.Model
 {
-    class Conta
+    public class Conta
     {
         public int Numero { get; set; }
         public string Tipo { get; set; }
@@ -15,7 +15,7 @@ namespace WinFormBank.Model
             Random numAleatorio = new Random();
             int numConta = numAleatorio.Next(10000, 100000);
             contaCorrente.Numero = numConta;
-            this.Saldo = 0;
+            Saldo = 0;
             return contaCorrente;
         }
     }

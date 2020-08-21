@@ -2,7 +2,7 @@
 
 namespace WinFormBank.Model
 {
-    class Cliente
+    public class Cliente
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -15,14 +15,13 @@ namespace WinFormBank.Model
 
         public bool ValidaCliente(Cliente cliente)
         {
-            bool validado = true;
-
             if ((cliente.Nome == "") || (cliente.Cpf.Length < 14) || (cliente.Nascimento.ToString() == "    -  -  ") || (cliente.Endereco == "")
                    || (cliente.Uf == "") || (cliente.Celular.Length < 15) || (cliente.Email == ""))
             {
-                validado = false;
+                return false;
             }
-            return validado;
+
+            return true;
         }
     }
 }

@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormBank.Model;
-using WinFormBank.Controller;
+using WinFormBank.DAL;
 
 namespace WinFormBank.View
 {
@@ -18,13 +14,13 @@ namespace WinFormBank.View
         {
             InitializeComponent();
         }
-    // EVENTOS=========================================================================================================================
+        // EVENTOS=========================================================================================================================
         private void textBoxNome_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrWhiteSpace(textBoxNome.Text))
             {
                 label5.ForeColor = Color.Red;
-                
+
             }
             else
             {
@@ -301,11 +297,11 @@ namespace WinFormBank.View
                 cliente = contaDAO.ConsultarDados(cliente, idUsuario);
                 conta = contaDAO.ConsultarDados(conta, idUsuario);
 
-                labelNome.Text = "Nome: "+ cliente.Nome;
+                labelNome.Text = "Nome: " + cliente.Nome;
                 labelAgencia.Text = "Agencia: 0001 - 7";
                 labelBanco.Text = "Banco: 13";
-                labelConta.Text = "Conta: "+ conta.Numero;
-                labelSaldoCorrente.Text = "R$ "+conta.Saldo.ToString("0.00");
+                labelConta.Text = "Conta: " + conta.Numero;
+                labelSaldoCorrente.Text = "R$ " + conta.Saldo.ToString("0.00");
 
 
                 transacoesList = transacaoDAO.ConsultarDados(conta.Numero);
@@ -437,11 +433,11 @@ namespace WinFormBank.View
                 conta = contaCorrente.CriarConta();
                 contaDAO.Salvar(validadoC, conta, cpfCliente);
             }
-            catch (ArgumentOutOfRangeException )
+            catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Por favor informe sua data de nascimento. ");
             }
-            catch (FormatException )
+            catch (FormatException)
             {
                 MessageBox.Show("Formato de data de nascimento invalida!. ");
             }
@@ -463,7 +459,7 @@ namespace WinFormBank.View
         }
 
         //Botoes Panel Conta
-        
+
         private void buttonDepositar_Click(object sender, EventArgs e)
         {
             panelDeposito.Visible = true;
@@ -518,7 +514,7 @@ namespace WinFormBank.View
         {
             panelDeposito.Visible = false;
             textBoxValorDeposito.Text = "";
-            
+
         }
 
         private void buttonLimparDeposito_Click(object sender, EventArgs e)
@@ -600,7 +596,7 @@ namespace WinFormBank.View
             TransacaoDAO transacaoDAO = new TransacaoDAO();
             ContaCorrenteDAO contaCorrenteDAO = new ContaCorrenteDAO();
             List<Transacao> transacoesList = new List<Transacao>();
-            
+
             string input = textBoxValorSaque.Text;
             int valorValidacao = 0;
 
@@ -660,7 +656,7 @@ namespace WinFormBank.View
                     labelMensagemSaque.Visible = true;
                     textBoxValorSaque.Focus();
                 }
-            }   
+            }
         }
 
         private void buttonLimparTransf_Click(object sender, EventArgs e)
@@ -752,7 +748,7 @@ namespace WinFormBank.View
             {
                 MessageBox.Show("Valor invalido e/ou Conta para transferencia nao informada.", "Atenção");
                 textBoxValorTransf.Focus();
-            }  
+            }
         }
 
         private void buttonTransferir_Click(object sender, EventArgs e)

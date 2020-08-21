@@ -1,6 +1,6 @@
 ﻿namespace WinFormBank.Model
 {
-    class ContaCorrente : Conta
+    public class ContaCorrente : Conta
     {
         public ContaCorrente()
         {

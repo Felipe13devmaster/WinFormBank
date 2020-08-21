@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 
-namespace WinFormBank.Controller
+namespace WinFormBank.DAL
 {
-    class ClienteDAO
+    public class ClienteDAO
     {
         private SqlConnection connection;
         private SqlCommand command;
@@ -16,9 +16,9 @@ namespace WinFormBank.Controller
         {
             try
             {
-                connection = DataAccess.connection();
+                connection = ConnectionFactory.connection();
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Erro de conectar cliente Dao com o bd!");            
             }

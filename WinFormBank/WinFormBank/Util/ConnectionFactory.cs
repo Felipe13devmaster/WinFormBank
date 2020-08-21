@@ -3,7 +3,7 @@ using System.Data;
 
 namespace WinFormBank.Util
 {
-    class DataAccess
+    public class ConnectionFactory
     {
         public static SqlConnection sqlConnection = new SqlConnection();
         

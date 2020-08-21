@@ -1,6 +1,6 @@
 ﻿namespace WinFormBank.Model
 {
-    class Usuario
+    public class Usuario
     {
         public string IdNome { get; set; }
         public string Senha { get; set; }
@@ -8,13 +8,11 @@
 
         public bool ValidaUsuario(Usuario usuario)
         {
-            bool validado = true;
-
             if ((usuario.IdNome == "") || (usuario.Senha == ""))
             {
-                validado = false;
+                return false;
             }
-            return validado;
+            return true;
         }
     }
 }

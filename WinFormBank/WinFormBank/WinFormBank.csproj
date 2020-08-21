@@ -74,11 +74,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ClienteDAO.cs" />
-    <Compile Include="Controller\ContaCorrenteDAO.cs" />
-    <Compile Include="Controller\ContaDAO.cs" />
-    <Compile Include="Controller\TransacaoDAO.cs" />
-    <Compile Include="Controller\UsuarioDAO.cs" />
+    <Compile Include="DAL\ClienteDAO.cs" />
+    <Compile Include="DAL\ContaCorrenteDAO.cs" />
+    <Compile Include="DAL\ContaDAO.cs" />
+    <Compile Include="DAL\TransacaoDAO.cs" />
+    <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Conta.cs" />
     <Compile Include="Model\ContaCorrente.cs" />
@@ -86,7 +86,7 @@
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Util\ConexaoBancoDados.cs" />
+    <Compile Include="Util\ConnectionFactory.cs" />
     <Compile Include="View\FormTelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

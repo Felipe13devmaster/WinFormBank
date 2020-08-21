@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 
-namespace WinFormBank.Controller
+namespace WinFormBank.DAL
 {
-    class ContaCorrenteDAO : ContaDAO
+    public class ContaCorrenteDAO : ContaDAO
     {
         private SqlConnection connection;
         private SqlCommand command;
@@ -15,9 +15,9 @@ namespace WinFormBank.Controller
         {
             try
             {
-                connection = DataAccess.connection();
+                connection = ConnectionFactory.connection();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 MessageBox.Show("Erro de conectar cliente Dao com o bd!");
             }
@@ -25,7 +25,6 @@ namespace WinFormBank.Controller
 
         public bool Depositar(int numConta, decimal valorDeposito)
         {
-            bool aprovado = true;
             string sqlQuery = " UPDATE CONTA " +
                               " SET SALDO = @SALDO + SALDO " +
                               " WHERE NUMERO = @CONTA ";
@@ -40,8 +39,7 @@ namespace WinFormBank.Controller
             catch (SqlException e)
             {
                 MessageBox.Show("Erro ao depositar!" + e);
-                aprovado = false;
-                return aprovado;
+                return false;
             }
             finally
             {
@@ -50,7 +48,7 @@ namespace WinFormBank.Controller
                     connection.Close();
                 }
             }
-            return aprovado;
+            return true;
         }
 
         public bool PagarBoleto(string numBoleto, decimal valor)
@@ -63,7 +61,7 @@ namespace WinFormBank.Controller
         public bool Transferir(int numContaOrigem, int numContaDestino, decimal valorTransf)
         {
             bool aprovado = true;
-            bool tem = VerificarConta(numContaDestino);
+            bool temConta = VerificarConta(numContaDestino);
             decimal saldo = ConsultarSaldo(numContaOrigem);
             string sqlQuery = " UPDATE CONTA " +
                               " SET SALDO = SALDO - @VALORTRANSF " +
@@ -73,7 +71,7 @@ namespace WinFormBank.Controller
                               " WHERE NUMERO = @CONTA_DESTINO ";
             try
             {
-                if (tem == true)
+                if (temConta)
                 {
                     if (valorTransf <= saldo)
                     {

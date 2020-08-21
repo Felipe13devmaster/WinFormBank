@@ -5,9 +5,9 @@ using System.Windows.Forms;
 using WinFormBank.Model;
 using WinFormBank.Util;
 
-namespace WinFormBank.Controller
+namespace WinFormBank.DAL
 {
-    class ContaDAO
+    public class ContaDAO
     {
         private SqlConnection connection;
         private SqlCommand command;
@@ -17,7 +17,7 @@ namespace WinFormBank.Controller
         {
             try
             {
-                connection = DataAccess.connection();
+                connection = ConnectionFactory.connection();
             }
             catch (SqlException e)
             {
