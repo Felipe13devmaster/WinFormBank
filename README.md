@@ -1,7 +1,7 @@
 ## WinFormBank
 
 Este é um pequeno projeto de um banco digital, que desenvolvi como parte do meu aprendizado com C#.
-É meu primeiro projeto utilizando a linguagem, fiz do modo mais simples e didático possível, então ele não apliquei algumas boas praticas, mas provavelmente irei melhora-lo no futuro.
+É meu primeiro projeto utilizando a linguagem, fiz do modo mais simples e didático possível, então ainda não apliquei algumas boas praticas, mas provavelmente irei melhora-lo no futuro.
 
 **Ferramentas**
  - Windows Forms
