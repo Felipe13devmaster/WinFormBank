@@ -20,10 +20,10 @@ namespace WinFormBank.Util
                 }
                 return sqlConnection; 
             }
-            catch (SqlException ex)
+            catch (SqlException e)
             {
                 // MessageBox.Show("Ocorreou o erro: "+ex);
-                throw ex;
+                throw e;
             }
         } 
     }

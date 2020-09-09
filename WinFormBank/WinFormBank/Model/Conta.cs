@@ -9,7 +9,7 @@ namespace WinFormBank.Model
         public decimal Saldo { get; set; }
         public int IdCliente { get; set; }
 
-        public Conta CriarConta()
+        public virtual Conta CriarConta()
         {
             ContaCorrente contaCorrente = new ContaCorrente();
             Random numAleatorio = new Random();
